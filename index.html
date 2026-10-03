@@ -1,60 +1,760 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="ko">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="theme-color" content="#102a43">
-  <meta name="description" content="한국카케어전문학원. 수원에서 자동차 광택·코팅, 스팀세차, 덴트, 랩핑, 썬팅 교육을 안내합니다.">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+  <meta name="google-site-verification" content="TZECFYuhmUF-TkPNuQ7aV-0APL-UdOiVy43H7tPTo4c">
+  <title>한국카케어전문학원 | 국비지원 자동차광택·덴트·PPF 교육</title>
+  <meta name="description" content="13년 역사, 3,420명 졸업생. 국비지원 자동차 광택·덴트·PPF·틴팅·스팀세차·도장 실습 중심 전문 교육기관.">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="한국카케어전문학원 | 국비지원 자동차 외장관리 교육">
+  <meta property="og:description" content="13년 역사, 3,420명 졸업생. 국비지원 자동차 광택·덴트·PPF·틴팅·스팀세차·도장 실습 중심 전문 교육기관.">
+  <meta property="og:url" content="https://kca2009.com/">
+  <meta property="og:image" content="https://kca2009.com/images/CvQLWkak1iifj7rAqQmKqfeurzA.webp">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:locale" content="ko_KR">
   <link rel="canonical" href="https://kca2009.com/">
-  <title>한국카케어전문학원 | 수원 자동차 외장관리 교육</title>
-  <style>
-    :root{color-scheme:light;--navy:#102a43;--ink:#20364a;--muted:#607487;--blue:#2164b0;--pale:#edf5fc;--line:#dce6ee}
-    *{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;font-family:-apple-system,BlinkMacSystemFont,"Apple SD Gothic Neo","Malgun Gothic",sans-serif;color:var(--ink);background:#f7fafc;line-height:1.65}
-    a{color:inherit}.wrap{width:min(1120px,calc(100% - 36px));margin:auto}.top{background:#fff;border-bottom:1px solid var(--line)}
-    .top .wrap{display:flex;justify-content:space-between;align-items:center;gap:18px;min-height:76px}.brand{font-size:21px;font-weight:800;color:var(--navy);text-decoration:none;letter-spacing:-.05em}.brand small{display:block;font-size:11px;font-weight:650;letter-spacing:.02em;color:var(--blue)}
-    .top nav{display:flex;gap:24px;font-size:14px;font-weight:700}.top nav a{text-decoration:none}.top nav a:hover,.top nav a:focus-visible{color:var(--blue)}
-    .hero{background:linear-gradient(125deg,#102a43 0%,#174c79 58%,#176a9a 100%);color:#fff;padding:94px 0 100px}.eyebrow{margin:0 0 14px;color:#bde5ff;font-size:14px;font-weight:800;letter-spacing:.12em}.hero h1{max-width:760px;font-size:clamp(34px,5vw,58px);line-height:1.18;letter-spacing:-.06em;margin:0 0 24px}.hero p{max-width:620px;margin:0;color:#e0ecf7;font-size:18px}.actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:34px}.button{display:inline-flex;align-items:center;justify-content:center;min-height:48px;padding:11px 20px;border-radius:10px;font-size:15px;font-weight:800;text-decoration:none}.button.primary{background:#fff;color:#123a60}.button.secondary{border:1px solid #a7c9e2;color:#fff}.button:hover,.button:focus-visible{transform:translateY(-1px);box-shadow:0 6px 18px #061e3855}
-    section{padding:76px 0}.section-title{margin:0 0 10px;font-size:clamp(26px,3vw,36px);line-height:1.3;letter-spacing:-.05em;color:var(--navy)}.section-lead{margin:0 0 28px;color:var(--muted)}.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}.card{background:#fff;border:1px solid var(--line);border-radius:16px;padding:26px}.card h3{margin:0 0 8px;color:var(--navy);font-size:20px}.card p{margin:0;color:var(--muted)}.tag{display:inline-block;margin-bottom:12px;color:var(--blue);background:var(--pale);padding:3px 9px;border-radius:6px;font-size:12px;font-weight:800}
-    .notice{background:#eaf3fb;border-top:1px solid #d5e6f4;border-bottom:1px solid #d5e6f4}.notice .wrap{display:flex;gap:28px;align-items:center;justify-content:space-between}.notice p{margin:0;max-width:720px;color:#436078}.contact-grid{display:grid;grid-template-columns:1.2fr 1fr;gap:18px}.contact-card{background:#fff;border:1px solid var(--line);border-radius:16px;padding:30px}.contact-card h3{margin:0 0 18px;color:var(--navy)}.contact-card dl{margin:0;display:grid;grid-template-columns:70px 1fr;gap:10px 14px}.contact-card dt{font-weight:800;color:var(--navy)}.contact-card dd{margin:0}.contact-card a{color:var(--blue);font-weight:750}.foot{padding:30px 0;background:var(--navy);color:#d2dfeb;font-size:13px}.foot p{margin:0}.foot p+p{margin-top:5px}
-    @media(max-width:720px){.top .wrap{padding:16px 0;display:block}.top nav{margin-top:14px;gap:18px;flex-wrap:wrap}.hero{padding:72px 0 78px}.hero p{font-size:16px}.grid,.contact-grid{grid-template-columns:1fr}section{padding:56px 0}.notice .wrap{display:block}.notice .button{margin-top:22px}.contact-card{padding:24px}}
-    @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.button:hover,.button:focus-visible{transform:none}}
-  </style>
+  <link rel="alternate" hreflang="ko" href="https://kca2009.com/" />
+  <link rel="alternate" hreflang="en" href="https://kca2009.com/en/" />
+  <meta name="naver-site-verification" content="54ade63d51ccc9c7a565197013cacaf5a64e7646" />
+  <link rel="icon" href="images/YNzL4pRhNqbrOwHvFkJ2wct0IoA.webp">
+  <link rel="apple-touch-icon" href="images/YNzL4pRhNqbrOwHvFkJ2wct0IoA.webp">
+  <meta name="theme-color" content="#111928">
+  <link rel="preload" href="images/CvQLWkak1iifj7rAqQmKqfeurzA.webp" as="image" type="image/webp">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preload" href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700;900&family=Bebas+Neue&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700;900&family=Bebas+Neue&display=swap" rel="stylesheet"></noscript>
+  <link rel="stylesheet" href="css/base.css?v=4">
+  <link rel="stylesheet" href="css/header.css?v=2">
+  <link rel="stylesheet" href="css/hero.css?v=3">
+  <link rel="stylesheet" href="css/stats.css?v=2">
+  <link rel="stylesheet" href="css/sections.css?v=4">
+  <link rel="stylesheet" href="css/photo-strip.css?v=3">
+  <link rel="stylesheet" href="css/posts.css?v=3">
+  <link rel="stylesheet" href="css/form.css?v=6">
+  <link rel="stylesheet" href="css/schedule.css?v=2">
+  <link rel="stylesheet" href="css/footer.css?v=2">
+  <link rel="stylesheet" href="css/responsive.css?v=8">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "EducationalOrganization",
+        "@id": "https://kca2009.com/#organization",
+        "name": "한국카케어전문학원",
+        "alternateName": "Korea Car Care Academy",
+        "url": "https://kca2009.com",
+        "logo": "https://kca2009.com/images/YNzL4pRhNqbrOwHvFkJ2wct0IoA.webp",
+        "image": "https://kca2009.com/images/CvQLWkak1iifj7rAqQmKqfeurzA.webp",
+        "description": "13년 역사, 3,420명 졸업생. 국비지원 자동차 광택·덴트·PPF·틴팅·스팀세차·도장 실습 중심 전문 교육기관.",
+        "telephone": "010-2519-8585",
+        "faxNumber": "031-294-3117",
+        "foundingDate": "2012-09-20",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "권선구 온정로 46",
+          "addressLocality": "수원시",
+          "addressRegion": "경기도",
+          "addressCountry": "KR"
+        },
+        "geo": {
+          "@type": "GeoCoordinates",
+          "latitude": 37.2517,
+          "longitude": 126.9631
+        },
+        "hasMap": "https://maps.google.com/?q=경기도+수원시+권선구+온정로+46",
+        "sameAs": []
+      },
+      {
+        "@type": "WebSite",
+        "@id": "https://kca2009.com/#website",
+        "url": "https://kca2009.com",
+        "name": "한국카케어전문학원",
+        "publisher": { "@id": "https://kca2009.com/#organization" }
+      },
+      {
+        "@type": "Course",
+        "name": "자동차광택코팅+디테일링스팀세차과정",
+        "description": "광택·코팅·스팀세차 실습 통합 과정. 국비지원 자동차 외장관리 전문 기술 습득.",
+        "url": "https://kca2009.com/courses/polishing",
+        "provider": { "@id": "https://kca2009.com/#organization" },
+        "hasCourseInstance": { "@type": "CourseInstance", "courseMode": "onsite", "offers": { "@type": "Offer", "price": "749240", "priceCurrency": "KRW", "description": "내일배움카드 자부담금 기준" } }
+      },
+      {
+        "@type": "Course",
+        "name": "자동차썬팅과정",
+        "description": "윈도우 필름 시공 실습. 국내외 브랜드 필름 취급 기술.",
+        "url": "https://kca2009.com/courses/tinting",
+        "provider": { "@id": "https://kca2009.com/#organization" },
+        "hasCourseInstance": { "@type": "CourseInstance", "courseMode": "onsite", "offers": { "@type": "Offer", "price": "590660", "priceCurrency": "KRW", "description": "내일배움카드 자부담금 기준" } }
+      },
+      {
+        "@type": "Course",
+        "name": "자동차덴트복원 입문과정",
+        "description": "무도장 덴트 복원(PDR) 기초~중급. 핀과 로드를 이용한 복원 기술.",
+        "url": "https://kca2009.com/courses/dent",
+        "provider": { "@id": "https://kca2009.com/#organization" },
+        "hasCourseInstance": { "@type": "CourseInstance", "courseMode": "onsite", "offers": { "@type": "Offer", "price": "624620", "priceCurrency": "KRW", "description": "내일배움카드 자부담금 기준" } }
+      },
+      {
+        "@type": "Course",
+        "name": "자동차랩핑 입문과정",
+        "description": "차량 랩핑 및 PPF 시공 실습.",
+        "url": "https://kca2009.com/courses/wrapping",
+        "provider": { "@id": "https://kca2009.com/#organization" },
+        "hasCourseInstance": { "@type": "CourseInstance", "courseMode": "onsite", "offers": { "@type": "Offer", "price": "624620", "priceCurrency": "KRW", "description": "내일배움카드 자부담금 기준" } }
+      },
+      {
+        "@type": "Course",
+        "name": "자동차진단평가사과정",
+        "description": "중고차 진단평가 자격증 취득 과정. 이론+실기.",
+        "url": "https://kca2009.com/courses/inspector",
+        "provider": { "@id": "https://kca2009.com/#organization" },
+        "hasCourseInstance": { "@type": "CourseInstance", "courseMode": "onsite", "offers": { "@type": "Offer", "price": "290660", "priceCurrency": "KRW", "description": "내일배움카드 자부담금 기준" } }
+      },
+      {
+        "@type": "Course",
+        "name": "자동차디테일링스팀세차과정",
+        "description": "스팀세차·디테일링 전문 기술 과정.",
+        "url": "https://kca2009.com/courses/steam",
+        "provider": { "@id": "https://kca2009.com/#organization" },
+        "hasCourseInstance": { "@type": "CourseInstance", "courseMode": "onsite", "offers": { "@type": "Offer", "price": "510440", "priceCurrency": "KRW", "description": "내일배움카드 자부담금 기준" } }
+      }
+    ]
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "초보자도 수강 가능한가요?",
+        "acceptedAnswer": { "@type": "Answer", "text": "네, 모든 교육과정은 기초부터 시작합니다. 자동차에 대한 사전 지식이나 경험이 없어도 충분히 수강 가능합니다. 실습 중심으로 진행되므로 처음 접하는 분들도 빠르게 적응하고 있습니다." }
+      },
+      {
+        "@type": "Question",
+        "name": "내일배움카드는 어떻게 발급받나요?",
+        "acceptedAnswer": { "@type": "Answer", "text": "HRD-Net(직업훈련포털)에서 온라인으로 신청하거나, 가까운 고용센터를 방문하시면 됩니다. 발급까지 약 1~2주 소요됩니다. 자세한 절차가 궁금하시면 전화(010-2519-8585)로 문의해주세요." }
+      },
+      {
+        "@type": "Question",
+        "name": "배운 기술로 창업할 수 있나요?",
+        "acceptedAnswer": { "@type": "Answer", "text": "네, 많은 수료생들이 자동차 외장관리 사업을 운영하고 있습니다. 카케어협동조합 네트워크를 통해 창업 컨설팅, 자재 공급, 기술 교류 등 수료 후에도 지속적인 지원을 받으실 수 있습니다." }
+      },
+      {
+        "@type": "Question",
+        "name": "학원 위치는 어디인가요?",
+        "acceptedAnswer": { "@type": "Answer", "text": "경기도 수원시 권선구 온정로 46에 위치해 있습니다. 주차 공간이 마련되어 있으며, 정확한 교통편은 상담 시 안내드립니다." }
+      },
+      {
+        "@type": "Question",
+        "name": "수업 일정은 어떻게 되나요?",
+        "acceptedAnswer": { "@type": "Answer", "text": "평일반과 주말반이 운영됩니다. 과정별로 일정이 다르며, 홈페이지 모집 중인 교육과정 섹션에서 현재 신청 가능한 과정을 확인하실 수 있습니다." }
+      },
+      {
+        "@type": "Question",
+        "name": "국비지원 대상이 되는지 어떻게 확인하나요?",
+        "acceptedAnswer": { "@type": "Answer", "text": "만 15세~75세 미만의 구직자, 재직자(중소기업·비정규직), 자영업자(매출 1.5억 이하) 등이 대상입니다. 공무원, 사학연금 대상자, 대기업 재직자(45세 미만·월 300만 원 이상)는 제외됩니다. 홈페이지 내 수강료 확인 기능을 이용하시거나 전화(010-2519-8585)로 문의해 주세요." }
+      },
+      {
+        "@type": "Question",
+        "name": "수료 후 취업 지원이 되나요?",
+        "acceptedAnswer": { "@type": "Answer", "text": "카케어협동조합 102개 협력업체 네트워크를 통해 취업 연계를 지원합니다. 창업을 원하시는 분께는 창업 컨설팅과 자재 공급 지원도 제공됩니다." }
+      }
+    ]
+  }
+  </script>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-LWCKBCH08P"></script>
+  <script src="js/ga.js"></script>
+  <script src="js/fonts.js" defer></script>
 </head>
-<body>
-  <header class="top"><div class="wrap">
-    <a class="brand" href="#top"><small>KOREA CAR CARE ACADEMY</small>한국카케어전문학원</a>
-    <nav aria-label="주요 메뉴"><a href="#courses">교육 분야</a><a href="#contact">문의·위치</a></nav>
-  </div></header>
-  <main id="top">
-    <div class="hero"><div class="wrap">
-      <p class="eyebrow">수원 자동차 외장관리 교육</p>
-      <h1>카케어 기술을<br>직접 배우는 곳</h1>
-      <p>자동차 광택·코팅부터 스팀세차, 덴트, 랩핑, 썬팅까지. 한국카케어전문학원의 교육 분야를 확인하고 편하게 문의해 주세요.</p>
-      <div class="actions"><a class="button primary" href="tel:01025198585">전화 상담 010-2519-8585</a><a class="button secondary" href="#courses">교육 분야 보기</a></div>
-    </div></div>
-    <section id="courses"><div class="wrap">
-      <h2 class="section-title">교육 분야</h2>
-      <p class="section-lead">개강 일정, 수강 가능 여부, 국비지원 조건은 학원에 문의해 주세요.</p>
-      <div class="grid">
-        <article class="card"><span class="tag">01</span><h3>광택·코팅·스팀세차</h3><p>도장면 관리와 디테일링 세차의 기초부터 실습까지 배웁니다.</p></article>
-        <article class="card"><span class="tag">02</span><h3>덴트 복원</h3><p>차량 외판의 찌그러짐을 복원하는 기술을 배웁니다.</p></article>
-        <article class="card"><span class="tag">03</span><h3>차량 랩핑</h3><p>필름 시공의 기초와 차량 외관 작업을 익힙니다.</p></article>
-        <article class="card"><span class="tag">04</span><h3>윈도우 틴팅</h3><p>자동차 유리 필름 작업의 기본 과정을 배웁니다.</p></article>
+<body class="has-topbar">
+
+<!-- ===== Top Bar ===== -->
+<div class="top-bar">
+  <span id="topbar-text"><strong>2026년 3월 개강</strong> — 모집 중</span> <a href="#schedule" id="topbar-course-link">과정 보기 →</a>
+</div>
+
+<!--#include virtual="/_nav.html" -->
+
+<!-- ===== Hero ===== -->
+<section class="hero">
+  <div class="hero-bg">
+    <img src="images/CvQLWkak1iifj7rAqQmKqfeurzA.webp" alt="학원 실습 현장" fetchpriority="high">
+  </div>
+  <div class="hero-content">
+    <h1>카케어 기술<br>이제 당신의 손으로<br>붙잡으세요</h1>
+    <p class="hero-sub"><span class="kca-graduates">3,410</span>명의 한국카케어전문학원 가족들<br>대한민국의 경제를 이끄는 기술자들입니다.</p>
+    <div class="hero-ctas">
+      <a href="#check" class="hero-btn-primary">무료 상담 신청</a>
+      <a href="#schedule" class="hero-btn-secondary">모집 과정 보기</a>
+    </div>
+  </div>
+</section>
+
+
+<!-- ===== Stats Bar ===== -->
+<div class="stats-bar">
+  <div class="stats-container">
+    <!-- 페이즈1: 타이틀 -->
+    <div class="stats-phase" id="stats-phase1">
+      <div class="stats-title" id="stats-title">한국카케어전문학원이 걸어온 시간 <span class="kca-years"></span>년</div>
+    </div>
+    <!-- 페이즈2: 시간 -->
+    <div class="stats-phase" id="stats-phase2">
+      <div class="stat-number stat-clock" id="stats-clock">
+        <span class="dial-group clock-unit" data-clock="1"><span id="dial-days" class="dial-static">0</span><small>일</small></span>
+        <span class="dial-group clock-unit" data-clock="2"><span class="dial" id="dh1"></span><span class="dial" id="dh0"></span><small>시간</small></span>
+        <span class="dial-group clock-unit" data-clock="3"><span class="dial" id="dm1"></span><span class="dial" id="dm0"></span><small>분</small></span>
+        <span class="dial-group clock-unit" data-clock="4"><span class="dial" id="ds1"></span><span class="dial" id="ds0"></span><small>초</small></span>
       </div>
-    </div></section>
-    <section class="notice"><div class="wrap">
-      <div><h2 class="section-title">상담은 전화로 바로 연결됩니다</h2><p>이 안내 페이지는 별도의 신청 정보나 개인정보를 수집하지 않습니다. 자세한 과정과 일정은 학원에 직접 문의해 주세요.</p></div>
-      <a class="button primary" href="tel:01025198585">전화하기</a>
-    </div></section>
-    <section id="contact"><div class="wrap">
-      <h2 class="section-title">문의·위치</h2>
-      <p class="section-lead">한국카케어전문학원에 연락하실 수 있습니다.</p>
-      <div class="contact-grid">
-        <div class="contact-card"><h3>학원 안내</h3><dl><dt>주소</dt><dd>경기도 수원시 권선구 온정로 46</dd><dt>전화</dt><dd><a href="tel:01025198585">010-2519-8585</a></dd><dt>이메일</dt><dd><a href="mailto:sooahzion@naver.com">sooahzion@naver.com</a></dd></dl></div>
-        <div class="contact-card"><h3>교육 상담</h3><p>희망하는 교육 분야와 수강 시기를 말씀해 주세요. 현재 모집 중인 과정과 지원 가능 여부를 안내받으실 수 있습니다.</p><p><a href="tel:01025198585">전화 상담하기 →</a></p></div>
+    </div>
+    <!-- 페이즈3: 결과물 -->
+    <div class="stats-phase" id="stats-phase3">
+      <div class="stats-row-bottom">
+        <div class="stat-anim" data-order="3">
+          <div class="stat-label">누적 졸업생</div>
+          <div class="stat-number"><span data-count="3410" data-stat="graduates">0</span><small class="stat-unit">명</small></div>
+        </div>
+        <div class="stat-anim" data-order="4">
+          <div class="stat-label">협력업체</div>
+          <div class="stat-number"><span data-count="102" data-stat="partners">0</span><small class="stat-unit">곳</small></div>
+        </div>
+        <div class="stat-anim" data-order="5">
+          <div class="stat-label">강사 평균 경력</div>
+          <div class="stat-number"><span data-count="15">0</span><small class="stat-unit">년</small></div>
+        </div>
       </div>
-    </div></section>
-  </main>
-  <footer class="foot"><div class="wrap"><p>한국카케어전문학원 · 대표자 김현아 · 사업자등록번호 409-91-76137</p><p>경기도 수원시 권선구 온정로 46 · © 한국카케어전문학원</p></div></footer>
+    </div>
+  </div>
+</div>
+
+<!-- ===== 학원소개 ===== -->
+<section id="about" class="sec sec--about">
+  <div class="container">
+    <div class="about-grid">
+      <div class="about-img">
+      </div>
+      <div class="about-text">
+        <span class="about-tag">SINCE 2012</span>
+        <h2>왜 한국카케어전문학원인가?<br><span class="kca-graduates">3,410</span>명이 선택한 이유</h2>
+        <p><strong>한국카케어전문학원은 2012년 개원한 국내 최초 국비지원 자동차 외장관리 전문 교육기관입니다.</strong></p>
+        <p>고용노동부 정식 승인을 받아 내일배움카드로 교육비를 지원받고 배울 수 있습니다. 평균 경력 15년 이상의 현업 강사진이 이론이 아닌 <span class="kw">실차 실습</span> 중심으로 가르칩니다.</p>
+        <p>수료 후에도 카케어협동조합 102곳 네트워크를 통해 창업·취업·기술 교류가 이어집니다.</p>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+
+<!-- ===== 교육분야 ===== -->
+<!-- ===== Photo Strip ===== -->
+<div class="photo-strip">
+  <div class="photo-strip-header"></div>
+  <div class="photo-strip-track">
+    <img src="images/gallery/DSC05598.webp" alt="실습 현장" loading="lazy">
+    <img src="images/gallery/DSC05634.webp" alt="실습 현장" loading="lazy">
+    <img src="images/gallery/DSC05650.webp" alt="실습 현장" loading="lazy">
+    <img src="images/gallery/DSC05654.webp" alt="실습 현장" loading="lazy">
+    <img src="images/gallery/DSC05541.webp" alt="실습 현장" loading="lazy">
+    <img src="images/gallery/DSC05284.webp" alt="실습 현장" loading="lazy">
+    <!-- 무한 루프용 복사 -->
+    <img src="images/gallery/DSC05598.webp" alt="실습 현장" loading="lazy">
+    <img src="images/gallery/DSC05634.webp" alt="실습 현장" loading="lazy">
+    <img src="images/gallery/DSC05650.webp" alt="실습 현장" loading="lazy">
+    <img src="images/gallery/DSC05654.webp" alt="실습 현장" loading="lazy">
+    <img src="images/gallery/DSC05541.webp" alt="실습 현장" loading="lazy">
+    <img src="images/gallery/DSC05284.webp" alt="실습 현장" loading="lazy">
+  </div>
+  <div class="photo-strip-footer">
+    <a href="gallery.html">갤러리 전체보기 →</a>
+  </div>
+</div>
+
+<!-- ===== 게시글 ===== -->
+<section class="posts-sec" id="reviews">
+  <div class="container">
+    <div class="sec-center">
+      <h2 class="sec-title">교육생 후기</h2>
+      <p class="sec-desc">실제 수강생들이 직접 전하는 이야기입니다</p>
+    </div>
+    <div class="posts-grid">
+      <div class="post-card post-card--video post-card--featured" data-youtube="6-z24ajO4S8">
+        <div class="post-thumb post-thumb--video">
+          <img src="images/articles/blog_youtube.jpg" alt="한국카케어전문학원 유튜브 후기" loading="lazy">
+          <div class="post-play">▶</div>
+        </div>
+        <div class="post-body">
+          <span class="post-tag post-tag--red">유튜브 영상</span>
+          <p class="post-title">한국카케어전문학원 수강생 인터뷰 — 영상 후기</p>
+          <p class="post-desc">수강생이 직접 카메라 앞에서 말하는 교육 경험과 수료 후 변화.</p>
+          <div class="post-meta">
+            <span class="post-meta-source">YouTube</span>
+          </div>
+        </div>
+      </div>
+      <div class="posts-side">
+        <a href="https://blog.naver.com/heesuk7273/223773998603" target="_blank" rel="noopener" class="post-card">
+          <div class="post-thumb">
+            <img src="images/articles/blog_review.png" alt="세차창업 교육생 리얼 후기" loading="lazy">
+          </div>
+          <div class="post-body">
+            <span class="post-tag">수강생 후기</span>
+            <p class="post-title">세차창업, 직접 배워보니 달랐다! 스팀세차·광택 교육생 리얼 후기</p>
+            <p class="post-desc">벤츠 서비스센터 출신 교육생이 직접 말하는 교육 후기. 스팀세차부터 광택까지 실습 중심으로 배우고 "진짜 또 하고 싶다"고 한 이유가 뭔지, 솔직하게 풀어낸 글입니다.</p>
+            <div class="post-meta">
+              <span class="post-meta-source">네이버 블로그</span>
+              <span>·</span>
+              <span>2025.02.26</span>
+            </div>
+          </div>
+        </a>
+      </div>
+    </div>
+    <div class="posts-more">
+      <a href="https://blog.naver.com/heesuk7273" target="_blank" rel="noopener">후기 더보기 →</a>
+    </div>
+  </div>
+</section>
+
+<!-- ===== 국비지원 ===== -->
+<section class="gov-sec">
+  <div class="container">
+    <h2 class="sec-title">교육비의 절반, 국가가 부담합니다</h2>
+    <p class="sec-desc">내일배움카드 하나면 됩니다</p>
+
+    <div class="gov-steps">
+      <div class="gov-step">
+        <div class="gov-step-num">1</div>
+        <strong>카드 발급</strong>
+        <small>HRD-Net · 고용센터</small>
+      </div>
+      <div class="gov-step">
+        <div class="gov-step-num">2</div>
+        <strong>과정 선택</strong>
+        <small>원하는 교육분야 선택</small>
+      </div>
+      <div class="gov-step">
+        <div class="gov-step-num">3</div>
+        <strong>수강 시작</strong>
+        <small>과정별 40~70% 지원</small>
+      </div>
+    </div>
+
+    <div class="gov-features">
+      <div class="gov-feature">고용노동부 정식 승인</div>
+      <div class="gov-feature">재직자·구직자 모두 대상</div>
+      <div class="gov-feature" id="gov-max-support">국가지원 과정별 최대 —%</div>
+    </div>
+
+    <div class="gov-certs">
+      <div class="gov-cert">
+        <img src="images/logo-moel.webp" alt="고용노동부" class="gov-cert-logo" style="width:44px;height:44px">
+        <div class="gov-cert-text">
+          <strong>고용노동부</strong>
+          <span>정식 승인 훈련기관</span>
+        </div>
+      </div>
+      <div class="gov-cert">
+        <img src="images/logo-hrdk.svg" alt="한국산업인력공단" class="gov-cert-logo" style="width:74px;height:74px">
+        <div class="gov-cert-text">
+          <strong>한국산업인력공단</strong>
+          <span>HRD Korea 인증</span>
+        </div>
+      </div>
+      <div class="gov-cert">
+        <img src="images/logo-goe.webp" alt="수원교육지원청" class="gov-cert-logo">
+        <div class="gov-cert-text">
+          <strong>수원교육지원청</strong>
+          <span>직업체험 교육 협력</span>
+        </div>
+      </div>
+      <div class="gov-cert">
+        <img src="images/logo-moel.webp" alt="국가보훈부·법무부" class="gov-cert-logo">
+        <div class="gov-cert-text">
+          <strong>국가보훈부 · 법무부</strong>
+          <span>보훈·사회복귀 교육 위탁</span>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ===== 모집과정 ===== -->
+<section id="schedule" class="sec">
+  <div class="container">
+    <div class="sec-center">
+      <h2 class="sec-title">모집 중인 교육과정</h2>
+      <p class="sec-desc">현재 수강 신청이 가능하거나 다음 회차를 기다릴 수 있는 과정입니다</p>
+    </div>
+
+    <!-- KCA-SCHEDULE-START -->
+    <h3 class="course-group-title">평일반</h3>
+    <div class="course-list">
+      <div class="course-item" data-start="11.09">
+        <div class="c-main" onclick="location.href='courses/polishing.html'">
+          <div class="c-thumb">
+            <img src="images/8blosoHiL8jyAnPAr9bdNurbk.webp" alt="자동차광택코팅+디테일링스팀세차과정" loading="lazy">
+          </div>
+          <div class="c-body">
+            <div class="c-top">
+              <div class="c-tags">
+              <span class="c-tag c-tag--round">2026-7차</span>
+              <span class="c-tag c-tag--method">집체</span>
+              <span class="c-tag c-tag--weekday">평일반</span>
+              </div>
+              <span class="c-state c-state--active">모집중</span>
+            </div>
+            <div class="c-center">
+              <strong class="c-name">자동차광택코팅+디테일링스팀세차과정</strong>
+            <p class="c-desc">스월·스크래치 제거 후 유리막·세라믹 코팅으로 도장면을 보호합니다.</p>
+            </div>
+            <div class="c-bottom">
+              <div class="c-bottom-row">
+                <dl class="c-dl"><dt>교육기간</dt><dd>2026.11.09 - 2026.12.16</dd></dl>
+              </div>
+              <div class="c-bottom-row">
+                <dl class="c-dl"><dt>교육정보</dt><dd>224시간 총 28일 <a href="courses/polishing.html#cal-section" class="timetable-link" onclick="event.stopPropagation()">시간표보기</a></dd></dl>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="c-action">
+          <a href="courses/polishing.html" class="c-btn c-btn--active">수강신청</a>
+        </div>
+      </div>
+      <div class="course-item" data-start="11.23">
+        <div class="c-main" onclick="location.href='courses/dent.html'">
+          <div class="c-thumb">
+            <img src="images/QJwk6DYbmCZBFDtCZcd6Hio4oxY.webp" alt="자동차덴트복원 입문과정" loading="lazy">
+          </div>
+          <div class="c-body">
+            <div class="c-top">
+              <div class="c-tags">
+              <span class="c-tag c-tag--round">2026-4차</span>
+              <span class="c-tag c-tag--method">집체</span>
+              <span class="c-tag c-tag--weekday">평일반</span>
+              </div>
+              <span class="c-state c-state--active">모집중</span>
+            </div>
+            <div class="c-center">
+              <strong class="c-name">자동차덴트복원 입문과정</strong>
+            <p class="c-desc">도장 없이 찌그러진 패널을 원상복원하는 PDR 무도장 기술입니다.</p>
+            </div>
+            <div class="c-bottom">
+              <div class="c-bottom-row">
+                <dl class="c-dl"><dt>교육기간</dt><dd>2026.11.23 - 2026.12.10</dd></dl>
+              </div>
+              <div class="c-bottom-row">
+                <dl class="c-dl"><dt>교육정보</dt><dd>112시간 총 14일 <a href="courses/dent.html#cal-section" class="timetable-link" onclick="event.stopPropagation()">시간표보기</a></dd></dl>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="c-action">
+          <a href="courses/dent.html" class="c-btn c-btn--active">수강신청</a>
+        </div>
+      </div>
+      <div class="course-item" data-start="12.14">
+        <div class="c-main" onclick="location.href='courses/wrapping.html'">
+          <div class="c-thumb">
+            <img src="images/wrapping_01.webp" alt="자동차랩핑 입문과정" loading="lazy">
+          </div>
+          <div class="c-body">
+            <div class="c-top">
+              <div class="c-tags">
+              <span class="c-tag c-tag--round">2026-4차</span>
+              <span class="c-tag c-tag--method">집체</span>
+              <span class="c-tag c-tag--weekday">평일반</span>
+              </div>
+              <span class="c-state c-state--active">모집중</span>
+            </div>
+            <div class="c-center">
+              <strong class="c-name">자동차랩핑 입문과정</strong>
+            <p class="c-desc">컬러 필름으로 차량 외관 색상을 바꾸는 랩핑 전문 기술을 배웁니다.</p>
+            </div>
+            <div class="c-bottom">
+              <div class="c-bottom-row">
+                <dl class="c-dl"><dt>교육기간</dt><dd>2026.12.14 - 2026.12.31</dd></dl>
+              </div>
+              <div class="c-bottom-row">
+                <dl class="c-dl"><dt>교육정보</dt><dd>112시간 총 14일 <a href="courses/wrapping.html#cal-section" class="timetable-link" onclick="event.stopPropagation()">시간표보기</a></dd></dl>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="c-action">
+          <a href="courses/wrapping.html" class="c-btn c-btn--active">수강신청</a>
+        </div>
+      </div>
+    </div>
+
+    <h3 class="course-group-title">주말반</h3>
+    <div class="course-list">
+      <div class="course-item" data-start="10.11">
+        <div class="c-main" onclick="location.href='courses/polishing-only-weekend.html'">
+          <div class="c-thumb">
+            <img src="images/8blosoHiL8jyAnPAr9bdNurbk.webp" alt="자동차광택코팅과정" loading="lazy">
+          </div>
+          <div class="c-body">
+            <div class="c-top">
+              <div class="c-tags">
+              <span class="c-tag c-tag--round">2026-3차</span>
+              <span class="c-tag c-tag--method">집체</span>
+              <span class="c-tag c-tag--weekend">주말반</span>
+              </div>
+              <span class="c-state c-state--active">모집중</span>
+            </div>
+            <div class="c-center">
+              <strong class="c-name">자동차광택코팅과정</strong>
+            <p class="c-desc">스월·스크래치를 연마로 지우고 유리막코팅으로 보호하는 기술. 주말반으로 직장인도 수강 가능.</p>
+            </div>
+            <div class="c-bottom">
+              <div class="c-bottom-row">
+                <dl class="c-dl"><dt>교육기간</dt><dd>2026.10.11 - 2026.11.29</dd></dl>
+              </div>
+              <div class="c-bottom-row">
+                <dl class="c-dl"><dt>교육정보</dt><dd>120시간 총 15일 <a href="courses/polishing-only-weekend.html#cal-section" class="timetable-link" onclick="event.stopPropagation()">시간표보기</a></dd></dl>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="c-action">
+          <a href="courses/polishing-only-weekend.html" class="c-btn c-btn--active">수강신청</a>
+        </div>
+      </div>
+      <div class="course-item" data-start="11.22">
+        <div class="c-main" onclick="location.href='courses/tinting-weekend.html'">
+          <div class="c-thumb">
+            <img src="images/uhDjjwfYVz7sMhXkQ1jvadNWrhQ.webp" alt="자동차썬팅과정" loading="lazy">
+          </div>
+          <div class="c-body">
+            <div class="c-top">
+              <div class="c-tags">
+              <span class="c-tag c-tag--round">2026-4차</span>
+              <span class="c-tag c-tag--method">집체</span>
+              <span class="c-tag c-tag--weekend">주말반</span>
+              </div>
+              <span class="c-state c-state--active">모집중</span>
+            </div>
+            <div class="c-center">
+              <strong class="c-name">자동차썬팅과정</strong>
+            <p class="c-desc">자외선·열 차단 필름을 정밀 패턴 커팅으로 유리에 시공합니다.</p>
+            </div>
+            <div class="c-bottom">
+              <div class="c-bottom-row">
+                <dl class="c-dl"><dt>교육기간</dt><dd>2026.11.22 - 2027.01.10</dd></dl>
+              </div>
+              <div class="c-bottom-row">
+                <dl class="c-dl"><dt>교육정보</dt><dd>120시간 총 15일 <a href="courses/tinting-weekend.html#cal-section" class="timetable-link" onclick="event.stopPropagation()">시간표보기</a></dd></dl>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="c-action">
+          <a href="courses/tinting-weekend.html" class="c-btn c-btn--active">수강신청</a>
+        </div>
+      </div>
+    </div>
+    <!-- KCA-SCHEDULE-END -->
+  </div>
+</section>
+
+<!-- ===== 국비지원 대상 확인 ===== -->
+<section class="check-sec" id="check">
+  <div class="container">
+    <div class="sec-center">
+      <h2 class="check-title">무료 상담 신청</h2>
+      <p class="check-desc">원하는 과정을 선택하고 상담을 신청해 주세요.</p>
+      <a href="tel:010-2519-8585" class="check-tel">☎ 010-2519-8585</a>
+    </div>
+
+    <div class="check-panel" id="check-panel">
+      <div class="check-step" id="check-step1">
+        <div class="survey-grid">
+          <!-- Row 1: Headings -->
+          <h3 class="survey-heading">희망 교육과정</h3>
+          <h3 class="survey-heading">신청자 정보</h3>
+          <!-- Row 2: Sub-labels -->
+          <div class="sc-group-label survey-sublabel">평일반</div>
+          <div class="survey-sublabel-ph"></div>
+          <!-- Row 3: Content -->
+          <div class="cdd" id="mobile-course-dd">
+            <button type="button" class="cdd-btn" id="cdd-btn">
+              <span class="cdd-label placeholder" id="cdd-label">과정을 선택하세요</span>
+              <svg class="cdd-arrow" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+            </button>
+            <div class="cdd-panel" id="cdd-panel"></div>
+          </div>
+          <div class="survey-courses">
+            <!-- KCA-SURVEY-COURSES-START -->
+              <label class="survey-course"><input type="radio" name="q-course" value="자동차광택코팅+디테일링스팀세차과정" data-total="1700000" data-self="749240"><span class="sc-name">자동차광택코팅+디테일링스팀세차과정</span><span class="sc-meta">2026-11-09 - 12-16</span></label>
+              <label class="survey-course"><input type="radio" name="q-course" value="자동차덴트복원 입문과정" data-total="1100000" data-self="624620"><span class="sc-name">자동차덴트복원 입문과정</span><span class="sc-meta">2026-11-23 - 12-10</span></label>
+              <label class="survey-course"><input type="radio" name="q-course" value="자동차랩핑 입문과정" data-total="1100000" data-self="624620"><span class="sc-name">자동차랩핑 입문과정</span><span class="sc-meta">2026-12-14 - 12-31</span></label>
+              <div class="sc-group-label">주말반</div>
+              <label class="survey-course"><input type="radio" name="q-course" value="자동차광택코팅과정" data-total="1050000" data-self="540660"><span class="sc-name">자동차광택코팅과정</span><span class="sc-meta">2026-10-11 - 11-29</span></label>
+              <label class="survey-course"><input type="radio" name="q-course" value="자동차썬팅과정" data-total="1100000" data-self="590660"><span class="sc-name">자동차썬팅과정</span><span class="sc-meta">2026-11-22 - 01-10</span></label>
+              <!-- KCA-SURVEY-COURSES-END -->
+          </div>
+          <form class="survey-form" id="survey-form">
+            <input type="text" name="name" placeholder="이름을 입력해 주세요." required class="sf-input">
+            <input type="tel" name="phone" placeholder="010-0000-0000" class="sf-input" required>
+            <label class="sf-privacy"><input type="checkbox" name="privacy" required><span><a href="privacy.html" class="sf-privacy-link">개인정보 처리방침</a>에 동의</span></label>
+            <button type="submit" class="sf-submit sf-submit--blue">메시지 보내기</button>
+          </form>
+        </div>
+      </div>
+
+      <!-- 완료 -->
+      <div class="check-step" id="check-step3">
+        <div class="survey-done">
+          <div class="survey-done-icon">✅</div>
+          <p class="survey-done-title">상담 신청이 완료되었습니다</p>
+          <p class="survey-done-desc">빠른 시간 내에 연락드리겠습니다.<br>급하시면 지금 바로 전화주세요.</p>
+          <a href="tel:010-2519-8585" class="survey-result-cta">📞 010-2519-8585</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ===== FAQ ===== -->
+<section id="faq" class="sec">
+  <div class="container">
+    <div class="sec-center">
+      <h2 class="sec-title">자주 묻는 질문</h2>
+      <p class="sec-desc">궁금한 점은 전화(010-2519-8585)로 편하게 문의하세요</p>
+    </div>
+
+    <div class="faq-list">
+      <div class="faq-item">
+        <div class="faq-q">초보자도 수강 가능한가요?<span class="faq-icon">&#9662;</span></div>
+        <div class="faq-a"><div class="faq-a-inner">네, 모든 교육과정은 기초부터 시작합니다. 자동차에 대한 사전 지식이나 경험이 없어도 충분히 수강 가능합니다. 실습 중심으로 진행되므로 처음 접하는 분들도 빠르게 적응하고 있습니다.</div></div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">내일배움카드는 어떻게 발급받나요?<span class="faq-icon">&#9662;</span></div>
+        <div class="faq-a"><div class="faq-a-inner">HRD-Net(직업훈련포털)에서 온라인으로 신청하거나, 가까운 고용센터를 방문하시면 됩니다. 발급까지 약 1~2주 소요됩니다. 자세한 절차가 궁금하시면 전화(010-2519-8585)로 문의해주세요.</div></div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">배운 기술로 창업할 수 있나요?<span class="faq-icon">&#9662;</span></div>
+        <div class="faq-a"><div class="faq-a-inner">네, 많은 수료생들이 자동차 외장관리 사업을 운영하고 있습니다. 카케어협동조합 네트워크를 통해 창업 컨설팅, 자재 공급, 기술 교류 등 수료 후에도 지속적인 지원을 받으실 수 있습니다.</div></div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">학원 위치는 어디인가요?<span class="faq-icon">&#9662;</span></div>
+        <div class="faq-a"><div class="faq-a-inner">경기도 수원시 권선구 온정로 46에 위치해 있습니다. 주차 공간이 마련되어 있으며, 정확한 교통편은 상담 시 안내드립니다.</div></div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">수업 일정은 어떻게 되나요?<span class="faq-icon">&#9662;</span></div>
+        <div class="faq-a"><div class="faq-a-inner">평일반과 주말반이 운영됩니다. 과정별로 일정이 다르며, 위 '모집 중인 교육과정' 섹션에서 현재 신청 가능한 과정을 확인하실 수 있습니다.</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== Footer ===== -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <strong>한국카케어전문학원</strong>
+        <p>대표자 : 김현아 | 사업자번호 : 409-91-76137</p>
+        <p>Tel : 010-2519-8585 | Fax : 031-294-3117</p>
+        <p>경기도 수원시 권선구 온정로 46</p>
+        <p><a href="/parking" style="color:inherit;text-decoration:underline;">🅿 주차 안내</a></p>
+        <p><a href="/attendance" style="color:inherit;text-decoration:underline;">✅ 입실·출석 안내</a></p>
+        <p>sooahzion@naver.com</p>
+      </div>
+      <div class="footer-col">
+        <h4>교육과정</h4>
+        <a href="courses/steam.html">스팀 세차</a>
+        <a href="courses/polishing.html">광택 코팅</a>
+        <a href="courses/dent.html">덴트 복원</a>
+        <a href="courses/wrapping.html">차량 랩핑</a>
+        <a href="courses/tinting.html">윈도우 틴팅</a>
+      </div>
+      <div class="footer-col">
+        <h4>학원안내</h4>
+        <a href="#schedule">모집과정</a>
+        <a href="gallery.html">갤러리</a>
+        <a href="/#check">상담신청</a>
+        <a href="#faq">자주 묻는 질문</a>
+        <a href="startup.html">카케어 창업</a>
+        <a href="/exam-notice.html">자격시험 공고</a>
+      </div>
+            <div class="footer-col">
+        <h4>수강생 전용</h4>
+        <a href="/store/">스토어 (재료 구매)</a>
+        <a href="/login.html">로그인</a>
+      </div>
+      <div class="footer-col">
+        <h4>소셜</h4>
+        <a href="https://blog.naver.com/heesuk7273" target="_blank" rel="noopener">네이버 블로그</a>
+        <a href="https://www.instagram.com/koreacarcare/" target="_blank" rel="noopener">인스타그램</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="footer-copy">&copy; 2026 한국카케어전문학원. All rights reserved. &nbsp;|&nbsp; <a href="/middle-aged-employment.html" style="color:inherit;opacity:0.8;text-decoration:underline;">중장년 일경험 안내</a> &nbsp;|&nbsp; <a href="/oncha-recruit" style="color:inherit;opacity:0.8;text-decoration:underline;">온차 취업 연계 안내</a> &nbsp;|&nbsp; <a href="/ppt/" style="color:inherit;opacity:0.6;text-decoration:underline;" target="_blank">오리엔테이션</a> &nbsp;|&nbsp; <a href="/ppt/광택/" style="color:inherit;opacity:0.6;text-decoration:underline;" target="_blank">광택교육</a> &nbsp;|&nbsp; <a href="/ppt/세차/" style="color:inherit;opacity:0.6;text-decoration:underline;" target="_blank">세차교육</a></div>
+      <div class="footer-sns">
+        <a href="https://blog.naver.com/heesuk7273" target="_blank" rel="noopener">블로그</a>
+        <a href="https://www.instagram.com/koreacarcare/" target="_blank" rel="noopener">인스타그램</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+
+<!-- ===== 개설 알림 신청 모달 ===== -->
+<div class="notify-modal" id="notify-modal" aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="notify-modal-title">
+  <div class="notify-modal__backdrop" data-notify-close></div>
+  <div class="notify-modal__panel">
+    <button type="button" class="notify-modal__close" data-notify-close aria-label="닫기">×</button>
+    <h3 class="notify-modal__title" id="notify-modal-title">개설 알림 신청</h3>
+    <p class="notify-modal__desc">
+      <strong id="notify-course-label">과정명</strong><br>
+      <span id="notify-round-label">2026-?차</span> 개설이 확정되면<br>
+      입력하신 번호로 안내 문자를 보내드립니다.
+    </p>
+    <form class="notify-modal__form" id="notify-form" novalidate>
+      <label class="notify-modal__field">
+        <span>이름 <em>(선택)</em></span>
+        <input type="text" id="notify-name" autocomplete="name" maxlength="20" placeholder="홍길동">
+      </label>
+      <label class="notify-modal__field">
+        <span>휴대폰 번호 <em>*</em></span>
+        <input type="tel" id="notify-phone" autocomplete="tel-national" inputmode="numeric" required placeholder="010-1234-5678" maxlength="13">
+      </label>
+      <label class="notify-modal__check">
+        <input type="checkbox" id="notify-agree" required checked>
+        <span>개설 알림 발송을 위한 휴대폰 번호 수집·이용에 동의합니다.</span>
+      </label>
+      <p class="notify-modal__error" id="notify-error" role="alert"></p>
+      <button type="submit" class="notify-modal__submit" id="notify-submit">알림 신청</button>
+    </form>
+    <div class="notify-modal__done" id="notify-done" hidden>
+      <p class="notify-modal__done-title">✓ 알림 신청 완료</p>
+      <p class="notify-modal__done-desc">개설이 확정되면 입력하신 번호로 문자를 보내드립니다.<br>확인 문자를 발송했습니다.</p>
+      <button type="button" class="notify-modal__submit" data-notify-close>닫기</button>
+    </div>
+  </div>
+</div>
+<script src="js/notify-signup.js?v=1"></script>
+<script src="js/courses.js?v=2"></script>
+<script src="js/topbar.js"></script>
+<script src="js/clock.js?v=1"></script>
+<script src="js/stats.js?v=1"></script>
+<script src="js/faq-nav.js?v=1"></script>
+<script src="js/form.js?v=2"></script>
+<script src="js/posts.js?v=1"></script>
+<script src="js/scroll.js?v=2"></script>
+<script src="js/analytics.js?v=1"></script>
 </body>
 </html>
