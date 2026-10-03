@@ -6,32 +6,108 @@
   <title>한국카케어전문학원</title>
   <link rel="icon" href="/favicon.ico">
   <style>
-    :root { color-scheme: light; }
+    :root { color-scheme: light; --ink: #171b20; --muted: #657078; --line: #e5e7e9; --red: #c9222b; }
     * { box-sizing: border-box; }
-    body { margin: 0; min-height: 100vh; background: #f7f8fa; color: #252b32; font-family: system-ui, -apple-system, "Apple SD Gothic Neo", "Noto Sans KR", sans-serif; }
-    main { width: min(100% - 40px, 680px); margin: 0 auto; padding: clamp(72px, 14vh, 144px) 0 80px; }
-    img { width: 68px; height: 68px; object-fit: contain; }
-    h1 { margin: 24px 0 8px; font-size: clamp(28px, 5vw, 40px); letter-spacing: -.04em; }
-    p { margin: 0; line-height: 1.8; }
-    .intro { color: #67717a; }
-    dl { margin: 56px 0 0; padding-top: 24px; border-top: 1px solid #dce1e5; }
-    dl div { display: grid; grid-template-columns: 80px 1fr; gap: 16px; padding: 10px 0; }
-    dt { color: #67717a; }
-    dd { margin: 0; }
-    a { color: inherit; text-underline-offset: 3px; }
-    footer { margin-top: 72px; color: #8a9298; font-size: 13px; }
+    html { scroll-behavior: smooth; }
+    body { margin: 0; color: var(--ink); background: #fff; font-family: -apple-system, BlinkMacSystemFont, "Apple SD Gothic Neo", "Malgun Gothic", sans-serif; }
+    a { color: inherit; }
+    .wrap { width: min(100% - 48px, 1120px); margin: auto; }
+    .site-header { background: #fff; border-bottom: 1px solid var(--line); }
+    .header-inner { min-height: 84px; display: flex; align-items: center; justify-content: space-between; gap: 28px; }
+    .brand { display: inline-flex; align-items: center; gap: 13px; color: var(--ink); text-decoration: none; font-weight: 800; font-size: 19px; letter-spacing: -.05em; white-space: nowrap; }
+    .brand img { width: 52px; height: 52px; object-fit: contain; }
+    .site-nav { display: flex; gap: 32px; align-items: center; }
+    .site-nav a { color: #3f484f; text-decoration: none; font-size: 14px; font-weight: 600; }
+    .site-nav a:hover, .site-nav a:focus-visible { color: var(--red); }
+    .hero { position: relative; min-height: 560px; display: flex; align-items: center; isolation: isolate; overflow: hidden; background: #252d37; }
+    .hero::before { content: ""; position: absolute; inset: 0; z-index: -2; background: url('/images/CvQLWkak1iifj7rAqQmKqfeurzA.webp') center 48% / cover no-repeat; }
+    .hero::after { content: ""; position: absolute; inset: 0; z-index: -1; background: linear-gradient(90deg, rgba(12, 19, 28, .9) 0%, rgba(12, 19, 28, .72) 35%, rgba(12, 19, 28, .2) 74%, rgba(12, 19, 28, .08) 100%); }
+    .hero-content { min-width: 0; padding: 90px 0 96px; color: #fff; }
+    .eyebrow { display: flex; align-items: center; gap: 11px; margin: 0 0 25px; font-size: 12px; letter-spacing: .18em; font-weight: 700; }
+    .eyebrow::before { content: ""; width: 29px; height: 2px; background: #e8424a; }
+    h1 { max-width: 660px; margin: 0; font-size: clamp(40px, 5.4vw, 67px); line-height: 1.18; letter-spacing: -.06em; font-weight: 800; }
+    .hero p:last-child { max-width: 550px; margin: 26px 0 0; color: rgba(255,255,255,.88); font-size: clamp(16px, 2vw, 18px); line-height: 1.8; overflow-wrap: anywhere; }
+    .section { padding: 100px 0; }
+    .section-head { display: flex; align-items: end; justify-content: space-between; gap: 32px; margin-bottom: 34px; }
+    .label { display: block; margin-bottom: 14px; color: var(--red); font-size: 12px; font-weight: 800; letter-spacing: .15em; }
+    h2 { margin: 0; font-size: clamp(29px, 3.4vw, 40px); letter-spacing: -.055em; line-height: 1.25; }
+    .section-note { max-width: 330px; margin: 0 0 3px; color: var(--muted); font-size: 14px; line-height: 1.7; word-break: keep-all; }
+    .subjects { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 20px; }
+    .subject { margin: 0; border: 1px solid var(--line); background: #fff; }
+    .subject img { display: block; width: 100%; height: 225px; object-fit: cover; }
+    .subject figcaption { padding: 23px 24px 25px; }
+    .subject strong { display: block; font-size: 19px; letter-spacing: -.04em; }
+    .subject span { display: block; margin-top: 9px; color: var(--muted); font-size: 13px; line-height: 1.6; }
+    .about { background: #f5f6f7; }
+    .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 8%; align-items: start; }
+    .about-grid p { margin: 0 0 17px; color: #48525b; font-size: 16px; line-height: 1.9; word-break: keep-all; }
+    .about-grid p:last-child { margin-bottom: 0; }
+    .contact { background: #18212c; color: #fff; }
+    .contact .label { color: #f5686d; }
+    .contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 50px; align-items: start; }
+    .contact dl { display: grid; gap: 22px; margin: 4px 0 0; }
+    .contact dl div { display: grid; grid-template-columns: 62px 1fr; gap: 12px; }
+    .contact dt { color: #aebac6; font-size: 14px; }
+    .contact dd { margin: 0; font-size: 16px; line-height: 1.6; }
+    .contact a { text-underline-offset: 3px; }
+    .site-footer { background: #111922; color: #9ca8b3; padding: 23px 0; font-size: 12px; }
+    .site-footer .wrap { display: flex; justify-content: space-between; gap: 20px; }
+    @media (max-width: 760px) {
+      .wrap { width: min(100% - 36px, 1120px); }
+      .header-inner { min-height: 72px; }
+      .brand { font-size: 16px; gap: 8px; }
+      .brand img { width: 42px; height: 42px; }
+      .site-nav { gap: 16px; }
+      .site-nav a { font-size: 12px; }
+      .hero { min-height: 500px; }
+      .hero::before { background-position: 58% center; }
+      .hero::after { background: linear-gradient(90deg, rgba(12,19,28,.88), rgba(12,19,28,.4)); }
+      .hero-content { padding: 74px 0; }
+      .section { padding: 70px 0; }
+      .section-head, .about-grid, .contact-grid { display: block; }
+      .section-note { margin-top: 15px; }
+      .subjects { grid-template-columns: 1fr; gap: 16px; }
+      .subject img { height: 230px; }
+      .about-grid p:first-child { margin-top: 25px; }
+      .contact dl { margin-top: 34px; }
+      .site-footer .wrap { display: block; }
+      .site-footer span { display: block; margin-top: 6px; }
+    }
+    @media (max-width: 430px) { .site-nav a:not(:last-child) { display: none; } h1 { font-size: 39px; } }
   </style>
 </head>
 <body>
+  <header class="site-header">
+    <div class="wrap header-inner">
+      <a class="brand" href="/" aria-label="한국카케어전문학원 홈"><img src="/images/YNzL4pRhNqbrOwHvFkJ2wct0IoA.webp" alt=""><span>한국카케어전문학원</span></a>
+      <nav class="site-nav" aria-label="주요 메뉴"><a href="#subjects">교육 분야</a><a href="#about">학원 안내</a><a href="#contact">위치·연락처</a></nav>
+    </div>
+  </header>
   <main>
-    <img src="/images/YNzL4pRhNqbrOwHvFkJ2wct0IoA.webp" alt="">
-    <h1>한국카케어전문학원</h1>
-    <p class="intro">학원 기본 안내</p>
-    <dl>
-      <div><dt>주소</dt><dd>경기도 수원시 권선구 온정로 46</dd></div>
-      <div><dt>전화</dt><dd><a href="tel:01025198585">010-2519-8585</a></dd></div>
-    </dl>
-    <footer>© 2026 한국카케어전문학원</footer>
+    <section class="hero" aria-labelledby="hero-title">
+      <div class="wrap hero-content">
+        <p class="eyebrow">KOREA CAR CARE ACADEMY</p>
+        <h1 id="hero-title">자동차 외장관리<br>실습 교육</h1>
+        <p>한국카케어전문학원은 수원에서 자동차 광택, 복원, 필름 작업 등 외장관리 분야를 교육합니다.</p>
+      </div>
+    </section>
+    <section id="subjects" class="section">
+      <div class="wrap">
+        <div class="section-head"><div><span class="label">EDUCATION</span><h2>교육 분야</h2></div><p class="section-note">과정 개설 여부와 일정은 학원에 직접 확인해 주세요.</p></div>
+        <div class="subjects">
+          <figure class="subject"><img src="/images/8blosoHiL8jyAnPAr9bdNurbk.webp" alt="차량 광택 실습" loading="lazy"><figcaption><strong>광택 · 코팅</strong><span>차량 표면 관리와 광택 작업</span></figcaption></figure>
+          <figure class="subject"><img src="/images/QJwk6DYbmCZBFDtCZcd6Hio4oxY.webp" alt="차량 덴트 복원 실습" loading="lazy"><figcaption><strong>덴트 · 복원</strong><span>자동차 외장 손상 복원 작업</span></figcaption></figure>
+          <figure class="subject"><img src="/images/uhDjjwfYVz7sMhXkQ1jvadNWrhQ.webp" alt="차량 필름 작업" loading="lazy"><figcaption><strong>랩핑 · 틴팅</strong><span>차량 외장 및 유리 필름 작업</span></figcaption></figure>
+        </div>
+      </div>
+    </section>
+    <section id="about" class="section about">
+      <div class="wrap about-grid"><div><span class="label">ABOUT</span><h2>한국카케어전문학원</h2></div><div><p>경기도 수원시에 있는 자동차 외장관리 교육기관입니다. 작업 현장에서 사용하는 도구와 차량을 바탕으로 실습 교육을 진행합니다.</p><p>이 페이지는 학원의 기본 정보와 교육 분야를 안내합니다. 세부 과정과 운영 일정은 학원에 문의해 주세요.</p></div></div>
+    </section>
+    <section id="contact" class="section contact">
+      <div class="wrap contact-grid"><div><span class="label">CONTACT</span><h2>위치 및 연락처</h2></div><dl><div><dt>주소</dt><dd>경기도 수원시 권선구 온정로 46</dd></div><div><dt>전화</dt><dd><a href="tel:01025198585">010-2519-8585</a></dd></div></dl></div>
+    </section>
   </main>
+  <footer class="site-footer"><div class="wrap"><strong>한국카케어전문학원</strong><span>© 2026 한국카케어전문학원</span></div></footer>
 </body>
 </html>
