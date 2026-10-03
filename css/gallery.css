@@ -1,0 +1,188 @@
+/* ═══════════════════════════════════════════
+   GALLERY — Dark / Scroll Layout
+   ═══════════════════════════════════════════ */
+
+/* ── 페이지 전체 ── */
+body {
+  background: #0a0a0a;
+  color: #9a9a9a;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+/* ── 배너 (뒤로가기 + 타이틀) ── */
+.gallery-banner {
+  background: #0a0a0a;
+  padding: 48px 0 36px;
+  border-bottom: 1px solid rgba(255,255,255,0.06);
+}
+.gallery-banner-inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+}
+.gallery-banner h1 {
+  font-size: 36px; font-weight: 900; color: #fff;
+  letter-spacing: -0.5px; margin-bottom: 10px;
+}
+.gallery-banner p {
+  font-size: 15px; color: rgba(255,255,255,0.35);
+}
+.gallery-back {
+  position: absolute; left: 40px; top: calc(50% + 12px); transform: translateY(-50%);
+  display: flex; align-items: center;
+  color: rgba(255,255,255,0.45);
+  padding: 8px 4px;
+  transition: color .2s;
+}
+.gallery-back:hover { color: #fff; }
+
+/* ── 필터 탭 ── */
+.gallery-filter {
+  padding: 20px 0 16px;
+  border-bottom: 1px solid rgba(255,255,255,0.06);
+  position: sticky; top: 0; z-index: 100;
+  background: #0a0a0a;
+}
+.gallery-filter-inner {
+  display: flex; gap: 8px; overflow-x: auto;
+  padding: 0 24px; max-width: var(--max-w); margin: 0 auto;
+  scrollbar-width: none; flex-wrap: nowrap;
+}
+.gallery-filter-inner::-webkit-scrollbar { display: none; }
+.filter-btn {
+  flex-shrink: 0; font-size: 11px; font-weight: 700;
+  padding: 4px 10px; border-radius: 4px;
+  border: 1px solid rgba(255,255,255,0.12);
+  color: rgba(255,255,255,0.35); background: transparent;
+  transition: all .2s; white-space: nowrap;
+  letter-spacing: 0.3px; text-transform: uppercase;
+}
+.filter-btn:hover { border-color: rgba(255,255,255,0.4); color: rgba(255,255,255,0.7); }
+.filter-btn.active { background: rgba(255,255,255,0.9); border-color: transparent; color: #0a0a0a; }
+
+/* ── 인트로 텍스트 ── */
+.gallery-intro {
+  font-size: 15px; font-weight: 500; letter-spacing: 4px;
+  text-transform: uppercase; color: rgba(255,255,255,0.3);
+  width: 100%; text-align: center;
+  padding-bottom: 100px;
+}
+
+/* ── 갤러리 스크롤 ── */
+.gallery-sec {
+  flex: 1;
+  padding: 160px 120px 0;
+}
+.gallery-item {
+  width: 100%;
+  padding: 240px 0;
+  border-bottom: 1px solid rgba(255,255,255,0.04);
+}
+.gallery-item img {
+  display: block;
+  width: 100%;
+  max-width: 1400px;
+  height: auto;
+  margin: 0 auto;
+  background: #151515;
+  min-height: min(56vw, 800px);
+  opacity: 0;
+  transition: opacity 0.35s ease;
+}
+.gallery-item img.img-loaded {
+  opacity: 1;
+  background: transparent;
+  min-height: 0;
+}
+.gallery-caption {
+  padding: 12px 0 0;
+  font-size: 13px; color: rgba(255,255,255,0.4);
+  display: flex; align-items: center; gap: 10px;
+  width: 100%; max-width: 1400px; margin: 0 auto;
+  text-align: left;
+}
+.gallery-year {
+  font-size: 12px; font-weight: 400;
+  color: rgba(200,60,60,0.7);
+  letter-spacing: 0.3px;
+}
+
+.gallery-legend {
+  font-family: 'Noto Sans KR', sans-serif;
+  font-weight: 300;
+  font-size: clamp(14px, 1.8vw, 28px);
+  color: rgba(255,255,255,0.65);
+  line-height: 1.1;
+  padding: 20px 0 6px;
+  max-width: 1400px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.gallery-headline {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: clamp(28px, 4vw, 60px);
+  color: rgba(255,255,255,0.82);
+  letter-spacing: 1px;
+  line-height: 1.1;
+  padding: 20px 0 6px;
+  max-width: 1400px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.gallery-cat-tag {
+  font-size: 11px; font-weight: 600;
+  color: rgba(255,255,255,0.3);
+  letter-spacing: 0.5px; text-transform: uppercase;
+}
+
+/* ── 메타정보 ── */
+.gallery-meta {
+  padding: 8px 4px 0;
+  display: flex; flex-wrap: wrap; align-items: center; gap: 4px;
+  font-size: 11px; color: rgba(255,255,255,0.2);
+  font-family: 'SF Mono', 'Fira Code', monospace;
+  letter-spacing: 0.3px;
+  min-height: 20px;
+}
+.gallery-meta span { white-space: nowrap; }
+.meta-dot { color: rgba(255,255,255,0.1); padding: 0 2px; }
+
+/* 숨김 */
+.gallery-item.hidden { display: none; }
+
+/* ── 빈 상태 ── */
+.gallery-empty {
+  display: none;
+  text-align: center; padding: 100px 24px;
+}
+.gallery-empty.show { display: block; }
+.gallery-empty p { font-size: 15px; color: rgba(255,255,255,0.2); }
+
+/* ── 푸터 ── */
+footer {
+  background: #0a0a0a;
+  padding-bottom: 40px;
+  border-top: 1px solid rgba(255,255,255,0.06);
+}
+.footer-sns a { background: rgba(255,255,255,0.1); color: rgba(255,255,255,0.6); }
+.footer-sns a:hover { background: rgba(255,255,255,0.18); }
+
+/* ── 모바일 ── */
+.fixed-bar { background: #111; border-top-color: rgba(255,255,255,0.08); }
+.fixed-phone { color: #fff; border-color: rgba(255,255,255,0.12); }
+
+@media (max-width: 768px) {
+  .gallery-banner h1 { font-size: 26px; }
+  .gallery-banner { padding: 40px 0 28px; }
+  .gallery-filter { padding: 14px 0 12px; }
+  .gallery-sec { padding: 0 16px 80px; }
+  .gallery-item { padding: 80px 0; }
+  .gallery-item img { height: auto; }
+  nav { background: #111; border-bottom-color: rgba(255,255,255,0.08); }
+  .nav-link { border-bottom-color: rgba(255,255,255,0.06); }
+}

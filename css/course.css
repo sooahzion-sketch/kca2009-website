@@ -1,0 +1,434 @@
+/* ═══════════════════════════════════════════
+   COURSE DETAIL PAGE
+   ═══════════════════════════════════════════ */
+
+/* ── Breadcrumb ── */
+.course-breadcrumb {
+  background: var(--bg-light);
+  border-bottom: 1px solid var(--border);
+  padding: 14px 0;
+  font-size: 14px;
+  color: var(--text-light);
+}
+.course-breadcrumb a { color: var(--text-light); }
+.course-breadcrumb a:hover { color: var(--primary); }
+.course-breadcrumb span { margin: 0 6px; }
+
+/* ── Course Hero ── */
+.course-hero {
+  background: linear-gradient(135deg, #091e30 0%, #0c2d48 100%);
+  padding: 56px 0 52px;
+  color: #fff;
+}
+.course-badges {
+  display: flex; gap: 8px; margin-bottom: 20px; flex-wrap: wrap;
+}
+.badge {
+  display: inline-block;
+  font-size: 13px; font-weight: 600;
+  padding: 4px 14px; border-radius: 20px;
+  border: 1px solid;
+}
+.badge--active { color: #4ade80; border-color: #4ade80; background: rgba(74,222,128,0.1); }
+.badge--type   { color: #93c5fd; border-color: #93c5fd; background: rgba(147,197,253,0.1); }
+.badge--gov    { color: #fbbf24; border-color: #fbbf24; background: rgba(251,191,36,0.1); }
+
+.course-hero h1 {
+  font-size: 38px; font-weight: 900; line-height: 1.3;
+  margin-bottom: 16px;
+  word-break: keep-all;
+}
+.course-hero-sub {
+  font-size: 17px; color: rgba(255,255,255,0.7); font-weight: 400;
+}
+.course-hero-sub strong { color: #f87171; font-weight: 700; }
+
+/* ── Info Strip ── */
+.course-info-strip {
+  background: var(--dark);
+  padding: 0;
+}
+.course-info-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  border-left: 1px solid rgba(255,255,255,0.08);
+}
+.course-info-item {
+  padding: 24px 28px;
+  border-right: 1px solid rgba(255,255,255,0.08);
+  border-bottom: 1px solid rgba(255,255,255,0.08);
+}
+.course-info-item dt {
+  font-size: 12px; font-weight: 500;
+  color: rgba(255,255,255,0.45);
+  margin-bottom: 6px; text-transform: uppercase; letter-spacing: 0.5px;
+}
+.course-info-item dd {
+  font-size: 18px; font-weight: 700; color: #fff;
+}
+.course-info-item dd strong { color: #f87171; }
+
+/* ── Curriculum ── */
+.course-curriculum-sec {
+  padding: 72px 0;
+  background: var(--card);
+}
+.course-sec-title {
+  font-size: 28px; font-weight: 900; color: var(--dark);
+  margin-bottom: 8px;
+}
+.course-sec-desc {
+  font-size: 16px; color: var(--text-light);
+  margin-bottom: 40px;
+}
+
+.curriculum-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+.curriculum-week {
+  background: var(--bg-light);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 28px 24px;
+  position: relative;
+}
+.curriculum-week:first-child { border-color: var(--primary); }
+.week-num {
+  font-size: 11px; font-weight: 700; letter-spacing: 1px;
+  color: var(--primary); text-transform: uppercase;
+  margin-bottom: 4px;
+}
+.week-period {
+  font-size: 13px; color: var(--text-light);
+  margin-bottom: 14px;
+}
+.week-title {
+  font-size: 17px; font-weight: 700; color: var(--dark);
+  margin-bottom: 12px; line-height: 1.4;
+}
+.week-topics {
+  display: flex; flex-direction: column; gap: 6px;
+}
+.week-topic {
+  font-size: 14px; color: var(--text-sub);
+  display: flex; align-items: center; gap: 8px;
+}
+.week-topic::before {
+  content: '';
+  width: 6px; height: 6px; border-radius: 50%;
+  background: var(--primary); flex-shrink: 0;
+  opacity: 0.6;
+}
+.week-hours {
+  margin-top: 16px; padding-top: 14px;
+  border-top: 1px solid var(--border);
+  font-size: 13px; color: var(--text-light);
+  font-weight: 500;
+}
+
+/* ── Calendar Section ── */
+.course-calendar-sec {
+  padding: 72px 0;
+  background: var(--bg);
+}
+.cal-legend {
+  display: flex; gap: 20px; margin-bottom: 32px; flex-wrap: wrap;
+}
+.cal-legend-item {
+  display: flex; align-items: center; gap: 8px;
+  font-size: 14px; color: var(--text-sub);
+}
+.cal-legend-item::before {
+  content: '';
+  width: 20px; height: 20px; border-radius: 6px;
+}
+.cal-legend--train::before { background: var(--primary); }
+.cal-legend--off::before   { background: #e5e7eb; border: 1px solid #d1d5db; }
+.cal-legend--weekend::before { background: #fef9c3; border: 1px solid #fde68a; }
+.cal-legend--outside::before { background: #fff; border: 1px solid #e5e7eb; }
+
+.cal-months {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24px;
+}
+.cal-month {
+  background: #fff;
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  overflow: hidden;
+}
+.cal-month-header {
+  background: var(--dark);
+  color: #fff;
+  padding: 18px 24px;
+  font-size: 18px; font-weight: 700;
+  display: flex; justify-content: space-between; align-items: center;
+}
+.cal-month-header span { font-size: 14px; color: rgba(255,255,255,0.5); font-weight: 400; }
+.cal-grid {
+  padding: 16px;
+}
+.cal-dow-row {
+  display: grid; grid-template-columns: repeat(7, 1fr);
+  margin-bottom: 8px;
+}
+.cal-dow {
+  text-align: center;
+  font-size: 12px; font-weight: 700; color: var(--text-light);
+  padding: 6px 0;
+}
+.cal-dow:first-child { color: #ef4444; }
+.cal-dow:last-child  { color: #3b82f6; }
+
+.cal-week {
+  display: grid; grid-template-columns: repeat(7, 1fr);
+  gap: 4px; margin-bottom: 4px;
+}
+.cal-day {
+  aspect-ratio: 1;
+  display: flex; flex-direction: column; align-items: center; justify-content: center;
+  border-radius: 8px;
+  font-size: 14px; font-weight: 500;
+  position: relative;
+}
+.cal-day--empty { }
+.cal-day--outside { color: var(--text-light); }
+.cal-day--weekend { background: #fef9c3; }
+.cal-day--sun { color: #ef4444; }
+.cal-day--sat { color: #3b82f6; }
+
+.cal-day--train {
+  background: var(--primary);
+  color: #fff;
+  font-weight: 700;
+}
+.cal-day--train.cal-day--sun,
+.cal-day--train.cal-day--sat { color: #fff; }
+
+.cal-day--off {
+  background: #f3f4f6;
+  color: #9ca3af;
+}
+.cal-day--today {
+  box-shadow: 0 0 0 2px var(--primary);
+}
+
+.cal-day-num { line-height: 1; }
+.cal-day-label {
+  font-size: 9px; font-weight: 600; margin-top: 2px;
+  opacity: 0.85;
+}
+
+.cal-summary {
+  padding: 14px 16px;
+  border-top: 1px solid var(--border);
+  display: flex; gap: 16px;
+  font-size: 13px; color: var(--text-light);
+}
+.cal-summary strong { color: var(--primary); font-weight: 700; }
+
+/* ── Fee Info ── */
+.course-fee-sec {
+  padding: 72px 0;
+  background: #fff;
+}
+.fee-grid {
+  display: grid; grid-template-columns: 1fr 1fr;
+  gap: 24px; margin-top: 40px;
+}
+.fee-card {
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 32px 28px;
+}
+.fee-card--highlight {
+  background: linear-gradient(135deg, #eef6ff 0%, #e0f0ff 100%);
+  border-color: var(--primary);
+}
+.fee-label {
+  font-size: 13px; font-weight: 600; color: var(--text-light);
+  text-transform: uppercase; letter-spacing: 0.5px;
+  margin-bottom: 8px;
+}
+.fee-amount {
+  font-size: 36px; font-weight: 900; color: var(--dark);
+  font-family: 'Bebas Neue', sans-serif; line-height: 1;
+}
+.fee-amount small {
+  font-family: 'Noto Sans KR', sans-serif;
+  font-size: 16px; font-weight: 500; color: var(--text-sub);
+  vertical-align: bottom; margin-left: 4px;
+}
+.fee-note {
+  font-size: 13px; color: var(--text-light);
+  margin-top: 10px; line-height: 1.6;
+}
+.fee-note strong { color: var(--primary); }
+
+/* ── Course Meta Tables (강사 · 교재 · 시간표 구성) ── */
+.course-meta-sec {
+  background: var(--bg);
+  padding: 0 0 56px;
+}
+.course-meta-rows { }
+
+.cmt-title {
+  font-size: 16px; font-weight: 700; color: var(--dark);
+  margin: 40px 0 12px;
+}
+.cmt-title:first-child { margin-top: 0; }
+
+.cmt-table {
+  width: 100%; border-collapse: collapse;
+  font-size: 14px;
+  table-layout: fixed; /* 셀 내용이 컨테이너를 밀어내지 못하게 고정 (모바일 가로 스크롤 방지) */
+}
+.cmt-table th {
+  text-align: center;
+  padding: 10px 16px;
+  background: #f8f9fa;
+  border: 1px solid var(--border);
+  font-size: 13px; font-weight: 600; color: var(--text-sub);
+  white-space: nowrap;
+  word-break: keep-all;
+}
+.cmt-table td {
+  padding: 10px 16px;
+  border: 1px solid var(--border);
+  color: var(--text-sub);
+  vertical-align: middle;
+  text-align: center;
+  line-height: 1.6;
+}
+
+/* 모바일: 표가 가로로 넘쳐 페이지 전체에 좌우 스크롤이 생기던 문제 수정 (2026-07-31).
+   원인은 th의 white-space:nowrap — 헤더 글자가 안 접혀 표가 컨테이너보다 넓어졌다.
+   좁은 화면에선 줄바꿈을 허용하고 여백·글자를 줄여 화면 폭 안에 가둔다. */
+@media (max-width: 768px) {
+  .cmt-table { font-size: 12.5px; }
+  .cmt-table th,
+  .cmt-table td { padding: 8px 6px; white-space: normal; word-break: break-word; }
+  .cmt-table th { font-size: 12px; }
+}
+
+/* ── After Course ── */
+.after-course {
+  margin-top: 48px;
+  padding: 32px 36px;
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+}
+.after-course-title {
+  font-size: 18px; font-weight: 700; color: var(--dark);
+  margin-bottom: 20px;
+}
+.after-course-list {
+  list-style: none;
+  display: flex; flex-direction: column; gap: 14px;
+}
+.after-course-list li {
+  font-size: 16px; color: var(--text-sub); line-height: 1.6;
+  display: flex; align-items: flex-start; gap: 10px;
+}
+.after-course-list li::before {
+  content: '✓';
+  color: var(--primary); font-weight: 700; font-size: 15px;
+  flex-shrink: 0; margin-top: 1px;
+}
+.after-course-list li strong {
+  color: var(--dark); font-weight: 700;
+}
+
+/* ── CTA ── */
+.course-cta-sec {
+  background: linear-gradient(135deg, #091e30 0%, #0c2d48 100%);
+  padding: 72px 0;
+  text-align: center;
+}
+.course-cta-sec h2 {
+  font-size: 32px; font-weight: 900; color: #fff;
+  margin-bottom: 12px;
+}
+.course-cta-sec p {
+  font-size: 16px; color: rgba(255,255,255,0.6);
+  margin-bottom: 32px;
+}
+.course-cta-sec p strong { color: #f87171; }
+.cta-btn-group {
+  display: flex; gap: 16px; justify-content: center; flex-wrap: wrap;
+}
+.cta-btn-phone {
+  display: inline-flex; align-items: center; gap: 10px;
+  padding: 16px 40px;
+  background: var(--primary); color: #fff;
+  border-radius: 10px; font-size: 18px; font-weight: 700;
+  transition: background .15s;
+}
+.cta-btn-phone:hover { background: var(--primary-dark); }
+.cta-btn-consult {
+  display: inline-flex; align-items: center; gap: 10px;
+  padding: 16px 40px;
+  background: rgba(255,255,255,0.1); color: #fff;
+  border: 1px solid rgba(255,255,255,0.3);
+  border-radius: 10px; font-size: 18px; font-weight: 700;
+  transition: background .15s;
+}
+.cta-btn-consult:hover { background: rgba(255,255,255,0.2); }
+
+/* ── 수강생 전용 스토어 배너 ── */
+.course-store-banner {
+  background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%);
+  border-top: 1px solid var(--border);
+  padding: 48px 0;
+}
+.csb-inner {
+  max-width: var(--max-w);
+  margin: 0 auto;
+  padding: 0 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  flex-wrap: wrap;
+}
+.csb-text strong {
+  display: block;
+  font-size: 20px;
+  font-weight: 800;
+  color: var(--dark);
+  margin-bottom: 6px;
+}
+.csb-text p {
+  font-size: 14px;
+  color: var(--text-sub);
+  line-height: 1.5;
+  margin: 0;
+}
+.csb-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 14px 28px;
+  background: var(--primary);
+  color: #fff;
+  border-radius: 10px;
+  font-size: 15px;
+  font-weight: 700;
+  text-decoration: none;
+  transition: background .15s;
+  white-space: nowrap;
+}
+.csb-btn:hover { background: var(--primary-dark); }
+
+/* ── 반응형 ── */
+@media (max-width: 768px) {
+  .cal-months { grid-template-columns: 1fr !important; }
+  .course-store-banner { padding: 32px 0; }
+  .csb-inner { padding: 0 16px; flex-direction: column; align-items: flex-start; gap: 16px; }
+  .csb-text strong { font-size: 17px; }
+  .csb-btn { width: 100%; justify-content: center; padding: 12px 20px; }
+}

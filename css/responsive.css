@@ -1,0 +1,196 @@
+/* ═══════════════════════════════════════════
+   RESPONSIVE
+   ═══════════════════════════════════════════ */
+
+/* ── 헤더/네비: 모바일 전용 (≤768px) ── */
+@media (max-width: 768px) {
+  .menu-toggle { display: none; }
+  .header-inner {
+    height: auto;
+    flex-wrap: wrap;
+    padding: 0;
+    align-items: stretch;
+  }
+  .logo {
+    flex: 1; order: 1;
+    height: 45px;
+    display: flex; align-items: center;
+    padding: 0 16px;
+    border-bottom: 2px solid var(--border);
+    overflow: hidden;
+  }
+  .logo img { height: 36px; top: 0; }
+  .logo-text { font-size: 18px; }
+  nav {
+    order: 2;
+    flex-basis: 100%;
+    position: static;
+    transform: none; opacity: 1; pointer-events: auto;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    width: 100%;
+    margin: 0;
+    background: var(--card);
+    padding: 0;
+    border-bottom: 2px solid var(--border);
+    box-shadow: none;
+    overflow: hidden;
+  }
+  .nav-link { padding: 0; height: 40px; font-size: 14px; border-right: 1px solid var(--border); text-align: center; white-space: nowrap; display: flex; align-items: center; justify-content: center; }
+  .nav-link:last-child { border-right: none; }
+  .nav-cta-wrap { display: none !important; position: absolute !important; width: 0 !important; height: 0 !important; overflow: hidden !important; }
+  .nav-hide-mobile { display: none !important; position: absolute !important; width: 0 !important; height: 0 !important; overflow: hidden !important; }
+  .nav-show-mobile { display: flex !important; }
+  .nav-mobile-cta { background: var(--primary); color: #fff !important; font-weight: 700; border: none !important; margin: 0 !important; padding: 0 !important; border-radius: 0; }
+  .header-ctas { display: flex; order: 1; height: 45px; padding: 0 12px; border-bottom: 2px solid var(--border); }
+  .lang-switcher { display: none; }
+}
+
+/* ── 컨텐츠 레이아웃: 태블릿 (≤1024px) ── */
+@media (max-width: 1024px) {
+  .reasons-grid { grid-template-columns: repeat(2, 1fr); }
+  .prog-grid { grid-template-columns: repeat(2, 1fr); }
+  .footer-grid { grid-template-columns: 1fr 1fr; }
+  .course-info-grid { grid-template-columns: repeat(2, 1fr); }
+
+  /* 태블릿 네비 — 폰트/패딩 축소 */
+  .logo-text { font-size: 17px; }
+  .logo img { height: 48px; }
+  .nav-link { font-size: 13px; padding: 8px 8px; }
+  .nav-cta { padding: 6px 14px !important; font-size: 13px !important; }
+  .header-ctas { gap: 4px; }
+  .lang-active, .lang-link { font-size: 11px; padding: 3px 8px; }
+}
+
+/* ── 모바일 (≤768px) ── */
+@media (max-width: 768px) {
+  html { scroll-padding-top: 100px; }
+  .container, .footer-inner { padding-left: 16px; padding-right: 16px; }
+  .logo { padding: 0 16px; }
+
+  .top-bar { font-size: 12px; padding: 6px 16px; }
+
+  .gov-certs { display: none; }
+
+  .hero { min-height: 360px; }
+  .hero-content { padding: 60px 16px 40px; }
+  .hero h1 { letter-spacing: -0.5px; }
+  .hero-sub { font-size: 15px; }
+  .hero-btn-primary, .hero-btn-secondary { padding: 9px 24px; font-size: 14px; }
+
+  .stats-grid { gap: 24px; flex-wrap: wrap; }
+  .stats-container { padding: 0 24px; }
+  .stats-bar { padding: 24px 0; }
+  .stat-number { font-size: 28px; }
+  .stats-title { font-size: 24px; }
+  .stat-clock { gap: 12px !important; }
+  #stats-phase2 .stat-number { font-size: 36px; }
+  #stats-phase2 .dial { height: 1.15em; width: 0.6em; }
+  #stats-phase2 .dial-group small { font-size: 15px; }
+  .stats-row-bottom { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px 8px; align-items: end; justify-items: center; }
+  .stats-row-bottom .stat-anim { min-width: 0; width: 100%; }
+  .stats-row-bottom .stat-number { font-size: 36px; }
+  .stat-label { font-size: 15px; }
+  .stats-row-bottom .stat-unit { font-size: 15px; }
+  .stat-label { font-size: 13px; }
+  .dial-group small { font-size: 13px; }
+
+  .sec { padding: 48px 0; }
+
+  .about-grid { grid-template-columns: 1fr; gap: 32px; }
+  .about-img { width: 100%; }
+  .about-slide { aspect-ratio: 4/3; }
+  .reasons-grid { grid-template-columns: 1fr 1fr; gap: 10px; }
+  .reason-card { padding: 20px 16px; }
+
+  .prog-grid { grid-template-columns: 1fr; gap: 14px; }
+  .prog-info { padding: 16px; }
+  .prog-name { font-size: 16px; }
+
+  .gov-steps { flex-direction: column; align-items: center; gap: 24px; margin-bottom: 32px; }
+  .gov-step {
+    flex: none; width: 100%; max-width: 320px; padding: 24px 20px;
+    background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 12px;
+    text-align: center;
+    position: relative;
+  }
+  .gov-step:not(:last-child)::after {
+    content: none;
+  }
+  .gov-step-num { width: 52px; height: 52px; font-size: 24px; margin-bottom: 12px; }
+  .gov-step strong { font-size: 18px; margin-bottom: 6px; }
+  .gov-step small { font-size: 14px; }
+  .gov-features { flex-direction: column; align-items: flex-start; gap: 12px; padding: 0 16px; }
+  .gov-survey { max-width: 100%; }
+  .survey-grid { grid-template-columns: 1fr; grid-template-rows: auto; gap: 24px; padding: 24px 16px; }
+  .survey-left, .survey-right { grid-column: 1; grid-row: auto; display: block; }
+  .survey-status { grid-template-columns: repeat(2, 1fr); }
+  .survey-discount { grid-template-columns: 1fr; }
+  .sc-name { font-size: 13px; }
+
+  .course-item { flex-direction: column; align-items: stretch; }
+  .c-main { flex: none; flex-direction: column; padding: 0; }
+  .c-thumb { width: 100%; height: 200px; }
+  .c-body { padding: 16px 16px 20px; }
+  .c-action {
+    flex: none; border-left: none; border-top: 1px solid #eee;
+    padding: 14px 20px; justify-content: flex-start;
+  }
+  .c-action::before { display: none; }
+  .c-btn { width: 100%; height: 45px; font-size: 16px; }
+  .c-name { font-size: 22px; }
+  .c-tag { font-size: 13px; padding: 4px 12px; }
+  .c-state { font-size: 13px; padding: 4px 14px; }
+  .c-dl dt { font-size: 15px; color: #111; }
+  .c-dl dd { font-size: 15px; color: #999; }
+  .c-bottom { grid-template-columns: 1fr; gap: 4px; }
+  .c-bottom-row:first-child .c-dl:nth-child(2) { order: 4; }
+  .c-bottom-row:nth-child(2) .c-dl:first-child { order: 2; }
+  .c-bottom-row:nth-child(2) .c-dl:nth-child(2) { order: 3; }
+
+  .review-grid { grid-template-columns: 1fr; gap: 12px; }
+
+  .footer-grid { grid-template-columns: repeat(3, 1fr); gap: 16px 8px; }
+  .footer-brand { grid-column: 1 / -1; padding-bottom: 12px; border-bottom: 1px solid rgba(255,255,255,0.08); }
+  .footer-col h4 { font-size: 12px; margin-bottom: 8px; }
+  .footer-col a { font-size: 12px; padding: 2px 0; }
+  .footer-bottom { flex-direction: column; gap: 12px; text-align: center; }
+
+  .fixed-bar { display: flex; }
+
+  .course-hero { min-height: 320px; }
+  .course-hero-content { padding: 80px 16px 48px; }
+  .course-hero-content h1 { letter-spacing: -0.5px; }
+  .course-info-grid { display: none !important; }
+  .course-info-mobile { display: block !important; }
+  .curriculum-sec { padding: 48px 0; }
+  .curriculum-tabs { flex-wrap: wrap; }
+  .practice-flow { grid-template-columns: 1fr 1fr; }
+  .subsidy-sec { padding: 48px 0; }
+  .subsidy-box { padding: 28px 20px; }
+  .subsidy-table th { width: 100px; }
+  .course-cta { padding: 48px 20px; }
+  .course-cta h2 { font-size: 22px; }
+  .course-cta p { font-size: 14px; }
+  .course-cta-btns { flex-direction: column; align-items: center; }
+  .cta-btn-white, .cta-btn-outline-w { width: 100%; max-width: 300px; justify-content: center; }
+}
+
+@media (min-width: 769px) {
+  .fixed-bar { display: none; }
+  .header-ctas-mobile { display: none; }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+  .footer-grid { grid-template-columns: 2fr 1fr 1fr; }
+
+  /* 과정 카드 — 모바일과 동일 */
+  .course-item { flex-direction: column; align-items: stretch; }
+  .c-main { flex: none; flex-direction: column; padding: 0; }
+  .c-thumb { width: 100%; height: 240px; }
+  .c-body { padding: 20px 24px; }
+  .c-action { flex: none; border-left: none; border-top: 1px solid #eee; padding: 16px 24px; justify-content: flex-start; }
+  .c-action::before { display: none; }
+  .c-btn { width: 100%; height: 52px; font-size: 16px; }
+}

@@ -1,0 +1,614 @@
+/* ═══════════════════════════════════════════
+   SECTION COMMON
+   ═══════════════════════════════════════════ */
+.sec { padding: 80px 0; }
+.sec--gray { background: var(--bg); }
+.sec--dark { background: var(--dark); }
+
+.sec-title {
+  font-size: var(--fs-h2);
+  font-weight: 900; color: var(--dark);
+  line-height: 1.2; letter-spacing: -0.8px;
+  margin-bottom: 8px;
+}
+.sec-title em { font-style: normal; color: var(--primary); }
+.sec-desc {
+  font-size: var(--fs-body); color: var(--text-sub);
+  line-height: 1.7; margin-bottom: 40px;
+}
+.sec-center { text-align: center; }
+
+/* ═══════════════════════════════════════════
+   ABOUT — 이미지+텍스트 2단
+   ═══════════════════════════════════════════ */
+.about-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 56px; align-items: center;
+}
+
+.about-img {
+  border-radius: var(--radius);
+  overflow: hidden;
+  box-shadow: 0 8px 40px rgba(0,0,0,0.10);
+  position: relative;
+}
+.about-img img { width: 100%; aspect-ratio: 4/3; object-fit: cover; }
+.about-slide { aspect-ratio: 4/3; }
+.about-slide-img {
+  position: absolute; top: 0; left: 0; width: 100%; height: 100%;
+  object-fit: cover; opacity: 0; transition: opacity 1s ease;
+}
+.about-slide-img.active { opacity: 1; }
+.slide-arrow {
+  position: absolute; top: 50%; transform: translateY(-50%) scaleY(1.8);
+  font-size: 96px; color: rgba(255,255,255,0.35);
+  z-index: 2; cursor: pointer; user-select: none;
+  line-height: 1; padding: 8px 4px;
+  transition: color .2s;
+}
+.slide-arrow:hover { color: rgba(255,255,255,0.7); }
+.slide-prev { left: 12px; }
+.slide-next { right: 12px; }
+
+.about-text h2 {
+  font-size: var(--fs-h2);
+  font-weight: 900; color: var(--dark);
+  line-height: 1.2; margin-bottom: 16px;
+}
+.about-text p {
+  font-size: var(--fs-body); color: var(--text-sub);
+  line-height: 1.8; margin-bottom: 12px;
+}
+.about-text strong { color: var(--dark); }
+.about-text .kw { color: var(--primary); font-weight: 700; }
+
+
+/* ── 이유 카드 ── */
+.reasons-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px; margin-top: 48px;
+}
+
+.reason-card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-left: 4px solid var(--primary);
+  border-radius: var(--radius-sm);
+  padding: 24px 20px;
+  transition: box-shadow .2s;
+}
+.reason-card:hover { box-shadow: 0 4px 20px rgba(0,0,0,0.06); }
+.reason-num {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 36px; color: var(--border); line-height: 1;
+  margin-bottom: 12px;
+}
+.reason-card h3 {
+  font-size: 15px; font-weight: 800; color: var(--dark);
+  margin-bottom: 6px;
+}
+.reason-card p {
+  font-size: 13px; color: var(--text-light);
+  line-height: 1.6;
+}
+
+/* ── index about 전용 오버라이드 ── */
+.reasons-grid--about {
+  gap: 0; margin-top: 56px;
+  border-radius: var(--radius);
+  overflow: hidden;
+  align-items: stretch;
+}
+.reasons-grid--about .reason-card {
+  text-align: center;
+  padding: 48px 24px;
+  background: var(--bg);
+  border: none;
+  border-right: 1px solid var(--border);
+  border-left: none;
+  border-radius: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.reasons-grid--about .reason-card:last-child { border-right: none; }
+.reasons-grid--about .reason-big {
+  display: block;
+}
+.reasons-grid--about .reason-card h3 { margin-top: 10px; }
+
+.reasons-grid--about .reason-card--hero {
+  background: linear-gradient(135deg, #091e30 0%, #0c2d48 100%);
+}
+.reasons-grid--about .reason-card--hero .reason-big { color: #fff; }
+.reasons-grid--about .reason-card--hero h3 { color: rgba(255,255,255,0.6); }
+
+.reason-big {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 72px; font-weight: 400; color: var(--dark);
+  line-height: 1; margin-bottom: 10px;
+}
+.reason-big small {
+  font-family: 'Noto Sans KR', sans-serif;
+  font-size: 36px; color: var(--primary); font-weight: 700;
+  vertical-align: text-bottom; line-height: 1;
+}
+
+/* ═══════════════════════════════════════════
+   PROGRAMS — 기술 영역 소개 카드
+   ═══════════════════════════════════════════ */
+.prog-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.prog-card {
+  background: var(--card);
+  border-radius: var(--radius);
+  overflow: hidden;
+  transition: transform .3s, box-shadow .3s;
+  display: block;
+  border: 1px solid var(--border);
+}
+.prog-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 40px rgba(0,0,0,0.10);
+}
+
+.prog-thumb { position: relative; overflow: hidden; }
+.prog-thumb img {
+  width: 100%; aspect-ratio: 16/10; object-fit: cover;
+  transition: transform .4s;
+}
+.prog-card:hover .prog-thumb img { transform: scale(1.05); }
+
+.prog-info { padding: 22px 20px 20px; }
+.prog-name {
+  font-size: 18px; font-weight: 800; color: var(--dark);
+  display: block; margin-bottom: 8px; line-height: 1.3;
+}
+.prog-desc {
+  font-size: 13px; color: var(--text-sub); line-height: 1.7;
+  margin-bottom: 0;
+}
+.prog-more {
+  display: inline-block; margin-top: 14px;
+  font-size: 13px; font-weight: 700; color: var(--primary);
+}
+.prog-card:hover .prog-more { text-decoration: underline; }
+
+/* ═══════════════════════════════════════════
+   GOVFUND — 다크 블루 섹션
+   ═══════════════════════════════════════════ */
+.gov-sec {
+  background: linear-gradient(135deg, #0c2d48 0%, #145c8e 100%);
+  padding: 100px 0;
+  text-align: center;
+  position: relative; overflow: hidden;
+}
+.gov-sec::before {
+  content: '';
+  position: absolute; top: -50%; right: -20%;
+  width: 600px; height: 600px;
+  background: radial-gradient(circle, rgba(255,255,255,0.04) 0%, transparent 60%);
+  border-radius: 50%;
+}
+
+.gov-sec .sec-title { color: #fff; }
+.gov-sec .sec-desc { color: rgba(255,255,255,0.8); margin-bottom: 64px; }
+
+.gov-steps {
+  display: flex; justify-content: center; gap: 20px;
+  margin-bottom: 48px; position: relative; z-index: 1;
+}
+
+.gov-step {
+  background: rgba(255,255,255,0.12);
+  border: 1px solid rgba(255,255,255,0.18);
+  border-radius: var(--radius);
+  padding: 44px 28px;
+  text-align: center;
+  flex: 1; max-width: 240px;
+}
+.gov-step-num {
+  width: 56px; height: 56px; border-radius: 50%;
+  background: var(--primary); color: #fff;
+  font-family: 'Bebas Neue', sans-serif; font-size: 28px;
+  display: flex; align-items: center; justify-content: center;
+  margin: 0 auto 16px;
+}
+.gov-step strong { display: block; font-size: 26px; color: #fff; margin-bottom: 8px; }
+.gov-step small { font-size: 16px; color: rgba(255,255,255,0.7); }
+
+.gov-features {
+  display: flex; justify-content: center; gap: 20px;
+  flex-wrap: wrap;
+  margin-bottom: 64px;
+  position: relative; z-index: 1;
+}
+.gov-features .gov-feature { flex: 1; max-width: 240px; justify-content: center; }
+.gov-feature {
+  display: flex; align-items: center; gap: 10px;
+  font-size: 17px; color: rgba(255,255,255,0.85);
+}
+.gov-feature::before {
+  content: '✓';
+  width: 22px; height: 22px; border-radius: 50%;
+  background: rgba(255,255,255,0.12);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 11px; color: #4ade80; flex-shrink: 0;
+}
+
+.gov-btn {
+  display: inline-flex; align-items: center; justify-content: center;
+  padding: 20px 52px; font-size: 18px; font-weight: 800;
+  letter-spacing: 0.5px;
+  border-radius: 10px;
+  background: #fff; color: var(--dark);
+  transition: all .25s;
+  position: relative; z-index: 1;
+}
+.gov-btn:hover { background: var(--bg); transform: translateY(-2px); }
+
+/* ── 인증기관 ── */
+.gov-certs {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 32px;
+  flex-wrap: wrap;
+  margin-top: 48px;
+  padding-top: 48px;
+  border-top: 1px solid rgba(255,255,255,0.1);
+  position: relative;
+  z-index: 1;
+}
+.gov-cert {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.gov-cert-logo {
+  width: 52px;
+  height: 52px;
+  object-fit: contain;
+  flex-shrink: 0;
+}
+.gov-cert-text strong {
+  display: block;
+  font-size: 19px;
+  font-weight: 700;
+  color: #fff;
+  line-height: 1.3;
+}
+.gov-cert-text span {
+  display: none;
+}
+
+/* ═══════════════════════════════════════════
+   COURSE DETAIL — 과정 상세 페이지
+   ═══════════════════════════════════════════ */
+
+/* ── Hero ── */
+.course-hero {
+  position: relative;
+  min-height: 420px;
+  display: flex; align-items: center;
+  overflow: hidden;
+}
+.course-hero-bg {
+  position: absolute; inset: 0;
+}
+.course-hero-bg img {
+  width: 100%; height: 100%;
+  object-fit: cover; object-position: center 40%;
+}
+.course-hero-bg::after {
+  content: '';
+  position: absolute; inset: 0;
+  background: linear-gradient(
+    0deg,
+    rgba(17,25,40,0.92) 0%,
+    rgba(17,25,40,0.60) 60%,
+    rgba(17,25,40,0.35) 100%
+  );
+}
+.course-hero-content {
+  position: relative; z-index: 1;
+  max-width: var(--max-w); margin: 0 auto;
+  padding: 100px 24px 60px;
+  width: 100%;
+}
+.course-hero-content .course-en {
+  font-size: 13px; font-weight: 700;
+  color: rgba(255,255,255,0.5);
+  text-transform: uppercase; letter-spacing: 2px;
+  margin-bottom: 8px;
+}
+.course-hero-content h1 {
+  font-size: var(--fs-h1);
+  font-weight: 900; color: #fff;
+  line-height: 1.15; letter-spacing: -1px;
+  margin-bottom: 12px;
+}
+.course-hero-content .course-tagline {
+  font-size: 17px; color: rgba(255,255,255,0.7);
+  line-height: 1.6; max-width: 540px;
+}
+
+/* ── 과정 개요 모바일 텍스트 (데스크톱에서 숨김) ── */
+.course-info-mobile { display: none; }
+.course-info-list {
+  display: flex; flex-wrap: wrap; gap: 0;
+  padding: 16px 0; border-top: 1px solid var(--border); border-bottom: 1px solid var(--border);
+  margin: 0;
+}
+.course-info-list > div {
+  flex: 1 1 50%; display: flex; align-items: baseline;
+  gap: 6px; padding: 6px 0;
+}
+.course-info-list dt {
+  font-size: 12px; font-weight: 600; color: var(--text-light); white-space: nowrap;
+}
+.course-info-list dd {
+  font-size: 14px; font-weight: 700; color: var(--dark); margin: 0;
+}
+.course-info-list dd.accent { color: var(--primary); }
+.course-info-list dd.accent span { font-size: 12px; color: var(--text-sub); font-weight: 600; }
+
+/* ── 과정 개요 카드 ── */
+.course-info-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+  margin-top: -40px;
+  position: relative; z-index: 2;
+  max-width: var(--max-w); margin-left: auto; margin-right: auto;
+  padding: 0 24px;
+}
+.course-info-card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 28px 24px;
+  text-align: center;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.06);
+}
+.course-info-card .info-label {
+  font-size: 13px; font-weight: 600;
+  color: var(--text-light);
+  margin-bottom: 8px;
+}
+.course-info-card .info-value {
+  font-size: clamp(17px, 1.5vw, 20px); font-weight: 800;
+  color: var(--dark);
+  white-space: nowrap;
+  line-height: 1.35;
+}
+.course-info-card .info-value small {
+  font-size: 14px; font-weight: 600;
+  color: var(--text-sub);
+  white-space: nowrap;
+}
+.course-info-card .info-value.accent { color: var(--primary); }
+
+/* ── 커리큘럼 타임라인 ── */
+.curriculum-sec {
+  padding: 80px 0;
+}
+.curriculum-sec .sec-title {
+  margin-bottom: 12px;
+}
+.curriculum-sec .sec-desc {
+  margin-bottom: 48px;
+}
+.curriculum-tabs {
+  display: flex; gap: 8px;
+  margin-bottom: 32px;
+}
+.curriculum-tab {
+  padding: 10px 24px;
+  font-size: 14px; font-weight: 700;
+  border-radius: 50px;
+  border: 2px solid var(--border);
+  background: transparent;
+  color: var(--text-sub);
+  cursor: pointer;
+  font-family: inherit;
+  transition: all 0.2s;
+}
+.curriculum-tab.active,
+.curriculum-tab:hover {
+  background: var(--primary);
+  border-color: var(--primary);
+  color: #fff;
+}
+.curriculum-timeline {
+  position: relative;
+  padding-left: 32px;
+}
+.curriculum-timeline::before {
+  content: '';
+  position: absolute; left: 11px; top: 8px; bottom: 8px;
+  width: 2px;
+  background: var(--border);
+}
+.timeline-item {
+  position: relative;
+  padding: 0 0 32px 24px;
+}
+.timeline-item:last-child { padding-bottom: 0; }
+.timeline-item::before {
+  content: '';
+  position: absolute; left: -25px; top: 6px;
+  width: 12px; height: 12px;
+  border-radius: 50%;
+  background: var(--primary);
+  border: 3px solid #fff;
+  box-shadow: 0 0 0 2px var(--primary);
+}
+.timeline-day {
+  font-size: 13px; font-weight: 700;
+  color: var(--primary);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 4px;
+}
+.timeline-title {
+  font-size: 18px; font-weight: 800;
+  color: var(--dark);
+  margin-bottom: 8px;
+}
+.timeline-desc {
+  font-size: 14px; color: var(--text-sub);
+  line-height: 1.7;
+}
+.timeline-desc ul {
+  list-style: none; padding: 0; margin: 8px 0 0;
+}
+.timeline-desc ul li {
+  padding: 3px 0;
+  padding-left: 16px;
+  position: relative;
+}
+.timeline-desc ul li::before {
+  content: '·';
+  position: absolute; left: 0;
+  color: var(--primary); font-weight: 900;
+}
+
+/* ── 실습 흐름 ── */
+.practice-flow {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 12px;
+  margin-top: 24px;
+  margin-bottom: 32px;
+}
+.practice-step {
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  padding: 20px 16px;
+  text-align: center;
+  position: relative;
+}
+.practice-step .step-time {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 22px; color: var(--primary);
+  margin-bottom: 4px;
+}
+.practice-step .step-name {
+  font-size: 14px; font-weight: 700;
+  color: var(--dark);
+  margin-bottom: 4px;
+}
+.practice-step .step-detail {
+  font-size: 12px; color: var(--text-light);
+  line-height: 1.5;
+}
+
+/* ── 국비지원 안내 박스 ── */
+.subsidy-sec {
+  background: var(--bg);
+  padding: 80px 0;
+}
+.subsidy-box {
+  max-width: 800px;
+  margin: 0 auto;
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 48px 40px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.04);
+}
+.subsidy-box h3 {
+  font-size: 22px; font-weight: 900;
+  color: var(--dark);
+  margin-bottom: 24px;
+}
+.subsidy-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 24px;
+}
+.subsidy-table th,
+.subsidy-table td {
+  padding: 14px 16px;
+  text-align: left;
+  font-size: 15px;
+  border-bottom: 1px solid var(--border);
+}
+.subsidy-table th {
+  font-weight: 600;
+  color: var(--text-light);
+  width: 140px;
+}
+.subsidy-table td {
+  font-weight: 700;
+  color: var(--dark);
+}
+.subsidy-table .highlight-row td {
+  color: var(--primary);
+  font-size: 18px; font-weight: 800;
+}
+.subsidy-note {
+  font-size: 13px; color: var(--text-light);
+  line-height: 1.7;
+  padding: 16px 20px;
+  background: var(--bg);
+  border-radius: var(--radius-sm);
+}
+.subsidy-note strong { color: var(--text-sub); }
+
+/* ── CTA 섹션 ── */
+.course-cta {
+  background: linear-gradient(135deg, #0c2d48 0%, #145c8e 100%);
+  padding: 80px 0;
+  text-align: center;
+  position: relative; overflow: hidden;
+}
+.course-cta::before {
+  content: '';
+  position: absolute; top: -30%; right: -10%;
+  width: 400px; height: 400px;
+  background: radial-gradient(circle, rgba(255,255,255,0.04) 0%, transparent 60%);
+  border-radius: 50%;
+}
+.course-cta h2 {
+  font-size: var(--fs-h2);
+  font-weight: 900; color: #fff;
+  margin-bottom: 12px;
+  position: relative; z-index: 1;
+}
+.course-cta p {
+  font-size: 16px; color: rgba(255,255,255,0.7);
+  margin-bottom: 32px;
+  position: relative; z-index: 1;
+}
+.course-cta-btns {
+  display: flex; gap: 12px;
+  justify-content: center;
+  position: relative; z-index: 1;
+}
+.cta-btn-white {
+  display: inline-flex; align-items: center; justify-content: center;
+  padding: 16px 36px; font-size: 15px; font-weight: 800;
+  border-radius: 8px;
+  background: #fff; color: var(--dark);
+  transition: all .25s;
+}
+.cta-btn-white:hover { background: var(--bg); transform: translateY(-2px); }
+.cta-btn-outline-w {
+  display: inline-flex; align-items: center; justify-content: center;
+  padding: 16px 36px; font-size: 15px; font-weight: 800;
+  border-radius: 8px;
+  background: transparent; color: #fff;
+  border: 2px solid rgba(255,255,255,0.4);
+  transition: all .25s;
+}
+.cta-btn-outline-w:hover { border-color: #fff; transform: translateY(-2px); }

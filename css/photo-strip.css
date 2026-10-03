@@ -1,0 +1,68 @@
+/* ===== Photo Strip ===== */
+.photo-strip {
+  overflow: hidden;
+  background: #000;
+  padding: 0;
+  position: relative;
+}
+
+.photo-strip::before,
+.photo-strip::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 80px;
+  z-index: 2;
+  pointer-events: none;
+}
+.photo-strip::before { left: 0;  background: linear-gradient(to right, #000, transparent); }
+.photo-strip::after  { right: 0; background: linear-gradient(to left,  #000, transparent); }
+
+.photo-strip-track {
+  display: flex;
+  gap: 6px;
+  width: max-content;
+  animation: strip-scroll 32s linear infinite;
+}
+
+.photo-strip-track:hover {
+  animation-play-state: paused;
+}
+
+.photo-strip-track img {
+  height: 220px;
+  width: auto;
+  object-fit: cover;
+  display: block;
+  flex-shrink: 0;
+  border-radius: 2px;
+}
+
+.photo-strip-header {
+  height: 8px;
+  background: #000;
+}
+
+.photo-strip-footer {
+  text-align: center;
+  padding: 8px 0 10px;
+  background: #000;
+}
+
+.photo-strip-footer a {
+  color: #888;
+  font-size: 13px;
+  text-decoration: none;
+  letter-spacing: .03em;
+}
+.photo-strip-footer a:hover { color: #fff; }
+
+@keyframes strip-scroll {
+  0%   { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+@media (max-width: 768px) {
+  .photo-strip-track img { height: 150px; }
+}

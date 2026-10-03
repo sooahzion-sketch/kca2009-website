@@ -1,0 +1,79 @@
+/* ═══════════════════════════════════════════
+   한국카케어전문학원 — Homepage v6
+   UTI Clone: 이미지 중심 + 블루 악센트
+   ═══════════════════════════════════════════ */
+
+:root {
+  --primary: #007CC2;
+  --primary-dark: #005f96;
+  --primary-light: #2196F3;
+  --dark: #111928;
+  --text: #25292B;
+  --text-sub: #475467;
+  --text-light: #6B7280;
+  --border: #E5E7EB;
+  --bg: #F3F4F6;
+  --bg-light: #F9FAFB;
+  --card: #FFFFFF;
+  --radius: 12px;
+  --radius-sm: 8px;
+  --max-w: 1320px;
+
+  /* ── 타이포그래피 스케일 (Desktop) ── */
+  --fs-h1: 52px;   /* 히어로 타이틀 */
+  --fs-h2: 36px;   /* 섹션 타이틀 */
+  --fs-h3: 24px;   /* 서브섹션 */
+  --fs-h4: 18px;   /* 카드 제목 */
+  --fs-h5: 15px;   /* 레이블 상위 */
+  --fs-h6: 13px;   /* 최소 강조 */
+  --fs-body: 15px;
+  --fs-small: 13px;
+}
+
+/* Tablet (769~1024px) */
+@media (max-width: 1024px) {
+  :root {
+    --fs-h1: 40px;
+    --fs-h2: 30px;
+    --fs-h3: 22px;
+    --fs-h4: 17px;
+    --fs-h5: 15px;
+    --fs-h6: 13px;
+  }
+}
+
+/* Mobile (≤768px) */
+@media (max-width: 768px) {
+  :root {
+    --fs-h1: 28px;
+    --fs-h2: 24px;
+    --fs-h3: 20px;
+    --fs-h4: 16px;
+    --fs-h5: 14px;
+    --fs-h6: 12px;
+  }
+}
+
+/* ── Reset ── */
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; scrollbar-gutter: stable; }
+body {
+  font-family: 'Noto Sans KR', -apple-system, BlinkMacSystemFont, sans-serif;
+  color: var(--text);
+  background: var(--card);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+  visibility: hidden;
+}
+body.fonts-ready { visibility: visible; }
+a { text-decoration: none; color: inherit; }
+img { max-width: 100%; height: auto; display: block; }
+button { cursor: pointer; border: none; background: none; font-family: inherit; }
+
+.container { max-width: var(--max-w); margin: 0 auto; padding: 0 24px; }
+
+
+/* 모바일 전용 줄바꿈 */
+.mobile-br { display: none; }
+@media (max-width: 768px) { .mobile-br { display: block; } }
