@@ -120,3 +120,9 @@
   margin-bottom: 8px;
   letter-spacing: 0.02em;
 }
+
+
+/* ═══ 히어로 아래 숫자 3개 숨김, 걸어온 시간 시계만 표시 (2026-10 매거진 리뉴얼) ═══ */
+#stats-phase3{display:none!important}
+#stats-phase2{display:flex!important}
+#stats-phase2.fade-out{opacity:1!important;transform:none!important}

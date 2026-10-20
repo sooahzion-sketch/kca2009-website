@@ -370,3 +370,40 @@ a.c-main:hover .c-name { color: var(--primary); }
   font-size: 15px; color: var(--text-sub);
   line-height: 1.8;
 }
+
+
+/* ═══ 교육과정 매거진 카드 (2026-10 리뉴얼) ═══ */
+/* 4열 세로 카드, 명조 제목, 남색 버튼 */
+#schedule .sec-title{font-family:"Noto Serif KR",serif;font-weight:700;letter-spacing:-.5px}
+#schedule .sec-title::before{content:"";display:block;width:1px;height:40px;background:#c9a24a;margin:0 auto 18px}
+#schedule .course-list{grid-template-columns:repeat(4,1fr);gap:20px}
+#schedule .course-item{flex-direction:column;height:100%;border-radius:0;border-color:#e3ddcf}
+#schedule .course-item:hover{border-color:#c9a24a}
+#schedule .c-main{flex:1;flex-direction:column}
+#schedule .c-thumb{width:100%;height:220px}
+#schedule .c-body{flex:1;display:flex;flex-direction:column;justify-content:flex-start;padding:22px 22px 6px}
+#schedule .c-center{flex:1;display:flex;flex-direction:column}
+#schedule .c-name{font-family:"Noto Serif KR",serif;font-weight:600;font-size:19px;line-height:1.4}
+#schedule .c-desc{margin-bottom:18px}
+#schedule .c-action{flex:none;padding:14px 22px 24px;align-items:stretch}
+#schedule .c-action::before{display:none}
+#schedule .c-btn{width:100%;border-radius:0;background:#1b3a5c;border-color:#1b3a5c}
+#schedule .c-btn:hover{background:#10263f;border-color:#10263f}
+
+/* 평일반 | 주말반 일정 — js/schedule-sheet.js 가 구글 시트를 읽어 채움 */
+#schedule .c-dates{margin-top:auto;display:grid;grid-template-columns:1fr 1fr;padding-top:14px;border-top:1px solid #e3ddcf}
+#schedule .c-slot{display:flex;flex-direction:column;gap:2px;padding:0 12px}
+#schedule .c-slot:first-child{padding-left:0;border-right:1px solid #eee8db}
+#schedule .c-slot--etc{grid-column:1 / -1;padding:12px 0 0;margin-top:12px;border-top:1px dashed #e3ddcf}
+#schedule .c-cls{display:flex;align-items:center;gap:6px;font-size:12px;font-weight:700;color:var(--text-sub);letter-spacing:.04em;margin-bottom:4px}
+#schedule .c-cls::before{content:"";width:7px;height:7px;border-radius:50%;background:#8a8f98}
+#schedule .c-slot--weekday .c-cls::before{background:#1b3a5c}
+#schedule .c-slot--weekend .c-cls::before{background:#c9a24a}
+#schedule .c-cls em{font-style:normal;font-size:10.5px;color:#b48d37;border:1px solid #c9a24a;padding:0 4px;margin-left:2px}
+#schedule .c-start{font-family:"Noto Serif KR",serif;font-weight:600;font-size:16px;color:var(--dark);font-variant-numeric:tabular-nums;line-height:1.3}
+#schedule .c-end{font-size:12.5px;color:var(--text-light);font-variant-numeric:tabular-nums}
+#schedule .c-slot--none .c-start{font-family:inherit;font-weight:400;font-size:13.5px;color:#a3a8ae}
+#schedule .c-slot--none .c-cls::before{opacity:.35}
+
+@media (max-width:1024px){#schedule .course-list{grid-template-columns:repeat(2,1fr)}}
+@media (max-width:768px){#schedule .course-list{grid-template-columns:1fr}}
