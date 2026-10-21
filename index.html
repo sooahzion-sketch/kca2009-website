@@ -6,406 +6,464 @@
 
   <title>한국카케어전문학원</title>
   <meta name="description" content="한국카케어전문학원의 자동차 광택·디테일링, 덴트, 랩핑, 썬팅 교육과정을 안내합니다.">
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700;900&family=Bebas+Neue&display=swap">
-  <link rel="stylesheet" href="css/base.css?v=4">
-  <link rel="stylesheet" href="css/header.css?v=2">
-  <link rel="stylesheet" href="css/hero.css?v=3">
-  <link rel="stylesheet" href="css/stats.css?v=2">
-  <link rel="stylesheet" href="css/sections.css?v=4">
-  <link rel="stylesheet" href="css/photo-strip.css?v=3">
-  <link rel="stylesheet" href="css/posts.css?v=3">
-  <link rel="stylesheet" href="css/form.css?v=6">
-  <link rel="stylesheet" href="css/schedule.css?v=2">
-  <link rel="stylesheet" href="css/footer.css?v=2">
-  <link rel="stylesheet" href="css/responsive.css?v=8">
-  <script src="js/fonts.js" defer></script>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700;900&family=Bebas+Neue&display=swap">
+<style>
+:root{--pearl:#f6f7f8;--sv:#e4e7ea;--sv2:#cfd3d8;--sv3:#a7adb5;--w:#fff;--k:#121314;--s:#585d65;--g:#a8822b;--g2:#d6af57;--gl:#f7ecd0;--gg:linear-gradient(135deg,#efd48b,#c39a3e 55%,#94711f);--chrome:linear-gradient(160deg,#ffffff 0%,#dfe2e6 40%,#f7f8f9 60%,#c9ced4 100%);--bebas:"Bebas Neue",sans-serif}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--pearl);color:var(--k);font-family:"Noto Sans KR",sans-serif;font-size:15px;line-height:1.7;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+a{color:inherit;text-decoration:none}
+img{display:block;max-width:100%}
+.wrap{max-width:1240px;margin:0 auto;padding:0 28px}
+.tag{display:inline-block;font-size:12px;font-weight:900;letter-spacing:.14em;color:var(--k);background:var(--gl);border-left:3px solid var(--g2);padding:4px 12px}
+
+/* 헤더 */
+header{background:var(--w);position:sticky;top:0;z-index:50;box-shadow:0 1px 0 var(--sv)}
+header::before{content:"";display:block;height:4px;background:linear-gradient(90deg,var(--k) 0 22%,var(--g2) 22% 30%,var(--sv2) 30%)}
+header .wrap{display:flex;align-items:center;height:68px;gap:32px}
+.brand{display:flex;align-items:center;gap:12px;font-weight:900}
+.brand img{width:36px;height:36px;object-fit:contain}
+header nav{display:flex;gap:6px;margin-left:auto}
+header nav a{padding:8px 14px;font-size:14px;font-weight:500;color:var(--s);border-radius:6px}
+header nav a:hover{background:var(--pearl);color:var(--k)}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:14px 26px;font-weight:700;font-size:14px;border-radius:6px;transition:.2s}
+.btn--k{background:var(--k);color:#fff}
+.btn--k:hover{background:#000;color:var(--g2)}
+.btn--g{background:var(--gg);color:#111}
+.btn--w{background:var(--w);border:1px solid var(--sv2)}
+.btn--w:hover{border-color:var(--k)}
+header .btn{padding:10px 18px}
+
+/* 히어로 — 사선 분할 */
+.hero{position:relative;background:var(--w);overflow:hidden}
+.hero .ph{position:absolute;top:0;right:0;bottom:0;width:54%;clip-path:polygon(16% 0,100% 0,100% 100%,0 100%)}
+.hero .ph img{width:100%;height:100%;object-fit:cover}
+.hero .ph::before{content:"";position:absolute;left:0;top:0;bottom:0;width:100%;clip-path:polygon(16% 0,17.4% 0,1.4% 100%,0 100%);background:var(--gg);z-index:1}
+.hero .wrap{position:relative;min-height:calc(100svh - 72px);display:flex;align-items:center}
+.hero .txt{max-width:540px;padding:70px 0}
+.hero h1{font-size:clamp(38px,4.8vw,66px);font-weight:900;line-height:1.14;letter-spacing:-.05em;margin:22px 0 20px}
+.hero h1 span{position:relative;z-index:0}
+.hero h1 span::after{content:"";position:absolute;left:-4px;right:-4px;bottom:6px;height:.32em;background:var(--gl);z-index:-1}
+.hero p{color:var(--s);font-size:16px}
+.hero .btns{display:flex;gap:10px;margin-top:30px;flex-wrap:wrap}
+.hero .facts{display:flex;gap:0;margin-top:46px;border:1px solid var(--sv);border-radius:10px;overflow:hidden;background:var(--pearl);width:max-content;max-width:100%}
+.facts{align-items:stretch;transition:border-color .2s}
+.facts:hover{border-color:var(--g2)}
+.facts>div{padding:14px 22px}
+.nx{background:var(--k);color:#fff;min-width:150px}
+.nx small{display:block;font-size:11px;font-weight:700;letter-spacing:.1em;color:var(--g2)}
+.nx b{display:block;font-family:var(--bebas);font-size:34px;line-height:1.05;margin-top:2px}
+.nx span{font-size:12px;color:#b9bdc3}
+.kw{display:flex;flex-direction:column;justify-content:center}
+.kw strong{font-size:14.5px}
+.kw span{font-size:12.5px;color:var(--s);margin-top:2px}
+
+/* 섹션 */
+.sec{padding:110px 0}
+.sh{margin-bottom:46px}
+.sh h2{font-size:clamp(28px,3.4vw,44px);font-weight:900;letter-spacing:-.045em;line-height:1.25;margin-top:14px}
+.sh p{color:var(--s);margin-top:8px}
+
+/* 과정 — 기존 홈페이지 카드 모양 (4열 세로 카드, 평일반 | 주말반) */
+.courses{background:linear-gradient(180deg,var(--sv) 0%,var(--pearl) 100%)}
+.course-list{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
+.course-item{display:flex;flex-direction:column;height:100%;background:var(--w);border:1px solid var(--sv2);transition:border-color .2s,box-shadow .2s}
+.course-item:hover{border-color:var(--g2);box-shadow:0 14px 34px rgba(18,19,20,.08)}
+.c-main{flex:1;display:flex;flex-direction:column}
+.c-thumb{height:220px;overflow:hidden}
+.c-thumb img{width:100%;height:100%;object-fit:cover;transition:transform .5s}
+.course-item:hover .c-thumb img{transform:scale(1.04)}
+.c-body{flex:1;display:flex;flex-direction:column;padding:22px 22px 6px}
+.c-name{font-size:19px;font-weight:900;line-height:1.4;letter-spacing:-.03em}
+.c-desc{font-size:13px;color:var(--s);line-height:1.55;margin:6px 0 18px}
+.c-dates{margin-top:auto;display:grid;grid-template-columns:1fr 1fr;padding-top:14px;border-top:1px solid var(--sv)}
+.c-slot{display:flex;flex-direction:column;gap:2px;padding:0 12px}
+.c-slot:first-child{padding-left:0;border-right:1px solid var(--sv)}
+.c-cls{display:flex;align-items:center;gap:6px;font-size:12px;font-weight:700;color:var(--s);letter-spacing:.04em;margin-bottom:4px}
+.c-cls::before{content:"";width:7px;height:7px;border-radius:50%;background:var(--k)}
+.c-slot--weekend .c-cls::before{background:var(--g2)}
+.c-cls em{font-style:normal;font-size:10.5px;color:var(--g);border:1px solid var(--g2);padding:0 4px;margin-left:2px}
+.c-start{font-weight:700;font-size:16px;color:var(--k);font-variant-numeric:tabular-nums;line-height:1.3}
+.c-end{font-size:12.5px;color:var(--sv3);font-variant-numeric:tabular-nums}
+.c-slot--none .c-start{font-weight:400;font-size:13.5px;color:var(--sv3)}
+.c-slot--none .c-cls::before{opacity:.35}
+.c-action{padding:14px 22px 24px;display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.c-btn{display:flex;align-items:center;justify-content:center;gap:6px;height:50px;background:var(--k);color:#fff;font-size:14px;font-weight:700;white-space:nowrap;transition:.2s}
+.c-btn--sms{background:var(--w);color:var(--k);border:1.5px solid var(--k)}
+.c-btn--sms:hover{border-color:transparent}
+.c-action--one{grid-template-columns:1fr}
+.c-btn--apply{flex-direction:column;gap:0;height:58px;background:var(--gg);color:#111;font-size:15px}
+.c-btn--apply small{font-size:11.5px;font-weight:500;opacity:.75}
+.c-btn--apply:hover{background:var(--k);color:var(--g2)}
+.consult{margin-top:24px;display:grid;grid-template-columns:1fr auto;gap:30px;align-items:center;background:var(--w);border:1px solid var(--sv2);border-left:4px solid var(--g2);padding:30px 34px}
+.consult h3{font-size:22px;font-weight:900;letter-spacing:-.03em;margin:12px 0 4px}
+.consult p{color:var(--s);font-size:14px}
+.consult-btns{display:grid;grid-template-columns:1fr 1fr;gap:10px;position:relative}
+.consult .c-btn{flex-direction:column;gap:0;height:64px;padding:0 26px}
+.consult .c-btn small{font-size:11.5px;font-weight:500;opacity:.7}
+.consult .c-btn.pc{position:absolute;left:0;right:0;top:100%;margin-top:8px;height:auto}
+.c-btn.pc{grid-column:1 / -1;order:3;height:auto;padding:10px;background:var(--gl);color:var(--k);border:0;font-size:12.5px;font-weight:500;white-space:normal;text-align:center}
+.c-btn:hover{background:var(--gg);color:#111}
+
+/* 국비 */
+.gov{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+.gbox{background:var(--w);border-radius:14px;padding:40px;border:1px solid var(--sv)}
+.gbox.hl{background:var(--chrome);border-color:#fff;box-shadow:0 14px 34px rgba(18,19,20,.08)}
+.gbox h3{font-size:24px;font-weight:900;letter-spacing:-.03em;margin:14px 0 6px}
+.gbox .pct{font-family:var(--bebas);font-size:108px;line-height:1;margin-top:18px;background:var(--gg);-webkit-background-clip:text;background-clip:text;color:transparent}
+.net{margin-top:14px;padding:4px 0 4px 16px;border-left:3px solid var(--g2)}
+.net span{font-size:15px;color:var(--s);line-height:1.6}
+.net b{color:var(--k)}
+.after{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:16px}
+.after div{padding:12px 14px;border-radius:10px;background:var(--pearl);border:1px solid var(--sv);border-left:3px solid var(--g2)}
+.after strong{display:block;font-size:15px}
+.after span{font-size:12.5px;color:var(--s)}
+.who{list-style:none;margin-top:18px}
+.who li{display:grid;grid-template-columns:22px 104px 1fr;align-items:center;gap:10px;padding:13px 0;border-bottom:1px dashed var(--sv2);font-size:14px}
+.who li::before{content:"✓";width:22px;height:22px;border-radius:50%;background:var(--gl);color:var(--g);display:grid;place-items:center;font-weight:900;font-size:12px}
+.who b{font-size:15px}
+.who span{color:var(--s)}
+.orgs{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:20px}
+.orgs div{display:grid;grid-template-columns:44px 1fr;column-gap:12px;align-items:center;padding:14px;border:1px solid var(--sv);border-radius:10px;background:var(--pearl)}
+.orgs img{grid-row:span 2;width:44px;height:44px;object-fit:contain}
+.orgs strong{font-size:14.5px;line-height:1.3}
+.orgs span{font-size:12px;color:var(--s)}
+.ask{display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:wrap;margin-top:18px;padding:14px 18px;border-radius:10px;background:var(--k);color:#d9dbde;font-size:14px;transition:.2s}
+.ask b{color:var(--g2);font-size:15px}
+.ask:hover{background:#000}
+.gsteps{counter-reset:s;margin-top:22px}
+.gsteps div{display:flex;gap:16px;align-items:center;padding:14px 0;border-bottom:1px dashed var(--sv2)}
+.gsteps div::before{counter-increment:s;content:counter(s);width:36px;height:36px;flex:none;border-radius:50%;background:var(--k);color:var(--g2);display:grid;place-items:center;font-family:var(--bebas);font-size:20px}
+.gsteps strong{font-size:16px}
+.gsteps span{color:var(--s);font-size:13.5px;margin-left:auto}
+.ck{display:flex;flex-wrap:wrap;gap:8px;margin-top:24px}
+.ck span{font-size:12.5px;padding:6px 12px;border-radius:999px;background:var(--w);border:1px solid var(--sv2)}
+
+/* 후기 + FAQ */
+.two{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+.rv{background:var(--w);border-radius:14px;overflow:hidden;border:1px solid var(--sv);display:flex;flex-direction:column;transition:box-shadow .2s}
+.rv:hover{box-shadow:0 18px 40px rgba(18,19,20,.1)}
+.rv .im{aspect-ratio:16/9;position:relative;overflow:hidden}
+.rv .im img{width:100%;height:100%;object-fit:cover}
+.rv .im i{position:absolute;right:16px;bottom:16px;font-style:normal;background:var(--k);color:var(--g2);font-size:13px;font-weight:700;padding:8px 14px;border-radius:6px}
+.rv .bd{padding:22px 24px 26px}
+.rv small{font-size:12px;font-weight:700;color:var(--g)}
+.rv h4{font-size:18px;font-weight:900;line-height:1.45;margin-top:6px;letter-spacing:-.02em}
+details{background:var(--w);border:1px solid var(--sv);border-radius:10px;margin-bottom:8px;transition:border-color .2s}
+details[open]{border-color:var(--g2)}
+summary{list-style:none;cursor:pointer;padding:18px 50px 18px 20px;font-weight:700;position:relative}
+summary::-webkit-details-marker{display:none}
+summary::before{content:"Q.";font-weight:900;color:var(--g);font-size:16px;margin-right:8px}
+summary::after{content:"+";position:absolute;right:18px;top:50%;transform:translateY(-50%);font-size:22px;font-weight:400;color:var(--s)}
+details[open] summary::after{content:"−";color:var(--g)}
+details p{padding:0 20px 20px 42px;color:var(--s);font-size:14px}
+
+/* 상담 — 과정 선택 + 연락처 남기기 */
+.cta{margin:110px 0 0;background:var(--w);border-top:1px solid var(--sv)}
+.cta .wrap{display:grid;grid-template-columns:1fr 1.15fr;gap:56px;align-items:start;padding-block:80px}
+.cta h2{font-size:clamp(26px,3vw,40px);font-weight:900;letter-spacing:-.04em;margin:12px 0 8px}
+.cta p{color:var(--s)}
+.cta .tel{display:block;font-family:var(--bebas);font-size:clamp(44px,5vw,68px);line-height:1;letter-spacing:.02em;margin-top:34px}
+.cta .tel span{background:var(--gg);-webkit-background-clip:text;background-clip:text;color:transparent}
+.cta .addr{color:var(--s);font-size:13px;margin-top:8px}
+.ask-form{position:relative;background:var(--pearl);border:1px solid var(--sv);border-top:4px solid var(--g2);border-radius:12px;padding:30px 30px 28px}
+.f-lab{display:block;font-size:13px;font-weight:700;margin:18px 0 8px}
+.f-lab:first-child{margin-top:0}
+.f-lab i{font-style:normal;color:var(--g)}
+.chips-sel{display:flex;flex-wrap:wrap;gap:6px}
+.chips-sel button{font:inherit;font-size:14px;padding:9px 16px;border-radius:999px;border:1px solid var(--sv2);background:var(--w);color:var(--k);cursor:pointer;transition:.15s}
+.chips-sel button:hover{border-color:var(--k)}
+.chips-sel button.on{background:var(--k);border-color:var(--k);color:var(--g2);font-weight:700}
+.f-row{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:18px}
+.ask-form input[type=text],.ask-form input[type=tel],.ask-form textarea{width:100%;font:inherit;font-size:15px;padding:12px 14px;border:1px solid var(--sv2);border-radius:8px;background:var(--w);color:var(--k);resize:vertical}
+.ask-form input:focus,.ask-form textarea:focus{outline:2px solid var(--g2);outline-offset:-1px;border-color:transparent}
+.f-agree{display:block;margin-top:16px;font-size:13px;color:var(--s);line-height:1.5;cursor:pointer}
+.f-agree input{accent-color:var(--k);margin-right:6px;vertical-align:-2px}
+.f-agree small{display:block;margin-left:22px;color:var(--sv3)}
+.f-err{margin-top:12px;font-size:13px;color:#b4412f;font-weight:700}
+.f-send{width:100%;margin-top:18px;height:56px;border:0;border-radius:8px;background:var(--k);color:#fff;font:inherit;font-size:16px;font-weight:800;cursor:pointer;transition:.2s}
+.f-send:hover{background:var(--gg);color:#111}
+.f-done{margin-top:16px;padding:18px;border-radius:8px;background:var(--gl);border:1px solid #ecd9a6}
+.f-done strong{display:block;font-size:16px}
+.f-done span{font-size:13.5px;color:var(--s)}
+.f-done pre{margin-top:10px;padding:12px;background:var(--w);border-radius:6px;font:inherit;font-size:13px;white-space:pre-wrap;color:var(--k)}
+
+footer{background:var(--pearl);border-top:1px solid var(--sv);padding:36px 0 46px;color:var(--sv3);font-size:13px}
+footer .wrap{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
+footer strong{color:var(--k);display:block;margin-bottom:6px}
+footer nav{display:flex;gap:18px;color:var(--s)}
+footer nav a:hover{color:var(--g)}
+
+@media (max-width:1100px){
+  .course-list{grid-template-columns:repeat(2,1fr)}
+}
+@media (max-width:820px){
+  .wrap{padding:0 16px}
+  header nav{display:none}
+  header .btn{margin-left:auto;font-size:13px;padding:9px 12px;white-space:nowrap}
+  .brand{font-size:14px;white-space:nowrap;gap:8px}
+  .brand img{width:30px;height:30px}
+  .hero .ph{position:relative;width:100%;height:300px;clip-path:polygon(0 0,100% 0,100% 88%,0 100%)}
+  .hero .ph::before{display:none}
+  .hero .wrap{min-height:0}
+  .hero .txt{padding:40px 0 60px}
+  .facts{width:100%}
+  .facts{flex-direction:column;width:100%}
+  .facts>div{padding:12px 16px}
+  .gov,.two{grid-template-columns:1fr}
+  .course-list{grid-template-columns:1fr}
+  .consult{grid-template-columns:1fr;padding:24px 20px}
+  .consult .c-btn{padding:0 10px}
+  .gbox{padding:28px 22px}
+  .orgs{grid-template-columns:1fr}
+  .who li{grid-template-columns:22px 1fr;row-gap:2px}
+  .who span{grid-column:2}
+  .cta .wrap{grid-template-columns:1fr;gap:34px;padding-block:60px}
+  .ask-form{padding:22px 18px}
+  .f-row{grid-template-columns:1fr}
+  .sec{padding:80px 0}
+}
+</style>
 </head>
 <body>
 
 <header>
-  <div class="header-inner">
-    <a href="/" class="logo">
-      <img src="/images/YNzL4pRhNqbrOwHvFkJ2wct0IoA.webp" alt="한국카케어전문학원 로고">
-      <span class="logo-text">한국카케어전문학원</span>
-    </a>
-    <button class="menu-toggle" aria-label="메뉴 열기"><span></span><span></span><span></span></button>
-    <nav>
-      <a href="#about" class="nav-link">학원 소개</a>
-      <a href="#schedule" class="nav-link">교육과정</a>
-      <a href="#reviews" class="nav-link">수강후기</a>
-      <a href="#faq" class="nav-link">FAQ</a>
-      <div class="nav-cta-wrap"><a href="tel:01025198585" class="nav-cta">전화 상담</a></div>
-    </nav>
+  <div class="wrap">
+    <a href="/" class="brand"><img src="images/YNzL4pRhNqbrOwHvFkJ2wct0IoA.webp" alt="한국카케어전문학원 로고">한국카케어전문학원</a>
+    <nav><a href="#reviews">후기·FAQ</a><a href="#courses">교육과정</a><a href="#support">국비지원</a></nav>
+    <a href="tel:01025198585" class="btn btn--k">☎ 010-2519-8585</a>
   </div>
 </header>
 
-<!-- ===== Hero ===== -->
 <section class="hero">
-  <div class="hero-bg">
-    <img src="images/CvQLWkak1iifj7rAqQmKqfeurzA.webp" alt="학원 실습 현장" fetchpriority="high">
-  </div>
-  <div class="hero-content">
-    <h1>카케어 기술<br>이제 당신의 손으로<br>붙잡으세요</h1>
-    <p class="hero-sub"><span class="kca-graduates">3,410</span>명의 한국카케어전문학원 가족들<br>대한민국의 경제를 이끄는 기술자들입니다.</p>
-    <div class="hero-ctas">
-      <a href="#check" class="hero-btn-primary">전화 상담</a>
-      <a href="#schedule" class="hero-btn-secondary">교육과정 보기</a>
+  <div class="ph"><img src="images/CvQLWkak1iifj7rAqQmKqfeurzA.webp" alt="학원 실습 현장" fetchpriority="high"></div>
+  <div class="wrap">
+    <div class="txt">
+      <span class="tag">자동차 외형 전문 국비지원 학원</span>
+      <h1>카케어 기술<br>이제 <span>당신의 손으로</span><br>붙잡으세요</h1>
+      <p>광택·덴트·랩핑·썬팅까지, 현장에서 바로 쓰는 자동차 외형 기술을 실차 실습으로 배웁니다.</p>
+      <div class="btns"><a href="tel:01025198585" class="btn btn--k">전화 상담</a><a href="#courses" class="btn btn--w">교육과정 보기</a></div>
+      <a href="#courses" class="facts" id="next">
+        <div class="nx"><small>다음 개강</small><b>—</b><span>일정 불러오는 중</span></div>
+        <div class="kw"><strong>광택·디테일링 · 덴트 · 랩핑 · 썬팅</strong><span>평일반 / 주말반 운영 · 내일배움카드 국비지원</span></div>
+      </a>
+      </div>
     </div>
   </div>
 </section>
 
-
-<!-- ===== Stats Bar ===== -->
-<div class="stats-bar">
-  <div class="stats-container">
-    <!-- 페이즈1: 타이틀 -->
-    <div class="stats-phase" id="stats-phase1">
-      <div class="stats-title" id="stats-title">한국카케어전문학원이 걸어온 시간 <span class="kca-years"></span>년</div>
+<section class="sec" id="reviews"><div class="wrap">
+  <div class="sh"><span class="tag">REVIEWS · FAQ</span><h2>후기와 자주 묻는 질문</h2></div>
+  <div class="two">
+    <div style="display:grid;gap:20px">
+      <a class="rv" href="https://www.youtube.com/watch?v=6-z24ajO4S8" target="_blank" rel="noopener"><div class="im"><img src="images/articles/blog_youtube.jpg" alt="수강생 인터뷰 영상" loading="lazy"><i>▶ 영상 보기</i></div><div class="bd"><small>YOUTUBE</small><h4>한국카케어전문학원 수강생 인터뷰 — 영상 후기</h4></div></a>
+      <a class="rv" href="https://blog.naver.com/heesuk7273/223773998603" target="_blank" rel="noopener"><div class="bd"><small>네이버 블로그 · 2025.02.26</small><h4>세차창업, 직접 배워보니 달랐다! 스팀세차·광택 교육생 리얼 후기 →</h4></div></a>
     </div>
-    <!-- 페이즈2: 시간 -->
-    <div class="stats-phase" id="stats-phase2">
-      <div class="stat-number stat-clock" id="stats-clock">
-        <span class="dial-group clock-unit" data-clock="1"><span id="dial-days" class="dial-static">0</span><small>일</small></span>
-        <span class="dial-group clock-unit" data-clock="2"><span class="dial" id="dh1"></span><span class="dial" id="dh0"></span><small>시간</small></span>
-        <span class="dial-group clock-unit" data-clock="3"><span class="dial" id="dm1"></span><span class="dial" id="dm0"></span><small>분</small></span>
-        <span class="dial-group clock-unit" data-clock="4"><span class="dial" id="ds1"></span><span class="dial" id="ds0"></span><small>초</small></span>
-      </div>
-    </div>
-    <!-- 페이즈3: 결과물 -->
-    <div class="stats-phase" id="stats-phase3">
-      <div class="stats-row-bottom">
-        <div class="stat-anim" data-order="3">
-          <div class="stat-label">누적 졸업생</div>
-          <div class="stat-number"><span data-count="3410" data-stat="graduates">0</span><small class="stat-unit">명</small></div>
-        </div>
-        <div class="stat-anim" data-order="4">
-          <div class="stat-label">협력업체</div>
-          <div class="stat-number"><span data-count="102" data-stat="partners">0</span><small class="stat-unit">곳</small></div>
-        </div>
-        <div class="stat-anim" data-order="5">
-          <div class="stat-label">강사 평균 경력</div>
-          <div class="stat-number"><span data-count="15">0</span><small class="stat-unit">년</small></div>
-        </div>
-      </div>
+    <div>
+      <details open><summary>초보자도 수강 가능한가요?</summary><p>네, 모든 교육과정은 기초부터 시작합니다. 자동차에 대한 사전 지식이나 경험이 없어도 충분히 수강 가능합니다.</p></details>
+      <details><summary>내일배움카드는 어떻게 발급받나요?</summary><p>HRD-Net(직업훈련포털)에서 온라인으로 신청하거나, 가까운 고용센터를 방문하시면 됩니다. 발급까지 약 1~2주 소요됩니다.</p></details>
+      <details><summary>배운 기술로 창업할 수 있나요?</summary><p>네, 많은 수료생들이 자동차 외장관리 사업을 운영하고 있습니다. 카케어협동조합 네트워크를 통해 수료 후에도 지속적인 지원을 받으실 수 있습니다.</p></details>
+      <details><summary>학원 위치는 어디인가요?</summary><p>경기도 수원시 권선구 온정로 46에 위치해 있습니다. 주차 공간이 마련되어 있습니다.</p></details>
+      <details><summary>수업 일정은 어떻게 되나요?</summary><p>과정별 운영 여부와 일정은 변동될 수 있습니다. 자세한 내용은 전화로 문의해 주세요.</p></details>
     </div>
   </div>
-</div>
+</div></section>
 
-<!-- ===== 학원소개 ===== -->
-<section id="about" class="sec sec--about">
-  <div class="container">
-    <div class="about-grid">
-      <div class="about-img">
-      </div>
-      <div class="about-text">
-        <span class="about-tag">SINCE 2012</span>
-        <h2>왜 한국카케어전문학원인가?<br><span class="kca-graduates">3,410</span>명이 선택한 이유</h2>
-        <p><strong>한국카케어전문학원은 2012년 개원한 국내 최초 국비지원 자동차 외장관리 전문 교육기관입니다.</strong></p>
-        <p>고용노동부 정식 승인을 받아 내일배움카드로 교육비를 지원받고 배울 수 있습니다. 평균 경력 15년 이상의 현업 강사진이 이론이 아닌 <span class="kw">실차 실습</span> 중심으로 가르칩니다.</p>
-        <p>수료 후에도 카케어협동조합 102곳 네트워크를 통해 창업·취업·기술 교류가 이어집니다.</p>
-      </div>
-    </div>
-
-  </div>
-</section>
-
-
-<!-- ===== 교육분야 ===== -->
-<!-- ===== Photo Strip ===== -->
-<div class="photo-strip">
-  <div class="photo-strip-header"></div>
-  <div class="photo-strip-track">
-    <img src="images/gallery/DSC05598.webp" alt="실습 현장" loading="lazy">
-    <img src="images/gallery/DSC05634.webp" alt="실습 현장" loading="lazy">
-    <img src="images/gallery/DSC05650.webp" alt="실습 현장" loading="lazy">
-    <img src="images/gallery/DSC05654.webp" alt="실습 현장" loading="lazy">
-    <img src="images/gallery/DSC05541.webp" alt="실습 현장" loading="lazy">
-    <img src="images/gallery/DSC05284.webp" alt="실습 현장" loading="lazy">
-    <!-- 무한 루프용 복사 -->
-    <img src="images/gallery/DSC05598.webp" alt="실습 현장" loading="lazy">
-    <img src="images/gallery/DSC05634.webp" alt="실습 현장" loading="lazy">
-    <img src="images/gallery/DSC05650.webp" alt="실습 현장" loading="lazy">
-    <img src="images/gallery/DSC05654.webp" alt="실습 현장" loading="lazy">
-    <img src="images/gallery/DSC05541.webp" alt="실습 현장" loading="lazy">
-    <img src="images/gallery/DSC05284.webp" alt="실습 현장" loading="lazy">
-  </div>
-  <div class="photo-strip-footer">
-    
-  </div>
-</div>
-
-<!-- ===== 게시글 ===== -->
-<section class="posts-sec" id="reviews">
-  <div class="container">
-    <div class="sec-center">
-      <h2 class="sec-title">교육생 후기</h2>
-      <p class="sec-desc">실제 수강생들이 직접 전하는 이야기입니다</p>
-    </div>
-    <div class="posts-grid">
-      <div class="post-card post-card--video post-card--featured" data-youtube="6-z24ajO4S8">
-        <div class="post-thumb post-thumb--video">
-          <img src="images/articles/blog_youtube.jpg" alt="한국카케어전문학원 유튜브 후기" loading="lazy">
-          <div class="post-play">▶</div>
-        </div>
-        <div class="post-body">
-          <span class="post-tag post-tag--red">유튜브 영상</span>
-          <p class="post-title">한국카케어전문학원 수강생 인터뷰 — 영상 후기</p>
-          <p class="post-desc">수강생이 직접 카메라 앞에서 말하는 교육 경험과 수료 후 변화.</p>
-          <div class="post-meta">
-            <span class="post-meta-source">YouTube</span>
-          </div>
-        </div>
-      </div>
-      <div class="posts-side">
-        <a href="https://blog.naver.com/heesuk7273/223773998603" target="_blank" rel="noopener" class="post-card">
-          <div class="post-thumb">
-            <img src="images/articles/blog_review.png" alt="세차창업 교육생 리얼 후기" loading="lazy">
-          </div>
-          <div class="post-body">
-            <span class="post-tag">수강생 후기</span>
-            <p class="post-title">세차창업, 직접 배워보니 달랐다! 스팀세차·광택 교육생 리얼 후기</p>
-            <p class="post-desc">벤츠 서비스센터 출신 교육생이 직접 말하는 교육 후기. 스팀세차부터 광택까지 실습 중심으로 배우고 "진짜 또 하고 싶다"고 한 이유가 뭔지, 솔직하게 풀어낸 글입니다.</p>
-            <div class="post-meta">
-              <span class="post-meta-source">네이버 블로그</span>
-              <span>·</span>
-              <span>2025.02.26</span>
-            </div>
-          </div>
-        </a>
-      </div>
-    </div>
-    <div class="posts-more">
-      <a href="https://blog.naver.com/heesuk7273" target="_blank" rel="noopener">후기 더보기 →</a>
-    </div>
-  </div>
-</section>
-
-<!-- ===== 국비지원 ===== -->
-<section class="gov-sec">
-  <div class="container">
-    <h2 class="sec-title">교육비의 절반, 국가가 부담합니다</h2>
-    <p class="sec-desc">내일배움카드 하나면 됩니다</p>
-
-    <div class="gov-steps">
-      <div class="gov-step">
-        <div class="gov-step-num">1</div>
-        <strong>카드 발급</strong>
-        <small>HRD-Net · 고용센터</small>
-      </div>
-      <div class="gov-step">
-        <div class="gov-step-num">2</div>
-        <strong>과정 선택</strong>
-        <small>원하는 교육분야 선택</small>
-      </div>
-      <div class="gov-step">
-        <div class="gov-step-num">3</div>
-        <strong>수강 시작</strong>
-        <small>과정별 40~70% 지원</small>
-      </div>
-    </div>
-
-    <div class="gov-features">
-      <div class="gov-feature">고용노동부 정식 승인</div>
-      <div class="gov-feature">재직자·구직자 모두 대상</div>
-      <div class="gov-feature" id="gov-max-support">과정별 지원율 전화 문의</div>
-    </div>
-
-    <div class="gov-certs">
-      <div class="gov-cert">
-        <img src="images/logo-moel.webp" alt="고용노동부" class="gov-cert-logo" style="width:44px;height:44px">
-        <div class="gov-cert-text">
-          <strong>고용노동부</strong>
-          <span>정식 승인 훈련기관</span>
-        </div>
-      </div>
-      <div class="gov-cert">
-        <img src="images/logo-hrdk.svg" alt="한국산업인력공단" class="gov-cert-logo" style="width:74px;height:74px">
-        <div class="gov-cert-text">
-          <strong>한국산업인력공단</strong>
-          <span>HRD Korea 인증</span>
-        </div>
-      </div>
-      <div class="gov-cert">
-        <img src="images/logo-goe.webp" alt="수원교육지원청" class="gov-cert-logo">
-        <div class="gov-cert-text">
-          <strong>수원교육지원청</strong>
-          <span>직업체험 교육 협력</span>
-        </div>
-      </div>
-      <div class="gov-cert">
-        <img src="images/logo-moel.webp" alt="국가보훈부·법무부" class="gov-cert-logo">
-        <div class="gov-cert-text">
-          <strong>국가보훈부 · 법무부</strong>
-          <span>보훈·사회복귀 교육 위탁</span>
-        </div>
-      </div>
-    </div>
-
-  </div>
-</section>
-
-<!-- ===== 모집과정 ===== -->
-<section id="schedule" class="sec">
-  <div class="container">
-    <div class="sec-center">
-      <h2 class="sec-title">교육과정 안내</h2>
-      <p class="sec-desc">운영 여부와 세부 일정은 학원에 직접 확인해 주세요.</p>
-    </div>
-
-    <!-- KCA-SCHEDULE-START -->
+<section class="sec courses" id="courses">
+  <div class="wrap">
+    <div class="sh"><span class="tag">COURSES</span><h2>교육과정 안내</h2><p>운영 여부와 세부 일정은 학원에 직접 확인해 주세요.</p></div>
     <div class="course-list">
-      <div class="course-item">
-        <div class="c-main" onclick="location.href='#check'">
-          <div class="c-thumb">
-            <img src="images/8blosoHiL8jyAnPAr9bdNurbk.webp" alt="자동차광택코팅+디테일링스팀세차과정" loading="lazy">
-          </div>
-          <div class="c-body">
-            <div class="c-center">
-              <strong class="c-name">자동차광택코팅+디테일링스팀세차과정</strong>
-            <p class="c-desc">스월·스크래치 제거 후 유리막·세라믹 코팅으로 도장면을 보호합니다.</p>
-            </div>
-          </div>
+      <div class="course-item" data-course="광택">
+        <div class="c-main">
+          <div class="c-thumb"><img src="images/8blosoHiL8jyAnPAr9bdNurbk.webp" alt="자동차광택코팅+디테일링스팀세차과정" loading="lazy"></div>
+          <div class="c-body"><strong class="c-name">자동차광택코팅+디테일링스팀세차과정</strong><p class="c-desc">스월·스크래치 제거 후 유리막·세라믹 코팅으로 도장면을 보호합니다.</p><div class="c-dates"></div></div>
         </div>
-        <div class="c-action">
-          <a href="#check" class="c-btn c-btn--active">전화 상담</a>
-        </div>
+        <div class="c-action c-action--one"><a href="tel:01025198585" class="c-btn">☎ 전화 상담</a></div>
       </div>
-      <div class="course-item">
-        <div class="c-main" onclick="location.href='#check'">
-          <div class="c-thumb">
-            <img src="images/dent_01.webp" alt="자동차 덴트복원 실습" loading="lazy">
-          </div>
-          <div class="c-body">
-            <div class="c-center">
-              <strong class="c-name">자동차덴트복원 입문과정</strong>
-            <p class="c-desc">도장 없이 찌그러진 패널을 원상복원하는 PDR 무도장 기술입니다.</p>
-            </div>
-          </div>
+      <div class="course-item" data-course="덴트">
+        <div class="c-main">
+          <div class="c-thumb"><img src="images/dent_01.webp" alt="자동차덴트복원 입문과정" loading="lazy"></div>
+          <div class="c-body"><strong class="c-name">자동차덴트복원 입문과정</strong><p class="c-desc">도장 없이 찌그러진 패널을 원상복원하는 PDR 무도장 기술입니다.</p><div class="c-dates"></div></div>
         </div>
-        <div class="c-action">
-          <a href="#check" class="c-btn c-btn--active">전화 상담</a>
-        </div>
+        <div class="c-action c-action--one"><a href="tel:01025198585" class="c-btn">☎ 전화 상담</a></div>
       </div>
-      <div class="course-item">
-        <div class="c-main" onclick="location.href='#check'">
-          <div class="c-thumb">
-            <img src="images/wrapping_01.webp" alt="자동차랩핑 입문과정" loading="lazy">
-          </div>
-          <div class="c-body">
-            <div class="c-center">
-              <strong class="c-name">자동차랩핑 입문과정</strong>
-            <p class="c-desc">컬러 필름으로 차량 외관 색상을 바꾸는 랩핑 전문 기술을 배웁니다.</p>
-            </div>
-          </div>
+      <div class="course-item" data-course="랩핑">
+        <div class="c-main">
+          <div class="c-thumb"><img src="images/wrapping_01.webp" alt="자동차랩핑 입문과정" loading="lazy"></div>
+          <div class="c-body"><strong class="c-name">자동차랩핑 입문과정</strong><p class="c-desc">컬러 필름으로 차량 외관 색상을 바꾸는 랩핑 전문 기술을 배웁니다.</p><div class="c-dates"></div></div>
         </div>
-        <div class="c-action">
-          <a href="#check" class="c-btn c-btn--active">전화 상담</a>
-        </div>
+        <div class="c-action c-action--one"><a href="tel:01025198585" class="c-btn">☎ 전화 상담</a></div>
       </div>
-      <div class="course-item">
-        <div class="c-main" onclick="location.href='#check'">
-          <div class="c-thumb">
-            <img src="images/uhDjjwfYVz7sMhXkQ1jvadNWrhQ.webp" alt="자동차썬팅과정" loading="lazy">
-          </div>
-          <div class="c-body">
-            <div class="c-center">
-              <strong class="c-name">자동차썬팅과정</strong>
-            <p class="c-desc">자외선·열 차단 필름을 정밀 패턴 커팅으로 유리에 시공합니다.</p>
-            </div>
-          </div>
+      <div class="course-item" data-course="썬팅">
+        <div class="c-main">
+          <div class="c-thumb"><img src="images/uhDjjwfYVz7sMhXkQ1jvadNWrhQ.webp" alt="자동차썬팅과정" loading="lazy"></div>
+          <div class="c-body"><strong class="c-name">자동차썬팅과정</strong><p class="c-desc">자외선·열 차단 필름을 정밀 패턴 커팅으로 유리에 시공합니다.</p><div class="c-dates"></div></div>
         </div>
-        <div class="c-action">
-          <a href="#check" class="c-btn c-btn--active">전화 상담</a>
-        </div>
+        <div class="c-action c-action--one"><a href="tel:01025198585" class="c-btn">☎ 전화 상담</a></div>
       </div>
     </div>
-    <!-- KCA-SCHEDULE-END -->
+    <div class="consult">
+      <div class="consult-txt">
+        <span class="tag">수강 상담 · 신청</span>
+        <h3>문자로 문의하고, 고용24에서 바로 신청하세요</h3>
+        <p>궁금한 점은 문자로 남겨주시면 연락드려요. 국비지원 수강신청은 고용24에서 진행됩니다.</p>
+      </div>
+      <div class="consult-btns">
+        <a href="sms:01025198585" class="c-btn c-btn--sms" id="sms">✉ 문자 남기기<small>문의 내용 남기면 연락드려요</small></a>
+        <a href="https://www.work24.go.kr" target="_blank" rel="noopener" class="c-btn c-btn--apply">수강신청<small>고용24 바로가기 ↗</small></a>
+      </div>
+    </div>
+    </div>
   </div>
 </section>
 
-<!-- ===== 국비지원 대상 확인 ===== -->
-<section class="check-sec" id="check">
-  <div class="container">
-    <div class="sec-center">
-      <h2 class="check-title">수강 상담</h2>
-      <p class="check-desc">과정과 교육 일정은 전화로 문의해 주세요.</p>
-      <a href="tel:01025198585" class="check-tel">☎ 010-2519-8585</a>
+<section class="sec" id="support">
+  <div class="wrap">
+    <div class="sh"><span class="tag">SUPPORT</span><h2>교육비의 절반, 국가가 부담합니다</h2><p>내일배움카드 하나면 됩니다.</p></div>
+    <div class="gov">
+      <div class="gbox hl"><span class="tag">국비 지원율</span><div class="pct">40~70%</div><p style="color:var(--s)">과정별 지원율이 다르며, 정확한 금액은 전화로 안내해 드립니다. 재직자·구직자 모두 대상입니다.</p></div>
+      <div class="gbox"><span class="tag">수료 후 지원</span><h3>배우고 끝이 아닙니다</h3>
+        <div class="net"><span><b>카케어협동조합 네트워크</b>로<br>수료 후에도 창업·취업·기술 교류가 계속 이어집니다</span></div>
+        <div class="after">
+          <div><strong>창업 컨설팅</strong><span>외장관리 사업 시작을 함께 준비</span></div>
+          <div><strong>취업</strong><span>협동조합 네트워크로 연결</span></div>
+          <div><strong>자재 공급</strong><span>시공에 필요한 자재 지원</span></div>
+          <div><strong>기술 교류</strong><span>현장 기술을 계속 나누는 모임</span></div>
+        </div>
+        <a href="tel:01025198585" class="ask">수료 후 진로가 궁금하다면 <b>☎ 010-2519-8585</b></a>
+      </div>
     </div>
   </div>
 </section>
 
 
-<!-- ===== FAQ ===== -->
-<section id="faq" class="sec">
-  <div class="container">
-    <div class="sec-center">
-      <h2 class="sec-title">자주 묻는 질문</h2>
-      <p class="sec-desc">궁금한 점은 전화(010-2519-8585)로 편하게 문의하세요</p>
+<section class="cta" id="contact">
+  <div class="wrap">
+    <div class="cta-info">
+      <span class="tag">CONTACT</span><h2>수강 상담</h2>
+      <p>과정을 고르고 연락처를 남겨주시면 학원에서 연락드려요.<br>바로 통화를 원하시면 전화 주세요.</p>
+      <a href="tel:01025198585" class="tel">☎ <span>010-2519-8585</span></a>
+      <div class="addr">경기도 수원시 권선구 온정로 46 · Fax 031-294-3117</div>
     </div>
-
-    <div class="faq-list">
-      <div class="faq-item">
-        <div class="faq-q">초보자도 수강 가능한가요?<span class="faq-icon">&#9662;</span></div>
-        <div class="faq-a"><div class="faq-a-inner">네, 모든 교육과정은 기초부터 시작합니다. 자동차에 대한 사전 지식이나 경험이 없어도 충분히 수강 가능합니다. 실습 중심으로 진행되므로 처음 접하는 분들도 빠르게 적응하고 있습니다.</div></div>
+    <form class="ask-form" id="askForm" novalidate>
+      <label class="f-lab">관심 과정 <i>*</i></label>
+      <div class="chips-sel" data-name="course">
+        <button type="button" data-v="광택·디테일링">광택·디테일링</button>
+        <button type="button" data-v="덴트복원">덴트복원</button>
+        <button type="button" data-v="랩핑">랩핑</button>
+        <button type="button" data-v="썬팅">썬팅</button>
+        <button type="button" data-v="아직 모르겠어요">아직 모르겠어요</button>
       </div>
-      <div class="faq-item">
-        <div class="faq-q">내일배움카드는 어떻게 발급받나요?<span class="faq-icon">&#9662;</span></div>
-        <div class="faq-a"><div class="faq-a-inner">HRD-Net(직업훈련포털)에서 온라인으로 신청하거나, 가까운 고용센터를 방문하시면 됩니다. 발급까지 약 1~2주 소요됩니다. 자세한 절차가 궁금하시면 전화(010-2519-8585)로 문의해주세요.</div></div>
+      <label class="f-lab">희망 반</label>
+      <div class="chips-sel" data-name="cls">
+        <button type="button" data-v="평일반">평일반</button>
+        <button type="button" data-v="주말반">주말반</button>
+        <button type="button" data-v="상관없음">상관없음</button>
       </div>
-      <div class="faq-item">
-        <div class="faq-q">배운 기술로 창업할 수 있나요?<span class="faq-icon">&#9662;</span></div>
-        <div class="faq-a"><div class="faq-a-inner">네, 많은 수료생들이 자동차 외장관리 사업을 운영하고 있습니다. 카케어협동조합 네트워크를 통해 창업 컨설팅, 자재 공급, 기술 교류 등 수료 후에도 지속적인 지원을 받으실 수 있습니다.</div></div>
+      <div class="f-row">
+        <div><label class="f-lab" for="fName">성함</label><input id="fName" name="name" type="text" placeholder="홍길동" autocomplete="name"></div>
+        <div><label class="f-lab" for="fTel">연락처 <i>*</i></label><input id="fTel" name="tel" type="tel" inputmode="numeric" placeholder="010-0000-0000" autocomplete="tel" required></div>
       </div>
-      <div class="faq-item">
-        <div class="faq-q">학원 위치는 어디인가요?<span class="faq-icon">&#9662;</span></div>
-        <div class="faq-a"><div class="faq-a-inner">경기도 수원시 권선구 온정로 46에 위치해 있습니다. 주차 공간이 마련되어 있으며, 정확한 교통편은 상담 시 안내드립니다.</div></div>
+      <label class="f-lab" for="fMsg">궁금한 점</label>
+      <textarea id="fMsg" name="msg" rows="3" placeholder="예) 내일배움카드가 아직 없는데 수강할 수 있나요?"></textarea>
+      <input type="text" name="website" id="fWeb" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute;left:-9999px;width:1px;height:1px">
+      <label class="f-agree"><input type="checkbox" id="fAgree"> 상담을 위한 개인정보(성함·연락처) 수집·이용에 동의합니다. <small>상담 목적으로만 사용하며 상담 후 파기합니다.</small></label>
+      <p class="f-err" id="fErr" hidden></p>
+      <button type="submit" class="f-send">상담 문자 남기기</button>
+      <div class="f-done" id="fDone" hidden>
+        <strong>접수되었습니다 ✓</strong>
+        <span>학원에서 남겨주신 번호로 연락드릴게요.</span>
+        <pre id="fPreview"></pre>
       </div>
-      <div class="faq-item">
-        <div class="faq-q">수업 일정은 어떻게 되나요?<span class="faq-icon">&#9662;</span></div>
-        <div class="faq-a"><div class="faq-a-inner">과정별 운영 여부와 일정은 변동될 수 있습니다. 자세한 내용은 학원에 전화로 문의해 주세요.</div></div>
-      </div>
-    </div>
+    </form>
   </div>
 </section>
 
-<!-- ===== Footer ===== -->
 <footer>
-  <div class="footer-inner">
-    <div class="footer-grid">
-      <div class="footer-brand">
-        <strong>한국카케어전문학원</strong>
-        <p>대표자 : 김현아 | 사업자번호 : 409-91-76137</p>
-        <p>Tel : <a href="tel:01025198585">010-2519-8585</a> | Fax : 031-294-3117</p>
-        <p>경기도 수원시 권선구 온정로 46</p>
-        <p>sooahzion@naver.com</p>
-      </div>
-      <div class="footer-col">
-        <h4>학원안내</h4>
-        <a href="#about">학원 소개</a>
-        <a href="#schedule">교육과정</a>
-        <a href="#check">전화 상담</a>
-        <a href="#faq">자주 묻는 질문</a>
-      </div>
-      <div class="footer-col">
-        <h4>소셜</h4>
-        <a href="https://blog.naver.com/heesuk7273" target="_blank" rel="noopener">네이버 블로그</a>
-        <a href="https://www.instagram.com/koreacarcare/" target="_blank" rel="noopener">인스타그램</a>
-      </div>
-    </div>
-    <div class="footer-bottom"><div class="footer-copy">&copy; 2026 한국카케어전문학원. All rights reserved.</div></div>
+  <div class="wrap">
+    <div><strong>한국카케어전문학원</strong>대표자 : 김현아 | 사업자번호 : 409-91-76137 | sooahzion@naver.com<br>© 2026 한국카케어전문학원. All rights reserved.</div>
+    <nav><a href="https://blog.naver.com/heesuk7273" target="_blank" rel="noopener">네이버 블로그</a><a href="https://www.instagram.com/koreacarcare/" target="_blank" rel="noopener">인스타그램</a></nav>
   </div>
 </footer>
 
+<script src="js/sheet.js"></script>
+<script>
+kcaSchedule(function (d) {
+  var NAMES = { 광택: '광택·디테일링', 덴트: '덴트복원', 랩핑: '랩핑', 썬팅: '썬팅' };
+  var n = d.list.filter(function (x) { return !x.ongoing; })[0] || d.list[0], nx = document.querySelector('#next .nx');
+  if (n) { nx.querySelector('b').textContent = d.fmt(n.start); nx.querySelector('span').textContent = NAMES[n.course] + ' ' + (n.cls || ''); }
+  else { nx.querySelector('b').textContent = '전화 문의'; nx.querySelector('span').textContent = '010-2519-8585'; }
+  // 평일반 | 주말반 두 칸 — 일정 없는 반은 "일정 문의" (기존 홈페이지와 같은 표시)
+  function slot(label, mod, it) {
+    var tag = it && it.ongoing ? '<em>진행 중</em>' : '';
+    return '<div class="c-slot c-slot--' + mod + (it ? '' : ' c-slot--none') + '"><span class="c-cls">' + label + tag + '</span>' +
+      (it ? '<span class="c-start">' + d.fmt(it.start) + '</span><span class="c-end">' + (it.end ? '~ ' + d.fmt(it.end) : '개강') + '</span>'
+          : '<span class="c-start">일정 문의</span><span class="c-end">&nbsp;</span>') + '</div>';
+  }
+  document.querySelectorAll('.course-item').forEach(function (c) {
+    var b = d.by[c.dataset.course];
+    c.querySelector('.c-dates').innerHTML = slot('평일반', 'weekday', b['평일반']) + slot('주말반', 'weekend', b['주말반']);
+  });
+});
 
+// 문자 남기기 — 휴대폰: 과정명을 채운 문자창 열기 / PC: 번호 안내
+(function () {
+  var ua = navigator.userAgent, mobile = /Android|iPhone|iPad|iPod/i.test(ua), ios = /iPhone|iPad|iPod/i.test(ua);
+  document.querySelectorAll('.c-btn--sms').forEach(function (a) {
+    var item = a.closest('.course-item'), name = item ? item.querySelector('.c-name').textContent : '';
+    var body = '[한국카케어전문학원 수강 문의]\n과정: ' + name + '\n희망 반(평일/주말): \n성함: \n궁금한 점: ';
+    a.href = 'sms:01025198585' + (ios ? '&' : '?') + 'body=' + encodeURIComponent(body);
+    if (!mobile) a.addEventListener('click', function (e) {
+      e.preventDefault();
+      var box = a.parentNode.querySelector('.pc');
+      if (!box) { box = document.createElement('div'); box.className = 'c-btn pc'; box.innerHTML = '문자는 휴대폰에서 <b>010-2519-8585</b>로 보내주세요'; a.parentNode.appendChild(box); }
+    });
+  });
+})();
 
-<script src="js/courses.js?v=2"></script>
-<script src="js/clock.js?v=1"></script>
-<script src="js/stats.js?v=1"></script>
-<script src="js/faq-nav.js?v=1"></script>
-
-<script src="js/scroll.js?v=2"></script>
-<script src="js/schedule-sheet.js?v=1"></script>
-
-
+// 수강 상담 접수 — KCA_FORM_URL 에 Apps Script 웹 앱 주소(상담접수/Code.gs)를 넣으면 시트 저장 + 학원 휴대폰 문자 발송
+// 비워두면: 휴대폰은 문자 앱으로 학원에 직접 전송, PC는 전화 안내
+var KCA_FORM_URL = '';
+(function () {
+  var f = document.getElementById('askForm'), err = document.getElementById('fErr');
+  f.querySelectorAll('.chips-sel').forEach(function (g) {
+    g.addEventListener('click', function (e) {
+      var b = e.target.closest('button'); if (!b) return;
+      g.querySelectorAll('button').forEach(function (x) { x.classList.toggle('on', x === b); });
+    });
+  });
+  var tel = document.getElementById('fTel');
+  tel.addEventListener('input', function () {
+    var d = tel.value.replace(/\D/g, '').slice(0, 11);
+    tel.value = d.length > 7 ? d.replace(/(\d{3})(\d{3,4})(\d{4})/, '$1-$2-$3') : d.length > 3 ? d.slice(0, 3) + '-' + d.slice(3) : d;
+  });
+  function pick(n) { var b = f.querySelector('[data-name="' + n + '"] .on'); return b ? b.dataset.v : ''; }
+  f.addEventListener('submit', function (e) {
+    e.preventDefault();
+    var course = pick('course'), cls = pick('cls'), num = tel.value.replace(/\D/g, '');
+    var msg = !course ? '관심 과정을 선택해 주세요.' : !/^01\d{8,9}$/.test(num) ? '연락처를 정확히 입력해 주세요.' : !document.getElementById('fAgree').checked ? '개인정보 수집·이용에 동의해 주세요.' : '';
+    err.hidden = !msg; err.textContent = msg; if (msg) return;
+    var data = { course: course, cls: cls || '-', name: document.getElementById('fName').value.trim() || '-', tel: tel.value, msg: document.getElementById('fMsg').value.trim() || '-', website: document.getElementById('fWeb').value };
+    var text = '[홈페이지 수강 상담]\n과정: ' + data.course + '\n희망 반: ' + data.cls + '\n성함: ' + data.name + '\n연락처: ' + data.tel + '\n문의: ' + data.msg;
+    var done = document.getElementById('fDone');
+    if (KCA_FORM_URL) {
+      fetch(KCA_FORM_URL, { method: 'POST', mode: 'no-cors', body: JSON.stringify(data) }).catch(function () {});
+      document.getElementById('fPreview').textContent = text;
+    } else if (/Android|iPhone|iPad|iPod/i.test(navigator.userAgent)) {
+      // 온라인 접수 연결 전: 휴대폰 문자 앱으로 학원에 바로 보내기
+      location.href = 'sms:01025198585' + (/iPhone|iPad|iPod/i.test(navigator.userAgent) ? '&' : '?') + 'body=' + encodeURIComponent(text);
+      done.querySelector('strong').textContent = '문자 앱에서 전송 버튼을 눌러주세요';
+      done.querySelector('span').textContent = '문자를 보내주시면 학원에서 남겨주신 번호로 연락드릴게요.';
+      document.getElementById('fPreview').textContent = text;
+    } else {
+      done.querySelector('strong').textContent = '아래 번호로 연락 주세요';
+      done.querySelector('span').textContent = '온라인 접수는 준비 중입니다. 010-2519-8585로 전화나 문자 주시면 바로 안내해 드립니다.';
+      document.getElementById('fPreview').textContent = text;
+    }
+    done.hidden = false;
+    if (KCA_FORM_URL) f.querySelector('.f-send').hidden = true;
+  });
+})();
+</script>
 </body>
 </html>
