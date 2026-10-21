@@ -466,7 +466,7 @@ document.getElementById('toForm').addEventListener('click', function (e) {
 
 // 수강 상담 접수 — KCA_FORM_URL 에 Apps Script 웹 앱 주소(상담접수/Code.gs)를 넣으면 시트 저장 + 학원 휴대폰 문자 발송
 // 비워두면: 휴대폰은 문자 앱으로 학원에 직접 전송, PC는 전화 안내
-var KCA_FORM_URL = '';
+var KCA_FORM_URL = 'https://script.google.com/macros/s/AKfycbybl4KWUZN8bAyHH21yEy4RUeDdJBV03zYc1Vj1mk-ndg4K8h31NcqEBcpEByv6q4kWGg/exec';
 (function () {
   var f = document.getElementById('askForm'), err = document.getElementById('fErr');
   f.querySelectorAll('.chips-sel').forEach(function (g) {
