@@ -256,6 +256,151 @@ footer nav a:hover{color:var(--g)}
   .f-row{grid-template-columns:1fr}
   .sec{padding:80px 0}
 }
+/* ═══ 과정 소개 — 펼치는 카드 ═══ */
+.acc{display:flex;gap:12px;height:680px;margin-bottom:24px}
+.acc-item{position:relative;flex:1 1 0;min-width:0;border-radius:14px;overflow:hidden;background:var(--k);cursor:pointer;transition:flex .6s cubic-bezier(.2,.8,.2,1),box-shadow .3s;outline:none}
+.acc-item:hover{box-shadow:0 16px 36px rgba(18,19,20,.18)}
+.acc-item:focus-visible{box-shadow:0 0 0 3px var(--g2)}
+.acc.open .acc-item{flex:.55}
+.acc.open .acc-item.on{flex:6;cursor:default}
+/* 카드 앞면 */
+.face{position:absolute;inset:0;background:linear-gradient(180deg,rgba(18,19,20,.05) 30%,rgba(18,19,20,.88)),var(--img) center/cover;transition:opacity .35s}
+.face .no{position:absolute;left:20px;top:16px;font-family:var(--bebas);font-size:34px;color:#fff;letter-spacing:.04em}
+.face-txt{position:absolute;left:22px;right:22px;bottom:24px;color:#fff;transition:opacity .25s}
+.face-txt small{font-family:var(--bebas);font-size:15px;letter-spacing:.2em;color:var(--g2)}
+.face-txt h3{font-size:20px;font-weight:900;line-height:1.35;letter-spacing:-.03em;margin:6px 0 8px}
+.face-txt p{font-size:13.5px;color:#d5d7da;line-height:1.55}
+.face-txt .more{display:inline-block;margin-top:14px;font-size:13px;font-weight:700;padding:7px 14px;border:1px solid rgba(255,255,255,.5);border-radius:999px;transition:.2s}
+.acc-item:hover .more{background:var(--gg);border-color:transparent;color:#111}
+.vlabel{position:absolute;left:50%;bottom:28px;transform:translateX(-50%);writing-mode:vertical-rl;text-orientation:upright;color:#fff;font-weight:900;font-size:16px;letter-spacing:.08em;white-space:nowrap;opacity:0;transition:opacity .3s}
+.acc.open .acc-item:not(.on) .face-txt{opacity:0}
+.acc.open .acc-item:not(.on) .vlabel{opacity:1}
+.acc.open .acc-item:not(.on) .no{left:50%;transform:translateX(-50%)}
+.acc.open .acc-item:not(.on):hover .face{filter:brightness(1.15)}
+.acc-item.on .face{opacity:0;pointer-events:none}
+/* 펼친 설명 */
+.detail{position:absolute;inset:0;display:grid;grid-template-columns:40% 1fr;grid-template-rows:minmax(0,1fr);background:var(--w);opacity:0;visibility:hidden;transition:opacity .4s .25s,visibility 0s .6s}
+.acc-item.on .detail{opacity:1;visibility:visible;transition:opacity .45s .3s}
+.d-pics{display:grid;grid-template-rows:1.4fr 1fr;gap:6px;background:var(--w);min-height:0}
+.d-pics img{min-height:0}
+.d-pics img{width:100%;height:100%;object-fit:cover}
+.d-body{padding:34px 40px;overflow:auto;transform:translateY(16px);transition:transform .5s .3s}
+.acc-item.on .d-body{transform:none}
+.d-body h3{font-size:26px;font-weight:900;letter-spacing:-.04em;line-height:1.3;margin:12px 0 6px}
+.d-body .lead{color:var(--s)}
+.d-body h4{font-size:14px;font-weight:900;margin:22px 0 10px;display:flex;align-items:center;gap:8px}
+.d-body h4::before{content:"";width:7px;height:7px;background:var(--g2);transform:rotate(45deg)}
+.d-cols{display:grid;grid-template-columns:1.2fr 1fr;gap:24px}
+.d-body ol{list-style:none;counter-reset:n}
+.d-body ol li{counter-increment:n;position:relative;padding:7px 0 7px 32px;font-size:14.5px;border-bottom:1px dashed var(--sv)}
+.d-body ol li::before{content:counter(n);position:absolute;left:0;top:7px;width:22px;height:22px;border-radius:50%;background:var(--k);color:var(--g2);font-family:var(--bebas);font-size:14px;display:grid;place-items:center;line-height:22px}
+.d-body ul{list-style:none}
+.d-body ul li{padding:7px 0 7px 22px;position:relative;font-size:14.5px;color:var(--s);border-bottom:1px dashed var(--sv)}
+.d-body ul li::before{content:"✓";position:absolute;left:0;color:var(--g);font-weight:900}
+.d-dates{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.ds{background:var(--pearl);border:1px solid var(--sv);border-radius:8px;padding:12px 14px}
+.ds.we{background:var(--gl);border-color:#ecd9a6}
+.ds small{display:flex;justify-content:space-between;font-size:12px;font-weight:700;color:var(--s)}
+.ds small em{font-style:normal;color:var(--g)}
+.ds b{display:block;font-size:17px;margin-top:4px}
+.ds span{font-size:12.5px;color:var(--s)}
+.ds.none{background:var(--pearl);border-color:var(--sv)}
+.ds.none b{font-size:14px;font-weight:500;color:var(--sv3)}
+.d-btns{display:flex;flex-wrap:wrap;gap:8px;margin-top:22px}
+.d-btns .btn{padding:13px 20px}
+.btn--g small{font-weight:500;opacity:.75}
+.btn--w{background:var(--w);border:1.5px solid var(--k);color:var(--k)}
+.close{position:absolute;right:14px;top:12px;z-index:2;width:40px;height:40px;border-radius:50%;border:0;background:var(--k);color:#fff;font-size:22px;line-height:1;cursor:pointer}
+.close:hover{background:var(--g2);color:#111}
+@media (max-width:1100px){.detail{grid-template-columns:34% 1fr}.d-cols{grid-template-columns:1fr;gap:0}}
+@media (max-width:820px){
+  .acc{flex-direction:column;height:auto;gap:10px}
+  .acc-item{flex:none!important;height:200px;transition:height .5s}
+  .acc.open .acc-item:not(.on){height:64px}
+  .acc.open .acc-item:not(.on) .vlabel{writing-mode:horizontal-tb;text-orientation:mixed;transform:translateY(-50%);left:74px;top:50%;bottom:auto}
+  .acc.open .acc-item:not(.on) .no{left:20px;transform:none;top:12px;font-size:28px}
+  .acc-item.on{height:auto}
+  .detail{position:relative;grid-template-columns:1fr;grid-template-rows:auto}
+  .d-pics{grid-template-rows:none;grid-template-columns:1.4fr 1fr;height:200px}
+  .d-body{padding:24px 18px 26px}
+  .d-dates{grid-template-columns:1fr 1fr}
+  .d-btns .btn{flex:1 1 100%}
+}
+.d-btns .btn--g{font-weight:900}
+.d-btns .btn--g small{font-weight:500;opacity:.75}
+
+/* 펼친 카드: 내용 길이만큼 높이가 늘어남 */
+.acc.open{height:auto;min-height:620px}
+.acc-item.on .detail{position:relative;grid-template-rows:auto}
+.acc-item.on .d-body{overflow:visible}
+.acc-item.on .d-pics{grid-template-rows:minmax(260px,1.4fr) minmax(200px,1fr)}
+.detail{grid-template-columns:32% 1fr}
+.d-body{padding:36px 44px 40px}
+.d-period{display:inline-flex;gap:10px;align-items:center;margin:4px 0 12px;padding:7px 14px;background:var(--k);color:#fff;font-size:14px;font-weight:700;border-radius:6px}
+.d-period b{color:var(--g2);font-weight:700}
+.cur-wrap{overflow-x:auto;border:1px solid var(--sv);border-radius:10px}
+.cur{width:100%;border-collapse:collapse;font-size:14px;min-width:520px}
+.cur thead th{white-space:nowrap;background:var(--pearl);font-size:12.5px;font-weight:700;color:var(--s);text-align:left;padding:11px 14px;border-bottom:1px solid var(--sv)}
+.cur tbody th,.cur tfoot th{text-align:left;font-weight:900;white-space:nowrap;padding:13px 14px;vertical-align:top}
+.cur td{padding:13px 14px;color:var(--s);line-height:1.6;vertical-align:top}
+.cur tbody tr+tr th,.cur tbody tr+tr td{border-top:1px solid var(--sv)}
+.cur .days{white-space:nowrap;font-weight:700;color:var(--k);text-align:center}
+.cur tfoot th,.cur tfoot td{background:var(--gl);border-top:2px solid var(--g2);color:var(--k);font-weight:900}
+.cur--2{min-width:440px}
+.feat{display:grid;grid-template-columns:1fr 1fr;gap:6px 18px}
+@media (max-width:820px){
+  .acc.open{min-height:0}
+  .d-body{padding:24px 18px 26px}
+  .feat{grid-template-columns:1fr}
+  .cur{min-width:0}
+  .cur thead{display:none}
+  .cur tr{display:grid;grid-template-columns:1fr auto;padding:12px 14px;border-top:1px solid var(--sv)}
+  .cur tbody tr:first-child{border-top:0}
+  .cur tbody th,.cur tfoot th,.cur td{padding:0;border:0!important}
+  .cur td:last-child{grid-column:1 / -1;margin-top:4px;font-size:13.5px}
+  .cur--2{min-width:0}
+  .cur tfoot tr{background:var(--gl);border-top:2px solid var(--g2)}
+  .cur tfoot th,.cur tfoot td{background:none}
+}
+
+/* 누르기 전: 기존 교육과정 카드 모양 그대로 */
+.acc{height:auto;align-items:stretch}
+.acc.open{min-height:0}
+.acc-item{background:var(--w);border:1px solid var(--sv2);border-radius:0;color:var(--k)}
+.acc-item:hover{border-color:var(--g2);box-shadow:0 14px 34px rgba(18,19,20,.08)}
+.face{position:relative;inset:auto;height:100%;display:flex;flex-direction:column;background:none;filter:none!important}
+.face .c-body{flex:1;display:flex;flex-direction:column;padding:22px 22px 24px}
+.f-more{margin-top:16px;display:flex;align-items:center;justify-content:center;height:46px;background:var(--k);color:#fff;font-size:14px;font-weight:700;transition:.2s}
+.acc-item:hover .f-more{background:var(--gg);color:#111}
+.face .no{display:none}
+.vlabel{display:none}
+/* 펼친 뒤: 나머지 카드는 사진 띠로 */
+.acc.open .acc-item:not(.on){background:var(--k);border-color:var(--k)}
+.acc.open .acc-item:not(.on) .face{position:absolute;inset:0}
+.acc.open .acc-item:not(.on) .c-body{display:none}
+.acc.open .acc-item:not(.on) .c-thumb{position:absolute;inset:0;height:auto;aspect-ratio:auto}
+.acc.open .acc-item:not(.on) .c-thumb::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(18,19,20,.15),rgba(18,19,20,.85))}
+.acc.open .acc-item:not(.on) .no,.acc.open .acc-item:not(.on) .vlabel{display:block;z-index:1}
+.acc.open .acc-item:not(.on):hover .c-thumb img{transform:scale(1.05)}
+.acc-item.on{border-color:var(--g2)}
+.acc-item.on .face{position:absolute;inset:0;opacity:0;pointer-events:none}
+@media (max-width:820px){
+  .acc-item{height:auto!important}
+  .acc.open .acc-item:not(.on){height:64px!important}
+  .detail{grid-template-columns:1fr}
+  .acc-item.on .d-pics{grid-template-rows:none;grid-template-columns:1.4fr 1fr;height:200px}
+}
+
+/* 펼친 카드: 사진은 위에 가로로 크게, 설명은 그 아래로 */
+.acc-item.on .detail{grid-template-columns:1fr;grid-template-rows:auto auto}
+.acc-item.on .d-pics{grid-template-rows:none;grid-template-columns:1.6fr 1fr;height:380px;gap:6px}
+.acc-item.on .d-pics img{height:100%;min-height:0}
+.acc-item.on .d-body{padding:34px 48px 42px}
+.acc-item.on .d-body .lead{max-width:860px}
+@media (max-width:820px){
+  .acc-item.on .d-pics{height:220px;grid-template-columns:1.4fr 1fr}
+  .acc-item.on .d-body{padding:24px 18px 26px}
+}
 </style>
 </head>
 <body>
@@ -332,32 +477,182 @@ footer nav a:hover{color:var(--g)}
 
 <section class="sec courses" id="courses">
   <div class="wrap">
-    <div class="sh"><span class="tag">COURSES</span><h2>교육과정 안내</h2><p>운영 여부와 세부 일정은 학원에 직접 확인해 주세요.</p></div>
-    <div class="course-list">
-      <div class="course-item" data-course="광택">
-        <div class="c-main">
-          <div class="c-thumb"><img src="images/8blosoHiL8jyAnPAr9bdNurbk.webp" alt="자동차광택코팅+디테일링스팀세차과정" loading="lazy"></div>
-          <div class="c-body"><strong class="c-name">자동차광택코팅+디테일링스팀세차과정</strong><p class="c-desc">스월·스크래치 제거 후 유리막·세라믹 코팅으로 도장면을 보호합니다.</p><div class="c-dates"></div></div>
-        </div>
-      </div>
-      <div class="course-item" data-course="덴트">
-        <div class="c-main">
-          <div class="c-thumb"><img src="images/courses/dent.webp" alt="자동차덴트복원 입문과정" loading="lazy"></div>
-          <div class="c-body"><strong class="c-name">자동차덴트복원 입문과정</strong><p class="c-desc">도장 없이 찌그러진 패널을 원상복원하는 PDR 무도장 기술입니다.</p><div class="c-dates"></div></div>
-        </div>
-      </div>
-      <div class="course-item" data-course="랩핑">
-        <div class="c-main">
-          <div class="c-thumb"><img src="images/courses/wrapping.webp" alt="자동차랩핑 입문과정" loading="lazy"></div>
-          <div class="c-body"><strong class="c-name">자동차랩핑 입문과정</strong><p class="c-desc">컬러 필름으로 차량 외관 색상을 바꾸는 랩핑 전문 기술을 배웁니다.</p><div class="c-dates"></div></div>
-        </div>
-      </div>
-      <div class="course-item" data-course="썬팅">
-        <div class="c-main">
-          <div class="c-thumb"><img src="images/courses/tinting.webp" alt="자동차썬팅과정" loading="lazy"></div>
-          <div class="c-body"><strong class="c-name">자동차썬팅과정</strong><p class="c-desc">자외선·열 차단 필름을 정밀 패턴 커팅으로 유리에 시공합니다.</p><div class="c-dates"></div></div>
-        </div>
-      </div>
+    <div class="sh"><span class="tag">COURSES</span><h2>교육과정 안내</h2><p>궁금한 과정을 눌러보세요. 배우는 내용과 개강 일정을 한눈에 볼 수 있어요.</p></div>
+    <div class="acc" id="acc">
+        <article class="acc-item" data-course="광택" id="course-광택" tabindex="0" aria-expanded="false">
+          <div class="face">
+            <div class="c-thumb"><img src="images/8blosoHiL8jyAnPAr9bdNurbk.webp" alt="자동차광택코팅+디테일링스팀세차과정" loading="lazy"></div>
+            <div class="c-body"><strong class="c-name">자동차광택코팅+디테일링스팀세차과정</strong><p class="c-desc">스월·스크래치 제거 후 유리막·세라믹 코팅으로 도장면을 보호합니다.</p><div class="c-dates"></div><span class="f-more">과정 자세히 보기 +</span></div>
+            <span class="no">01</span>
+            <span class="vlabel">광택</span>
+          </div>
+          <div class="detail">
+            <button type="button" class="close" aria-label="닫기">×</button>
+            <div class="d-pics"><img src="images/8blosoHiL8jyAnPAr9bdNurbk.webp" alt="자동차광택코팅 + 디테일링스팀세차과정 실습" loading="lazy"><img src="images/gallery/DSC05634.webp" alt="실습 현장" loading="lazy"></div>
+            <div class="d-body">
+                <span class="tag">COURSE 01</span>
+                <h3>광택코팅 &amp; 디테일링스팀세차과정</h3>
+                <p class="lead">자동차 내·외장 관리에 필요한 전문지식과 실무기술을 습득하고, 현장 중심의 실습교육을 통해 자동차 광택코팅 및 디테일링 전문인력을 양성하는 과정입니다.</p>
+                <h4>주요 교육 커리큘럼</h4>
+                <div class="cur-wrap"><table class="cur cur--2">
+                  <thead><tr><th>교육과목</th><th>주요 교육내용</th></tr></thead>
+                  <tbody>
+                    <tr><th>자동차 광택코팅</th><td>자동차 도장 구조 및 도막 이해, 광택장비·약제 활용, 도장면 상태 진단, 스크래치 제거, 초벌·중벌·마무리 광택 이론 및 실차 실습</td></tr>
+                    <tr><th>디테일링 스팀세차</th><td>디테일링 세차 이론, 스팀장비 사용법, 차량 내·외부 세정, 휠·타이어 관리, 실내 오염 제거 및 실차 중심의 전문 세차 실습</td></tr>
+                    <tr><th>자동차 유리관리</th><td>자동차 유리 오염 진단, 유막 제거, 유리 발수코팅 시공 실습</td></tr>
+                    <tr><th>헤드라이트 복원</th><td>헤드라이트 황변 및 손상 진단, 표면 연마, 투명도 복원 실습</td></tr>
+                    <tr><th>유리막코팅</th><td>유리막코팅제의 특성 이해, 도장면 전처리, 코팅제 도포 및 마무리 실습</td></tr>
+                  </tbody>
+                </table></div>
+                <h4>교육과정 특징</h4>
+                <ul class="feat">
+                  <li>실차 중심의 단계별 실습교육</li>
+                  <li>자동차 내·외장 관리 전문기술 습득</li>
+                  <li>현장 실무능력 및 작업 품질 향상</li>
+                  <li>자동차 디테일링 전문업체 취업 및 창업 역량 강화</li>
+                </ul>
+                <h4>개강 일정</h4>
+              <div class="d-dates"></div>
+              <div class="d-btns">
+                <a href="https://www.work24.go.kr/hr/a/a/1100/trnnCrsInf.do?dghtSe=A&amp;traingMthCd=A&amp;endDate=20271021&amp;trng_prd=A&amp;pageSize=10&amp;startDate_datepicker=2026-10-21&amp;topMenuYn=&amp;tracseId=AIG20240000478461&amp;totamtSuptYn=A&amp;crseTracseSeNum=&amp;keyword=&amp;area=00%7C%EC%A0%84%EA%B5%AD+%EC%A0%84%EC%B2%B4&amp;orderKey=2&amp;kdgLinkYn=&amp;srchType=all_type&amp;crseTracseSe=A%7C%ED%9B%88%EB%A0%A8%EC%9C%A0%ED%98%95+%EC%A0%84%EC%B2%B4&amp;tranRegister=&amp;trng_type=A&amp;mberId=&amp;pageId=2&amp;noTrngPay=Y&amp;endDate_datepicker=2027-10-21&amp;monthGubun=&amp;pageOrder=2ASC&amp;startTrngPay=&amp;startDate=20261021&amp;endTrngPay=&amp;tracseTme=13&amp;keyword1=&amp;keyword2=&amp;orderBy=ASC&amp;currentTab=1&amp;pop=&amp;pageRow=10&amp;ncsSearchKeyword=&amp;keywordTrngNm=%ED%95%9C%EA%B5%AD%EC%B9%B4%EC%BC%80%EC%96%B4%EC%A0%84%EB%AC%B8%ED%95%99%EC%9B%90&amp;keywordType=1&amp;gb=&amp;kDgtlYn=&amp;mberSe=&amp;max_trng=&amp;totTraingTime=A&amp;i2=A&amp;areaSearchKeyword=&amp;programMenuIdentification=EBG020000000310&amp;min_trng=&amp;pageIndex=1&amp;chkNoTrngPay=&amp;bgrlInstYn=&amp;crseTracseSeKDT=&amp;ncs=&amp;gvrnInstt=&amp;selectNCSKeyword=&amp;compareArgArr=&amp;action=trnnCrsInfPost.do" target="_blank" rel="noopener" class="btn btn--g">수강신청 <small>고용24 ↗</small></a>
+                <a href="#contact" class="btn btn--w js-toForm">✉ 문자 상담 남기기</a>
+                <a href="tel:01025198585" class="btn btn--k">☎ 전화 상담</a>
+              </div>
+            </div>
+          </div>
+        </article>
+        <article class="acc-item" data-course="덴트" id="course-덴트" tabindex="0" aria-expanded="false">
+          <div class="face">
+            <div class="c-thumb"><img src="images/courses/dent.webp" alt="자동차덴트복원 입문과정" loading="lazy"></div>
+            <div class="c-body"><strong class="c-name">자동차덴트복원 입문과정</strong><p class="c-desc">도장 없이 찌그러진 패널을 원상복원하는 PDR 무도장 기술입니다.</p><div class="c-dates"></div><span class="f-more">과정 자세히 보기 +</span></div>
+            <span class="no">02</span>
+            <span class="vlabel">덴트</span>
+          </div>
+          <div class="detail">
+            <button type="button" class="close" aria-label="닫기">×</button>
+            <div class="d-pics"><img src="images/courses/dent.webp" alt="자동차덴트복원 입문과정 실습" loading="lazy"><img src="images/gallery/DSC05541.webp" alt="실습 현장" loading="lazy"></div>
+            <div class="d-body">
+                <span class="tag">COURSE 02</span>
+                <h3>자동차덴트복원 입문과정</h3>
+                <h4>교육목표</h4>
+                <p class="lead">자동차 덴트복원의 기본 원리와 작업방법을 이해하고, 덴트 전용장비 및 공구 사용법과 기초 복원 실습을 통해 자동차 외판의 경미한 찌그러짐을 복원하는 기초기술을 습득하는 과정입니다.</p>
+                <h4>주요 교육 커리큘럼</h4>
+                <div class="cur-wrap"><table class="cur cur--2">
+                  <thead><tr><th>교육과목</th><th>주요 교육내용</th></tr></thead>
+                  <tbody>
+                    <tr><th>자동차 덴트복원 기초이론</th><td>덴트복원의 이해, 자동차 외판 구조, 덴트의 종류 및 복원 원리</td></tr>
+                    <tr><th>덴트 장비 및 공구 사용</th><td>덴트라이트, 덴트로드, 펀치, 해머 등 기본 장비 사용법</td></tr>
+                    <tr><th>덴트 손상 진단 기초</th><td>덴트의 형태와 손상 정도 확인, 덴트라이트를 활용한 굴곡 판독</td></tr>
+                    <tr><th>덴트로드 기초 실습</th><td>덴트로드 조작방법, 공구 압력 조절 및 단순 찌그러짐 복원 실습</td></tr>
+                    <tr><th>덴트 복원 실습</th><td>평면 및 완만한 곡면의 경미한 찌그러짐 복원, 하이·로우 조정 기초</td></tr>
+                    <tr><th>마무리 및 품질점검</th><td>복원면 상태 확인, 표면 굴곡 점검 및 작업 결과 평가</td></tr>
+                  </tbody>
+                </table></div>
+                <h4>교육과정 특징</h4>
+                <ul class="feat">
+                  <li>덴트복원 초보자를 위한 기초 중심 교육</li>
+                  <li>덴트 전용장비 및 공구 사용기술 습득</li>
+                  <li>실습용 패널을 활용한 단계별 복원 실습</li>
+                  <li>자동차 덴트복원 전문기술 습득을 위한 기초역량 확보</li>
+                </ul>
+                <h4>개강 일정</h4>
+              <div class="d-dates"></div>
+              <div class="d-btns">
+                <a href="https://www.work24.go.kr/hr/a/a/1100/trnnCrsInf.do?dghtSe=A&amp;traingMthCd=A&amp;endDate=20271021&amp;trng_prd=A&amp;pageSize=10&amp;startDate_datepicker=2026-10-21&amp;topMenuYn=&amp;tracseId=AIG20240000478461&amp;totamtSuptYn=A&amp;crseTracseSeNum=&amp;keyword=&amp;area=00%7C%EC%A0%84%EA%B5%AD+%EC%A0%84%EC%B2%B4&amp;orderKey=2&amp;kdgLinkYn=&amp;srchType=all_type&amp;crseTracseSe=A%7C%ED%9B%88%EB%A0%A8%EC%9C%A0%ED%98%95+%EC%A0%84%EC%B2%B4&amp;tranRegister=&amp;trng_type=A&amp;mberId=&amp;pageId=2&amp;noTrngPay=Y&amp;endDate_datepicker=2027-10-21&amp;monthGubun=&amp;pageOrder=2ASC&amp;startTrngPay=&amp;startDate=20261021&amp;endTrngPay=&amp;tracseTme=13&amp;keyword1=&amp;keyword2=&amp;orderBy=ASC&amp;currentTab=1&amp;pop=&amp;pageRow=10&amp;ncsSearchKeyword=&amp;keywordTrngNm=%ED%95%9C%EA%B5%AD%EC%B9%B4%EC%BC%80%EC%96%B4%EC%A0%84%EB%AC%B8%ED%95%99%EC%9B%90&amp;keywordType=1&amp;gb=&amp;kDgtlYn=&amp;mberSe=&amp;max_trng=&amp;totTraingTime=A&amp;i2=A&amp;areaSearchKeyword=&amp;programMenuIdentification=EBG020000000310&amp;min_trng=&amp;pageIndex=1&amp;chkNoTrngPay=&amp;bgrlInstYn=&amp;crseTracseSeKDT=&amp;ncs=&amp;gvrnInstt=&amp;selectNCSKeyword=&amp;compareArgArr=&amp;action=trnnCrsInfPost.do" target="_blank" rel="noopener" class="btn btn--g">수강신청 <small>고용24 ↗</small></a>
+                <a href="#contact" class="btn btn--w js-toForm">✉ 문자 상담 남기기</a>
+                <a href="tel:01025198585" class="btn btn--k">☎ 전화 상담</a>
+              </div>
+            </div>
+          </div>
+        </article>
+        <article class="acc-item" data-course="랩핑" id="course-랩핑" tabindex="0" aria-expanded="false">
+          <div class="face">
+            <div class="c-thumb"><img src="images/courses/wrapping.webp" alt="자동차랩핑 입문과정" loading="lazy"></div>
+            <div class="c-body"><strong class="c-name">자동차랩핑 입문과정</strong><p class="c-desc">컬러 필름으로 차량 외관 색상을 바꾸는 랩핑 전문 기술을 배웁니다.</p><div class="c-dates"></div><span class="f-more">과정 자세히 보기 +</span></div>
+            <span class="no">03</span>
+            <span class="vlabel">랩핑</span>
+          </div>
+          <div class="detail">
+            <button type="button" class="close" aria-label="닫기">×</button>
+            <div class="d-pics"><img src="images/courses/wrapping.webp" alt="자동차랩핑 입문과정 실습" loading="lazy"><img src="images/gallery/DSC05650.webp" alt="실습 현장" loading="lazy"></div>
+            <div class="d-body">
+                <span class="tag">COURSE 03</span>
+                <h3>자동차랩핑 입문과정</h3>
+                <h4>교육목표</h4>
+                <p class="lead">자동차 랩핑의 기초지식과 기본 시공방법을 이해하고, 랩핑필름의 재단 및 부착 실습을 통해 자동차 랩핑의 기초 작업능력을 습득하는 과정입니다.</p>
+                <h4>주요 교육 커리큘럼</h4>
+                <div class="cur-wrap"><table class="cur cur--2">
+                  <thead><tr><th>교육과목</th><th>주요 교육내용</th></tr></thead>
+                  <tbody>
+                    <tr><th>자동차 랩핑 기초이론</th><td>자동차 랩핑의 이해, 랩핑필름의 종류 및 특성, 작업 안전수칙</td></tr>
+                    <tr><th>랩핑 장비 및 도구 사용</th><td>스퀴지, 히팅건, 커터 등 기본 시공도구의 사용방법</td></tr>
+                    <tr><th>랩핑 시공 기초</th><td>작업면 세정 및 탈지, 필름 치수 측정, 재단 및 부착방법</td></tr>
+                    <tr><th>랩핑 기초 실습</th><td>평면 및 단순 곡면 필름 부착, 기포와 주름 제거 실습</td></tr>
+                    <tr><th>자동차 부위별 기초 실습</th><td>보닛, 도어 등 기본적인 차량 외장 부위 랩핑 실습</td></tr>
+                    <tr><th>마무리 및 품질점검</th><td>필름 끝단 정리, 부착 상태 확인 및 기본 유지관리</td></tr>
+                  </tbody>
+                </table></div>
+                <h4>교육과정 특징</h4>
+                <ul class="feat">
+                  <li>랩핑 초보자를 위한 기초 중심 교육</li>
+                  <li>기본 장비 사용법 및 필름 부착기술 습득</li>
+                  <li>실습을 통한 기초 시공능력 향상</li>
+                  <li>자동차 랩핑 전문교육을 위한 기초역량 확보</li>
+                </ul>
+                <h4>개강 일정</h4>
+              <div class="d-dates"></div>
+              <div class="d-btns">
+                <a href="https://www.work24.go.kr/hr/a/a/1100/trnnCrsInf.do?dghtSe=A&amp;traingMthCd=A&amp;endDate=20271021&amp;trng_prd=A&amp;pageSize=10&amp;startDate_datepicker=2026-10-21&amp;topMenuYn=&amp;tracseId=AIG20240000478461&amp;totamtSuptYn=A&amp;crseTracseSeNum=&amp;keyword=&amp;area=00%7C%EC%A0%84%EA%B5%AD+%EC%A0%84%EC%B2%B4&amp;orderKey=2&amp;kdgLinkYn=&amp;srchType=all_type&amp;crseTracseSe=A%7C%ED%9B%88%EB%A0%A8%EC%9C%A0%ED%98%95+%EC%A0%84%EC%B2%B4&amp;tranRegister=&amp;trng_type=A&amp;mberId=&amp;pageId=2&amp;noTrngPay=Y&amp;endDate_datepicker=2027-10-21&amp;monthGubun=&amp;pageOrder=2ASC&amp;startTrngPay=&amp;startDate=20261021&amp;endTrngPay=&amp;tracseTme=13&amp;keyword1=&amp;keyword2=&amp;orderBy=ASC&amp;currentTab=1&amp;pop=&amp;pageRow=10&amp;ncsSearchKeyword=&amp;keywordTrngNm=%ED%95%9C%EA%B5%AD%EC%B9%B4%EC%BC%80%EC%96%B4%EC%A0%84%EB%AC%B8%ED%95%99%EC%9B%90&amp;keywordType=1&amp;gb=&amp;kDgtlYn=&amp;mberSe=&amp;max_trng=&amp;totTraingTime=A&amp;i2=A&amp;areaSearchKeyword=&amp;programMenuIdentification=EBG020000000310&amp;min_trng=&amp;pageIndex=1&amp;chkNoTrngPay=&amp;bgrlInstYn=&amp;crseTracseSeKDT=&amp;ncs=&amp;gvrnInstt=&amp;selectNCSKeyword=&amp;compareArgArr=&amp;action=trnnCrsInfPost.do" target="_blank" rel="noopener" class="btn btn--g">수강신청 <small>고용24 ↗</small></a>
+                <a href="#contact" class="btn btn--w js-toForm">✉ 문자 상담 남기기</a>
+                <a href="tel:01025198585" class="btn btn--k">☎ 전화 상담</a>
+              </div>
+            </div>
+          </div>
+        </article>
+        <article class="acc-item" data-course="썬팅" id="course-썬팅" tabindex="0" aria-expanded="false">
+          <div class="face">
+            <div class="c-thumb"><img src="images/courses/tinting.webp" alt="자동차썬팅과정" loading="lazy"></div>
+            <div class="c-body"><strong class="c-name">자동차썬팅과정</strong><p class="c-desc">자외선·열 차단 필름을 정밀 패턴 커팅으로 유리에 시공합니다.</p><div class="c-dates"></div><span class="f-more">과정 자세히 보기 +</span></div>
+            <span class="no">04</span>
+            <span class="vlabel">썬팅</span>
+          </div>
+          <div class="detail">
+            <button type="button" class="close" aria-label="닫기">×</button>
+            <div class="d-pics"><img src="images/courses/tinting.webp" alt="자동차썬팅과정 실습" loading="lazy"><img src="images/gallery/DSC05284.webp" alt="실습 현장" loading="lazy"></div>
+            <div class="d-body">
+                <span class="tag">COURSE 04</span>
+                <h3>자동차 썬팅(윈도우틴팅) 기초과정</h3>
+                <h4>교육목표</h4>
+                <p class="lead">자동차 썬팅필름의 종류와 특성을 이해하고, 기본 장비 사용법부터 필름 재단, 열성형 및 유리 부착 실습을 통해 자동차 썬팅의 기초 시공능력을 습득하는 과정입니다.</p>
+                <h4>주요 교육 커리큘럼</h4>
+                <div class="cur-wrap"><table class="cur cur--2">
+                  <thead><tr><th>교육과목</th><th>주요 교육내용</th></tr></thead>
+                  <tbody>
+                    <tr><th>자동차 썬팅 기초이론</th><td>자동차 썬팅의 이해, 필름 종류 및 특성, 가시광선 투과율과 열차단 원리</td></tr>
+                    <tr><th>썬팅 장비 및 도구 사용</th><td>히팅건, 스퀴지, 커터 등 기본 시공도구 사용법과 안전관리</td></tr>
+                    <tr><th>필름 재단 기초</th><td>자동차 유리 구조 이해, 필름 치수 측정 및 수동·자동 재단 기초</td></tr>
+                    <tr><th>필름 열성형 기초</th><td>열성형 원리 이해, 히팅건 사용 및 후면유리 필름 열성형 기초 실습</td></tr>
+                    <tr><th>자동차 유리 썬팅 실습</th><td>유리 세정 및 전처리, 측면유리·후면유리 필름 부착 기초 실습</td></tr>
+                    <tr><th>마무리 및 품질점검</th><td>기포·이물질 확인, 필름 끝단 정리, 시공 상태 점검 및 관리방법</td></tr>
+                  </tbody>
+                </table></div>
+                <h4>교육과정 특징</h4>
+                <ul class="feat">
+                  <li>썬팅 초보자를 위한 기초 중심 교육</li>
+                  <li>필름 재단 및 열성형 기본기술 습득</li>
+                  <li>실습용 유리와 실제 차량을 활용한 단계별 실습</li>
+                  <li>자동차 썬팅 전문기술 습득을 위한 기초역량 확보</li>
+                </ul>
+                <h4>개강 일정</h4>
+              <div class="d-dates"></div>
+              <div class="d-btns">
+                <a href="https://www.work24.go.kr/hr/a/a/1100/trnnCrsInf.do?dghtSe=A&amp;traingMthCd=A&amp;endDate=20271021&amp;trng_prd=A&amp;pageSize=10&amp;startDate_datepicker=2026-10-21&amp;topMenuYn=&amp;tracseId=AIG20240000478461&amp;totamtSuptYn=A&amp;crseTracseSeNum=&amp;keyword=&amp;area=00%7C%EC%A0%84%EA%B5%AD+%EC%A0%84%EC%B2%B4&amp;orderKey=2&amp;kdgLinkYn=&amp;srchType=all_type&amp;crseTracseSe=A%7C%ED%9B%88%EB%A0%A8%EC%9C%A0%ED%98%95+%EC%A0%84%EC%B2%B4&amp;tranRegister=&amp;trng_type=A&amp;mberId=&amp;pageId=2&amp;noTrngPay=Y&amp;endDate_datepicker=2027-10-21&amp;monthGubun=&amp;pageOrder=2ASC&amp;startTrngPay=&amp;startDate=20261021&amp;endTrngPay=&amp;tracseTme=13&amp;keyword1=&amp;keyword2=&amp;orderBy=ASC&amp;currentTab=1&amp;pop=&amp;pageRow=10&amp;ncsSearchKeyword=&amp;keywordTrngNm=%ED%95%9C%EA%B5%AD%EC%B9%B4%EC%BC%80%EC%96%B4%EC%A0%84%EB%AC%B8%ED%95%99%EC%9B%90&amp;keywordType=1&amp;gb=&amp;kDgtlYn=&amp;mberSe=&amp;max_trng=&amp;totTraingTime=A&amp;i2=A&amp;areaSearchKeyword=&amp;programMenuIdentification=EBG020000000310&amp;min_trng=&amp;pageIndex=1&amp;chkNoTrngPay=&amp;bgrlInstYn=&amp;crseTracseSeKDT=&amp;ncs=&amp;gvrnInstt=&amp;selectNCSKeyword=&amp;compareArgArr=&amp;action=trnnCrsInfPost.do" target="_blank" rel="noopener" class="btn btn--g">수강신청 <small>고용24 ↗</small></a>
+                <a href="#contact" class="btn btn--w js-toForm">✉ 문자 상담 남기기</a>
+                <a href="tel:01025198585" class="btn btn--k">☎ 전화 상담</a>
+              </div>
+            </div>
+          </div>
+        </article>
     </div>
     <div class="consult">
       <div class="consult-txt">
@@ -450,26 +745,52 @@ kcaSchedule(function (d) {
   var n = d.list.filter(function (x) { return !x.ongoing; })[0] || d.list[0], nx = document.querySelector('#next .nx');
   if (n) { nx.querySelector('b').textContent = d.fmt(n.start); nx.querySelector('span').textContent = NAMES[n.course] + ' ' + (n.cls || ''); }
   else { nx.querySelector('b').textContent = '전화 문의'; nx.querySelector('span').textContent = '010-2519-8585'; }
-  // 평일반 | 주말반 두 칸 — 일정 없는 반은 "일정 문의" (기존 홈페이지와 같은 표시)
+  function ds(label, cls, it) {
+    if (!it) return '<div class="ds ' + cls + ' none"><small>' + label + '</small><b>일정 문의</b></div>';
+    return '<div class="ds ' + cls + '"><small>' + label + (it.ongoing ? '<em>진행 중</em>' : '') + '</small><b>' + d.fmt(it.start) + '</b><span>' + (it.end ? '~ ' + d.fmt(it.end) : '개강') + '</span></div>';
+  }
   function slot(label, mod, it) {
     var tag = it && it.ongoing ? '<em>진행 중</em>' : '';
     return '<div class="c-slot c-slot--' + mod + (it ? '' : ' c-slot--none') + '"><span class="c-cls">' + label + tag + '</span>' +
       (it ? '<span class="c-start">' + d.fmt(it.start) + '</span><span class="c-end">' + (it.end ? '~ ' + d.fmt(it.end) : '개강') + '</span>'
           : '<span class="c-start">일정 문의</span><span class="c-end">&nbsp;</span>') + '</div>';
   }
-  document.querySelectorAll('.course-item').forEach(function (c) {
+  document.querySelectorAll('.acc-item').forEach(function (c) {
     var b = d.by[c.dataset.course];
-    c.querySelector('.c-dates').innerHTML = slot('평일반', 'weekday', b['평일반']) + slot('주말반', 'weekend', b['주말반']);
+    c.querySelector('.face .c-dates').innerHTML = slot('평일반', 'weekday', b['평일반']) + slot('주말반', 'weekend', b['주말반']);
+    c.querySelector('.d-dates').innerHTML = ds('평일반', 'wd', b['평일반']) + ds('주말반', 'we', b['주말반']);
   });
 });
 
+// 카드 펼치기: 누른 과정은 크게, 나머지는 좁게 / ×·Esc 로 닫기 / 주소 #course-광택 로 바로 열기
+(function () {
+  var acc = document.getElementById('acc'), items = acc.querySelectorAll('.acc-item');
+  function open(it) {
+    items.forEach(function (x) { x.classList.toggle('on', x === it); x.setAttribute('aria-expanded', x === it); });
+    acc.classList.toggle('open', !!it);
+    if (it) {
+      if (innerWidth <= 820) setTimeout(function () { it.scrollIntoView({ behavior: 'smooth', block: 'start' }); }, 350);
+    }
+  }
+  items.forEach(function (it) {
+    it.addEventListener('click', function (e) {
+      if (e.target.closest('.close')) { e.stopPropagation(); open(null); return; }
+      if (!it.classList.contains('on')) open(it);
+    });
+    it.addEventListener('keydown', function (e) { if ((e.key === 'Enter' || e.key === ' ') && e.target === it) { e.preventDefault(); open(it); } });
+  });
+  document.addEventListener('keydown', function (e) { if (e.key === 'Escape') open(null); });
+  var h = decodeURIComponent(location.hash.slice(1)), t = h.indexOf('course-') === 0 && document.getElementById(h);
+  if (t) { open(t); t.scrollIntoView(); }
+})();
+
 // 문자 남기기 → 맨 아래 수강 상담 양식으로 이동하고 양식을 잠깐 강조
-document.getElementById('toForm').addEventListener('click', function (e) {
+document.querySelectorAll('#toForm, .js-toForm').forEach(function (a) { a.addEventListener('click', function (e) {
   e.preventDefault();
   var f = document.getElementById('askForm');
   document.getElementById('contact').scrollIntoView({ behavior: 'smooth' });
   f.classList.remove('flash'); void f.offsetWidth; f.classList.add('flash');
-});
+}); });
 
 // 수강 상담 접수 — KCA_FORM_URL 에 Apps Script 웹 앱 주소(상담접수/Code.gs)를 넣으면 시트 저장 + 학원 휴대폰 문자 발송
 // 비워두면: 휴대폰은 문자 앱으로 학원에 직접 전송, PC는 전화 안내
