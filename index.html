@@ -66,10 +66,15 @@ header .btn{padding:10px 18px}
 
 /* 학원 소개 */
 .about{background:var(--w);border-top:1px solid var(--sv)}
-.about-grid{display:grid;grid-template-columns:1fr 1.05fr;gap:64px;align-items:center}
-.about-pics{display:grid;grid-template-columns:1.25fr 1fr;grid-template-rows:1fr 1fr;gap:12px;aspect-ratio:1/1;position:relative}
-.about-pics img{width:100%;height:100%;object-fit:cover;border-radius:10px}
-.about-pics .p1{grid-row:span 2}
+.about-grid{display:grid;grid-template-columns:1.25fr 1fr;gap:56px;align-items:center}
+/* 사진은 자르지 않고 원본 비율 그대로: 위 큰 가로 사진 1장 + 아래 가로·세로 사진 */
+.about-pics{display:flex;flex-direction:column;gap:12px;position:relative}
+.about-pics .row{display:flex;gap:12px}
+.about-pics .row img{min-width:0}
+.about-pics img{display:block;width:100%;height:auto;border-radius:10px}
+.about-pics .p1{aspect-ratio:1400/933}
+.about-pics .p3{flex:1.5;aspect-ratio:1400/933}
+.about-pics .p2{flex:.6664;aspect-ratio:933/1400}
 .about-pics::before{content:"";position:absolute;left:-14px;bottom:-14px;width:46%;height:46%;border-left:3px solid var(--g2);border-bottom:3px solid var(--g2);z-index:-1}
 .about-txt h2{font-size:clamp(28px,3.2vw,42px);font-weight:900;letter-spacing:-.045em;line-height:1.3;margin:14px 0 16px}
 .about-txt>p{color:var(--s);font-size:15.5px}
@@ -236,7 +241,6 @@ footer nav a:hover{color:var(--g)}
   .gov,.two{grid-template-columns:1fr}
   .course-list{grid-template-columns:1fr}
   .about-grid{grid-template-columns:1fr;gap:40px}
-  .about-pics{aspect-ratio:4/3}
   .about-pts li{grid-template-columns:1fr;gap:2px}
   .about-info{grid-template-columns:1fr}
   .about-info div{border-left:0;border-top:1px solid var(--sv)}
@@ -259,7 +263,7 @@ footer nav a:hover{color:var(--g)}
 <header>
   <div class="wrap">
     <a href="/" class="brand"><img src="images/YNzL4pRhNqbrOwHvFkJ2wct0IoA.webp" alt="한국카케어전문학원 로고">한국카케어전문학원</a>
-    <nav><a href="#reviews">후기·FAQ</a><a href="#about">학원소개</a><a href="#courses">교육과정</a><a href="#support">국비지원</a></nav>
+    <nav><a href="#about">학원소개</a><a href="#reviews">후기·FAQ</a><a href="#courses">교육과정</a><a href="#support">국비지원</a></nav>
     <a href="tel:01025198585" class="btn btn--k">☎ 010-2519-8585</a>
   </div>
 </header>
@@ -276,6 +280,33 @@ footer nav a:hover{color:var(--g)}
         <div class="nx"><small>다음 개강</small><b>—</b><span>일정 불러오는 중</span></div>
         <div class="kw"><strong>광택·디테일링 · 덴트 · 랩핑 · 썬팅</strong><span>평일반 / 주말반 운영 · 내일배움카드 국비지원</span></div>
       </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="sec about" id="about">
+  <div class="wrap about-grid">
+    <div class="about-pics">
+      <img class="p1" src="images/gallery/DSC05654.webp" alt="실차 실습 현장" width="1400" height="933" loading="lazy" decoding="async">
+      <div class="row">
+        <img class="p3" src="images/gallery/DSC05598.webp" alt="실습 수업" width="1400" height="933" loading="lazy" decoding="async">
+        <img class="p2" src="images/gallery/DSC05634.webp" alt="광택 실습" width="933" height="1400" loading="lazy" decoding="async">
+      </div>
+    </div>
+    <div class="about-txt">
+      <span class="tag">ABOUT</span>
+      <h2>현장에서 통하는 기술을<br>현장의 방식으로 가르칩니다</h2>
+      <p>한국카케어전문학원은 자동차 내·외장 관리 기술을 가르치는 국비지원 전문 교육기관입니다. 광택·디테일링, 덴트복원, 랩핑, 썬팅까지 현장에서 필요한 기술을 실제 차량으로 직접 실습하며 배웁니다.</p>
+      <ul class="about-pts">
+        <li><b>국비지원 교육</b><span>내일배움카드로 교육비 부담을 덜고 배울 수 있습니다.</span></li>
+        <li><b>실차 실습 중심</b><span>이론보다 손으로 익히는 수업. 현업 강사진이 직접 가르칩니다.</span></li>
+        <li><b>수료 후에도 함께</b><span>카케어협동조합 네트워크로 창업·취업·기술 교류가 이어집니다.</span></li>
+      </ul>
+      <div class="about-info">
+        <div><small>위치</small><strong>경기도 수원시 권선구 온정로 46</strong></div>
+        <div><small>주차</small><strong>주차 공간 마련</strong></div>
+        <div><small>상담</small><strong><a href="tel:01025198585">010-2519-8585</a></strong></div>
       </div>
     </div>
   </div>
@@ -298,30 +329,6 @@ footer nav a:hover{color:var(--g)}
   </div>
 </div></section>
 
-<section class="sec about" id="about">
-  <div class="wrap about-grid">
-    <div class="about-pics">
-      <img class="p1" src="images/gallery/DSC05654.webp" alt="실차 실습 현장" loading="lazy">
-      <img class="p2" src="images/gallery/DSC05634.webp" alt="광택 실습" loading="lazy">
-      <img class="p3" src="images/gallery/DSC05598.webp" alt="실습 수업" loading="lazy">
-    </div>
-    <div class="about-txt">
-      <span class="tag">ABOUT</span>
-      <h2>현장에서 통하는 기술을<br>현장의 방식으로 가르칩니다</h2>
-      <p>한국카케어전문학원은 자동차 내·외장 관리 기술을 가르치는 국비지원 전문 교육기관입니다. 광택·디테일링, 덴트복원, 랩핑, 썬팅까지 현장에서 필요한 기술을 실제 차량으로 직접 실습하며 배웁니다.</p>
-      <ul class="about-pts">
-        <li><b>국비지원 교육</b><span>내일배움카드로 교육비 부담을 덜고 배울 수 있습니다.</span></li>
-        <li><b>실차 실습 중심</b><span>이론보다 손으로 익히는 수업. 현업 강사진이 직접 가르칩니다.</span></li>
-        <li><b>수료 후에도 함께</b><span>카케어협동조합 네트워크로 창업·취업·기술 교류가 이어집니다.</span></li>
-      </ul>
-      <div class="about-info">
-        <div><small>위치</small><strong>경기도 수원시 권선구 온정로 46</strong></div>
-        <div><small>주차</small><strong>주차 공간 마련</strong></div>
-        <div><small>상담</small><strong><a href="tel:01025198585">010-2519-8585</a></strong></div>
-      </div>
-    </div>
-  </div>
-</section>
 
 <section class="sec courses" id="courses">
   <div class="wrap">
