@@ -77,6 +77,10 @@ header .btn{padding:10px 18px}
 .about-pics::before{content:"";position:absolute;left:-14px;bottom:-14px;width:46%;height:46%;border-left:3px solid var(--g2);border-bottom:3px solid var(--g2);z-index:-1}
 .about-txt h2{font-size:clamp(28px,3.2vw,42px);font-weight:900;letter-spacing:-.045em;line-height:1.3;margin:14px 0 16px}
 .about-txt>p{color:var(--s);font-size:15.5px}
+.about-txt>p{word-break:keep-all}
+.about-txt>p+p{margin-top:12px}
+.about-txt>p.about-lead{color:var(--k);font-weight:700;font-size:16.5px;word-break:keep-all}
+.about-txt .hl{color:var(--g);font-weight:900}
 .about-pts{list-style:none;margin-top:26px;border-top:1px solid var(--sv)}
 .about-pts li{display:grid;grid-template-columns:140px 1fr;gap:16px;padding:16px 0;border-bottom:1px solid var(--sv);align-items:baseline}
 .about-pts b{font-size:16px;font-weight:900;position:relative;padding-left:16px}
@@ -440,14 +444,11 @@ footer nav a:hover{color:var(--g)}
       </div>
     </div>
     <div class="about-txt">
-      <span class="tag">ABOUT</span>
-      <h2>현장에서 통하는 기술을<br>현장의 방식으로 가르칩니다</h2>
-      <p>한국카케어전문학원은 자동차 내·외장 관리 기술을 가르치는 국비지원 전문 교육기관입니다. 광택·스팀세차, 덴트복원, 랩핑, 썬팅까지 현장에서 필요한 기술을 실제 차량으로 직접 실습하며 배웁니다.</p>
-      <ul class="about-pts">
-        <li><b>국비지원 교육</b><span>내일배움카드로 교육비 부담을 덜고 배울 수 있습니다.</span></li>
-        <li><b>실차 실습 중심</b><span>이론보다 손으로 익히는 수업. 현업 강사진이 직접 가르칩니다.</span></li>
-        <li><b>수료 후에도 함께</b><span>카케어협동조합 네트워크로 창업·취업·기술 교류가 이어집니다.</span></li>
-      </ul>
+      <span class="tag">SINCE 2012</span>
+      <h2>왜 한국카케어전문학원인가?<br><span class="kca-graduates">3,420</span>명이 선택한 이유</h2>
+      <p class="about-lead">한국카케어전문학원은 2012년 개원한 국비지원 자동차 외장관리 전문 교육기관입니다.</p>
+      <p>내일배움카드로 교육비를 지원받고 배울 수 있습니다. 평균 경력 15년 이상의 현업 강사진이 이론이 아닌 <b class="hl">실차 실습</b> 중심으로 가르칩니다.</p>
+      <p>수료 후에도 카케어협동조합 102곳 네트워크를 통해 창업·취업·기술 교류가 이어집니다.</p>
       <div class="about-info">
         <div><small>위치</small><strong>경기도 수원시 권선구 온정로 46</strong></div>
         <div><small>주차</small><strong>주차 공간 마련</strong></div>
